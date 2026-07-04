@@ -1,0 +1,46 @@
+{
+  "name": "renaiss",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "fetch-cards": "node scripts/fetch-pokemon-cards.mjs",
+    "enrich-prices": "node scripts/enrich-prices.mjs",
+    "expand-silphco-pool": "node scripts/expand-silphco-classic-pool.mjs",
+    "materialize-pool-images": "node scripts/materialize-classic-pool-images.mjs --prune-failed",
+    "sync-renaiss-cards": "node scripts/sync-renaiss-cards.mjs",
+    "seed-renaiss-cards": "node scripts/seed-renaiss-cards.mjs",
+    "record-journey": "node scripts/user-journey-video.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/postprocessing": "^3.0.4",
+    "@supabase/supabase-js": "^2.108.2",
+    "@tailwindcss/vite": "^4.3.1",
+    "@tanstack/react-query": "^5.101.1",
+    "@tcgdex/sdk": "^2.9.0",
+    "@types/three": "^0.184.1",
+    "@web3modal/ethers": "^5.1.11",
+    "ethers": "^6.17.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.1",
+    "three": "^0.185.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "oxlint": "^1.69.0",
+    "playwright": "^1.61.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0"
+  }
+}

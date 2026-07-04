@@ -1,0 +1,47 @@
+# Reserved / impersonation (one per line, case-insensitive)
+admin
+administrator
+moderator
+modteam
+staff
+support
+helpdesk
+official
+system
+root
+superuser
+owner
+developer
+devteam
+renaiss
+fliporfold
+flipfold
+null
+undefined
+anonymous
+guest
+deleted
+banned
+hacked
+hack
+cheater
+cheat
+bot
+npc
+testuser
+# Common slurs & hate (normalized match — add more as needed)
+nigger
+nigga
+faggot
+fag
+retard
+retarded
+kike
+chink
+spic
+tranny
+# SQL / XSS noise (harmless server-side, blocked for clarity)
+select
+drop table
+script
+javascript

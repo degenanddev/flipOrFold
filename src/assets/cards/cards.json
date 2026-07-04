@@ -1,0 +1,5241 @@
+{
+  "source": "SilphCo Analytics + pokemontcg.io — local pool/ images for WebGL (run materialize-classic-pool-images.mjs after expanding)",
+  "note": "Unified pool for card trading mode.",
+  "cards": [
+    {
+      "id": "card-base1-1",
+      "tcgId": "base1-1",
+      "name": "Alakazam",
+      "rarity": "epic",
+      "image": "pool/base1-1.png",
+      "set": "Base",
+      "marketPrice": 84
+    },
+    {
+      "id": "card-base1-2",
+      "tcgId": "base1-2",
+      "name": "Blastoise",
+      "rarity": "epic",
+      "image": "pool/base1-2.png",
+      "set": "Base",
+      "marketPrice": 226
+    },
+    {
+      "id": "card-base1-3",
+      "tcgId": "base1-3",
+      "name": "Chansey",
+      "rarity": "epic",
+      "image": "pool/base1-3.png",
+      "set": "Base",
+      "marketPrice": 66
+    },
+    {
+      "id": "card-base1-4",
+      "tcgId": "base1-4",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/base1-4.png",
+      "set": "Base",
+      "marketPrice": 630
+    },
+    {
+      "id": "card-base1-5",
+      "tcgId": "base1-5",
+      "name": "Clefairy",
+      "rarity": "epic",
+      "image": "pool/base1-5.png",
+      "set": "Base",
+      "marketPrice": 41
+    },
+    {
+      "id": "card-base1-6",
+      "tcgId": "base1-6",
+      "name": "Gyarados",
+      "rarity": "epic",
+      "image": "pool/base1-6.png",
+      "set": "Base",
+      "marketPrice": 54
+    },
+    {
+      "id": "card-base1-7",
+      "tcgId": "base1-7",
+      "name": "Hitmonchan",
+      "rarity": "epic",
+      "image": "pool/base1-7.png",
+      "set": "Base",
+      "marketPrice": 25
+    },
+    {
+      "id": "card-base1-8",
+      "tcgId": "base1-8",
+      "name": "Machamp",
+      "rarity": "epic",
+      "image": "pool/base1-8.png",
+      "set": "Base",
+      "marketPrice": 113
+    },
+    {
+      "id": "card-base1-9",
+      "tcgId": "base1-9",
+      "name": "Magneton",
+      "rarity": "epic",
+      "image": "pool/base1-9.png",
+      "set": "Base",
+      "marketPrice": 37
+    },
+    {
+      "id": "card-base1-10",
+      "tcgId": "base1-10",
+      "name": "Mewtwo",
+      "rarity": "epic",
+      "image": "pool/base1-10.png",
+      "set": "Base",
+      "marketPrice": 79
+    },
+    {
+      "id": "card-base1-11",
+      "tcgId": "base1-11",
+      "name": "Nidoking",
+      "rarity": "epic",
+      "image": "pool/base1-11.png",
+      "set": "Base",
+      "marketPrice": 39
+    },
+    {
+      "id": "card-base1-12",
+      "tcgId": "base1-12",
+      "name": "Ninetales",
+      "rarity": "epic",
+      "image": "pool/base1-12.png",
+      "set": "Base",
+      "marketPrice": 37
+    },
+    {
+      "id": "card-base1-13",
+      "tcgId": "base1-13",
+      "name": "Poliwrath",
+      "rarity": "epic",
+      "image": "pool/base1-13.png",
+      "set": "Base",
+      "marketPrice": 38
+    },
+    {
+      "id": "card-base1-14",
+      "tcgId": "base1-14",
+      "name": "Raichu",
+      "rarity": "epic",
+      "image": "pool/base1-14.png",
+      "set": "Base",
+      "marketPrice": 73
+    },
+    {
+      "id": "card-base1-15",
+      "tcgId": "base1-15",
+      "name": "Venusaur",
+      "rarity": "epic",
+      "image": "pool/base1-15.png",
+      "set": "Base",
+      "marketPrice": 156
+    },
+    {
+      "id": "card-base1-16",
+      "tcgId": "base1-16",
+      "name": "Zapdos",
+      "rarity": "epic",
+      "image": "pool/base1-16.png",
+      "set": "Base",
+      "marketPrice": 55
+    },
+    {
+      "id": "card-base1-58",
+      "tcgId": "base1-58",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/base1-58.png",
+      "set": "Base",
+      "marketPrice": 7
+    },
+    {
+      "id": "card-base1-62",
+      "tcgId": "base1-62",
+      "name": "Sandshrew",
+      "rarity": "common",
+      "image": "pool/base1-62.png",
+      "set": "Base",
+      "marketPrice": 1
+    },
+    {
+      "id": "card-base2-2",
+      "tcgId": "base2-2",
+      "name": "Electrode",
+      "rarity": "epic",
+      "image": "pool/base2-2.png",
+      "set": "Jungle",
+      "marketPrice": 56
+    },
+    {
+      "id": "card-base2-3",
+      "tcgId": "base2-3",
+      "name": "Flareon",
+      "rarity": "epic",
+      "image": "pool/base2-3.png",
+      "set": "Jungle",
+      "marketPrice": 165
+    },
+    {
+      "id": "card-base2-12",
+      "tcgId": "base2-12",
+      "name": "Vaporeon",
+      "rarity": "epic",
+      "image": "pool/base2-12.png",
+      "set": "Jungle",
+      "marketPrice": 168
+    },
+    {
+      "id": "card-base2-15",
+      "tcgId": "base2-15",
+      "name": "Vileplume",
+      "rarity": "epic",
+      "image": "pool/base2-15.png",
+      "set": "Jungle",
+      "marketPrice": 91
+    },
+    {
+      "id": "card-base3-2",
+      "tcgId": "base3-2",
+      "name": "Articuno",
+      "rarity": "epic",
+      "image": "pool/base3-2.png",
+      "set": "Fossil",
+      "marketPrice": 208
+    },
+    {
+      "id": "card-base3-4",
+      "tcgId": "base3-4",
+      "name": "Dragonite",
+      "rarity": "epic",
+      "image": "pool/base3-4.png",
+      "set": "Fossil",
+      "marketPrice": 429
+    },
+    {
+      "id": "card-base3-15",
+      "tcgId": "base3-15",
+      "name": "Zapdos",
+      "rarity": "epic",
+      "image": "pool/base3-15.png",
+      "set": "Fossil",
+      "marketPrice": 128
+    },
+    {
+      "id": "card-base4-1",
+      "tcgId": "base4-1",
+      "name": "Alakazam",
+      "rarity": "epic",
+      "image": "pool/base4-1.png",
+      "set": "Base Set 2",
+      "marketPrice": 55
+    },
+    {
+      "id": "card-base4-2",
+      "tcgId": "base4-2",
+      "name": "Blastoise",
+      "rarity": "epic",
+      "image": "pool/base4-2.png",
+      "set": "Base Set 2",
+      "marketPrice": 133
+    },
+    {
+      "id": "card-base4-4",
+      "tcgId": "base4-4",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/base4-4.png",
+      "set": "Base Set 2",
+      "marketPrice": 451
+    },
+    {
+      "id": "card-base4-10",
+      "tcgId": "base4-10",
+      "name": "Mewtwo",
+      "rarity": "epic",
+      "image": "pool/base4-10.png",
+      "set": "Base Set 2",
+      "marketPrice": 59
+    },
+    {
+      "id": "card-base4-12",
+      "tcgId": "base4-12",
+      "name": "Nidoqueen",
+      "rarity": "epic",
+      "image": "pool/base4-12.png",
+      "set": "Base Set 2",
+      "marketPrice": 31
+    },
+    {
+      "id": "card-base4-13",
+      "tcgId": "base4-13",
+      "name": "Ninetales",
+      "rarity": "epic",
+      "image": "pool/base4-13.png",
+      "set": "Base Set 2",
+      "marketPrice": 30
+    },
+    {
+      "id": "card-base5-1",
+      "tcgId": "base5-1",
+      "name": "Dark Alakazam",
+      "rarity": "epic",
+      "image": "pool/base5-1.png",
+      "set": "Team Rocket",
+      "marketPrice": 140
+    },
+    {
+      "id": "card-base5-4",
+      "tcgId": "base5-4",
+      "name": "Dark Charizard",
+      "rarity": "epic",
+      "image": "pool/base5-4.png",
+      "set": "Team Rocket",
+      "marketPrice": 384
+    },
+    {
+      "id": "card-base5-14",
+      "tcgId": "base5-14",
+      "name": "Dark Weezing",
+      "rarity": "epic",
+      "image": "pool/base5-14.png",
+      "set": "Team Rocket",
+      "marketPrice": 45
+    },
+    {
+      "id": "card-gym1-2",
+      "tcgId": "gym1-2",
+      "name": "Brock's Rhydon",
+      "rarity": "epic",
+      "image": "pool/gym1-2.png",
+      "set": "Gym Heroes",
+      "marketPrice": 122
+    },
+    {
+      "id": "card-gym1-5",
+      "tcgId": "gym1-5",
+      "name": "Erika's Vileplume",
+      "rarity": "epic",
+      "image": "pool/gym1-5.png",
+      "set": "Gym Heroes",
+      "marketPrice": 82
+    },
+    {
+      "id": "card-gym2-2",
+      "tcgId": "gym2-2",
+      "name": "Blaine's Charizard",
+      "rarity": "epic",
+      "image": "pool/gym2-2.png",
+      "set": "Gym Challenge",
+      "marketPrice": 895
+    },
+    {
+      "id": "card-gym2-5",
+      "tcgId": "gym2-5",
+      "name": "Giovanni's Gyarados",
+      "rarity": "epic",
+      "image": "pool/gym2-5.png",
+      "set": "Gym Challenge",
+      "marketPrice": 201
+    },
+    {
+      "id": "card-neo1-9",
+      "tcgId": "neo1-9",
+      "name": "Lugia",
+      "rarity": "epic",
+      "image": "pool/neo1-9.png",
+      "set": "Neo Genesis",
+      "marketPrice": 1600
+    },
+    {
+      "id": "card-neo1-13",
+      "tcgId": "neo1-13",
+      "name": "Skarmory",
+      "rarity": "epic",
+      "image": "pool/neo1-13.png",
+      "set": "Neo Genesis",
+      "marketPrice": 75
+    },
+    {
+      "id": "card-neo1-18",
+      "tcgId": "neo1-18",
+      "name": "Typhlosion",
+      "rarity": "epic",
+      "image": "pool/neo1-18.png",
+      "set": "Neo Genesis",
+      "marketPrice": 435
+    },
+    {
+      "id": "card-xy1-54",
+      "tcgId": "xy1-54",
+      "name": "Phantump",
+      "rarity": "common",
+      "image": "pool/xy1-54.png",
+      "set": "XY",
+      "marketPrice": 137
+    },
+    {
+      "id": "card-xy1-125",
+      "tcgId": "xy1-125",
+      "name": "Roller Skates",
+      "rarity": "common",
+      "image": "pool/xy1-125.png",
+      "set": "XY",
+      "marketPrice": 439
+    },
+    {
+      "id": "card-sm1-152",
+      "tcgId": "sm1-152",
+      "name": "Espeon-GX",
+      "rarity": "rare",
+      "image": "pool/sm1-152.png",
+      "set": "Sun & Moon",
+      "marketPrice": 49
+    },
+    {
+      "id": "card-sm1-161",
+      "tcgId": "sm1-161",
+      "name": "Ultra Ball",
+      "rarity": "legendary",
+      "image": "pool/sm1-161.png",
+      "set": "Sun & Moon",
+      "marketPrice": 34
+    },
+    {
+      "id": "card-sm1-171",
+      "tcgId": "sm1-171",
+      "name": "Metal Energy",
+      "rarity": "common",
+      "image": "pool/sm1-171.png",
+      "set": "Sun & Moon",
+      "marketPrice": 15
+    },
+    {
+      "id": "card-swsh1-74",
+      "tcgId": "swsh1-74",
+      "name": "Yamper",
+      "rarity": "common",
+      "image": "pool/swsh1-74.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48
+    },
+    {
+      "id": "card-swsh1-99",
+      "tcgId": "swsh1-99",
+      "name": "Rhyperior",
+      "rarity": "epic",
+      "image": "pool/swsh1-99.png",
+      "set": "Sword & Shield",
+      "marketPrice": 120
+    },
+    {
+      "id": "card-sv1-86",
+      "tcgId": "sv1-86",
+      "name": "Gardevoir ex",
+      "rarity": "rare",
+      "image": "pool/sv1-86.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 1
+    },
+    {
+      "id": "card-sv1-198",
+      "tcgId": "sv1-198",
+      "name": "Youngster",
+      "rarity": "common",
+      "image": "pool/sv1-198.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 37
+    },
+    {
+      "id": "card-sv1-205",
+      "tcgId": "sv1-205",
+      "name": "Clauncher",
+      "rarity": "legendary",
+      "image": "pool/sv1-205.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 9
+    },
+    {
+      "id": "card-sv3-86",
+      "tcgId": "sv3-86",
+      "name": "Espeon",
+      "rarity": "common",
+      "image": "pool/sv3-86.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 15
+    },
+    {
+      "id": "card-sv3-125",
+      "tcgId": "sv3-125",
+      "name": "Charizard ex",
+      "rarity": "rare",
+      "image": "pool/sv3-125.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 5
+    },
+    {
+      "id": "card-g1-RC5",
+      "tcgId": "g1-RC5",
+      "name": "Charizard",
+      "rarity": "common",
+      "image": "pool/g1-RC5.png",
+      "set": "Generations",
+      "marketPrice": 67
+    },
+    {
+      "id": "card-mcd19-6",
+      "tcgId": "mcd19-6",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/mcd19-6.png",
+      "set": "McDonald's Collection 2019",
+      "marketPrice": 33
+    },
+    {
+      "id": "card-ru1-1",
+      "tcgId": "ru1-1",
+      "name": "Venusaur",
+      "rarity": "common",
+      "image": "pool/ru1-1.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 280
+    },
+    {
+      "id": "card-ru1-3",
+      "tcgId": "ru1-3",
+      "name": "Ninetales",
+      "rarity": "common",
+      "image": "pool/ru1-3.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 310
+    },
+    {
+      "id": "card-ru1-6",
+      "tcgId": "ru1-6",
+      "name": "Gyarados",
+      "rarity": "common",
+      "image": "pool/ru1-6.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 270
+    },
+    {
+      "id": "card-ru1-8",
+      "tcgId": "ru1-8",
+      "name": "Zapdos",
+      "rarity": "common",
+      "image": "pool/ru1-8.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 300
+    },
+    {
+      "id": "card-ru1-9",
+      "tcgId": "ru1-9",
+      "name": "Mewtwo",
+      "rarity": "common",
+      "image": "pool/ru1-9.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 550
+    },
+    {
+      "id": "card-pop3-1",
+      "tcgId": "pop3-1",
+      "name": "Blastoise",
+      "rarity": "rare",
+      "image": "pool/pop3-1.png",
+      "set": "POP Series 3",
+      "marketPrice": 218
+    },
+    {
+      "id": "card-pop5-1",
+      "tcgId": "pop5-1",
+      "name": "Ho-Oh",
+      "rarity": "rare",
+      "image": "pool/pop5-1.png",
+      "set": "POP Series 5",
+      "marketPrice": 48
+    },
+    {
+      "id": "card-pop9-3",
+      "tcgId": "pop9-3",
+      "name": "Raichu",
+      "rarity": "rare",
+      "image": "pool/pop9-3.png",
+      "set": "POP Series 9",
+      "marketPrice": 11
+    },
+    {
+      "id": "card-det1-10",
+      "tcgId": "det1-10",
+      "name": "Detective Pikachu",
+      "rarity": "rare",
+      "image": "pool/det1-10.png",
+      "set": "Detective Pikachu",
+      "marketPrice": 15
+    },
+    {
+      "id": "card-det1-13",
+      "tcgId": "det1-13",
+      "name": "Machamp",
+      "rarity": "rare",
+      "image": "pool/det1-13.png",
+      "set": "Detective Pikachu",
+      "marketPrice": 2
+    },
+    {
+      "id": "card-smp-SM04",
+      "tcgId": "smp-SM04",
+      "name": "Pikachu",
+      "rarity": "rare",
+      "image": "pool/smp-SM04.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 13
+    },
+    {
+      "id": "card-smp-SM60",
+      "tcgId": "smp-SM60",
+      "name": "Charizard-GX",
+      "rarity": "rare",
+      "image": "pool/smp-SM60.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 52
+    },
+    {
+      "id": "card-smp-SM144",
+      "tcgId": "smp-SM144",
+      "name": "Articuno",
+      "rarity": "rare",
+      "image": "pool/smp-SM144.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 14
+    },
+    {
+      "id": "card-smp-SM170",
+      "tcgId": "smp-SM170",
+      "name": "Detective Pikachu",
+      "rarity": "rare",
+      "image": "pool/smp-SM170.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 39
+    },
+    {
+      "id": "card-smp-SM228",
+      "tcgId": "smp-SM228",
+      "name": "Armored Mewtwo",
+      "rarity": "rare",
+      "image": "pool/smp-SM228.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 258
+    },
+    {
+      "id": "card-pl4-3",
+      "tcgId": "pl4-3",
+      "name": "Heatran",
+      "rarity": "epic",
+      "image": "pool/pl4-3.png",
+      "set": "Arceus",
+      "marketPrice": 3
+    },
+    {
+      "id": "card-col1-23",
+      "tcgId": "col1-23",
+      "name": "Ampharos",
+      "rarity": "rare",
+      "image": "pool/col1-23.png",
+      "set": "Call of Legends",
+      "marketPrice": 3
+    },
+    {
+      "id": "card-bw1-114",
+      "tcgId": "bw1-114",
+      "name": "Zekrom",
+      "rarity": "epic",
+      "image": "pool/bw1-114.png",
+      "set": "Black & White",
+      "marketPrice": 117
+    },
+    {
+      "id": "card-ex14-17",
+      "tcgId": "ex14-17",
+      "name": "Dusclops",
+      "rarity": "rare",
+      "image": "pool/ex14-17.png",
+      "set": "Crystal Guardians",
+      "marketPrice": 1
+    },
+    {
+      "id": "card-mcd21-6",
+      "tcgId": "mcd21-6",
+      "name": "Chespin",
+      "rarity": "common",
+      "image": "pool/mcd21-6.png",
+      "set": "McDonald's Collection 2021",
+      "marketPrice": 1
+    },
+    {
+      "id": "card-mcd22-6",
+      "tcgId": "mcd22-6",
+      "name": "Lapras",
+      "rarity": "common",
+      "image": "pool/mcd22-6.png",
+      "set": "McDonald's Collection 2022",
+      "marketPrice": 2
+    },
+    {
+      "id": "card-sv9-105",
+      "tcgId": "sv9-105",
+      "name": "N's Klinklang",
+      "rarity": "common",
+      "image": "pool/sv9-105.png",
+      "set": "Journey Together",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-151",
+      "tcgId": "sv3pt5-151",
+      "name": "Mew ex",
+      "rarity": "epic",
+      "image": "pool/sv3pt5-151.png",
+      "set": "151",
+      "marketPrice": 24,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-114",
+      "tcgId": "swsh1-114",
+      "name": "Stonjourner",
+      "rarity": "rare",
+      "image": "pool/swsh1-114.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-101",
+      "tcgId": "sv9-101",
+      "name": "Bombirdier",
+      "rarity": "common",
+      "image": "pool/sv9-101.png",
+      "set": "Journey Together",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5-160",
+      "tcgId": "swsh12pt5-160",
+      "name": "Pikachu",
+      "rarity": "legendary",
+      "image": "pool/swsh12pt5-160.png",
+      "set": "Crown Zenith",
+      "marketPrice": 26,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-106",
+      "tcgId": "me2-106",
+      "name": "Meowth",
+      "rarity": "legendary",
+      "image": "pool/me2-106.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-73",
+      "tcgId": "sv5-73",
+      "name": "Elgyem",
+      "rarity": "rare",
+      "image": "pool/sv5-73.png",
+      "set": "Temporal Forces",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-117",
+      "tcgId": "sv3-117",
+      "name": "Lycanroc",
+      "rarity": "rare",
+      "image": "pool/sv3-117.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-77",
+      "tcgId": "sv5-77",
+      "name": "Scream Tail",
+      "rarity": "rare",
+      "image": "pool/sv5-77.png",
+      "set": "Temporal Forces",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25-5",
+      "tcgId": "cel25-5",
+      "name": "Pikachu",
+      "rarity": "epic",
+      "image": "pool/cel25-5.png",
+      "set": "Celebrations",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-82",
+      "tcgId": "sv2-82",
+      "name": "Kilowattrel",
+      "rarity": "rare",
+      "image": "pool/sv2-82.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-106",
+      "tcgId": "sv9-106",
+      "name": "Galarian Stunfisk",
+      "rarity": "rare",
+      "image": "pool/sv9-106.png",
+      "set": "Journey Together",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-87",
+      "tcgId": "sv1-87",
+      "name": "Shuppet",
+      "rarity": "rare",
+      "image": "pool/sv1-87.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-133",
+      "tcgId": "me1-133",
+      "name": "Bulbasaur",
+      "rarity": "legendary",
+      "image": "pool/me1-133.png",
+      "set": "Mega Evolution",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-72",
+      "tcgId": "sv5-72",
+      "name": "Reuniclus",
+      "rarity": "rare",
+      "image": "pool/sv5-72.png",
+      "set": "Temporal Forces",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-189",
+      "tcgId": "swsh1-189",
+      "name": "Lapras V",
+      "rarity": "epic",
+      "image": "pool/swsh1-189.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-125",
+      "tcgId": "me2-125",
+      "name": "Mega Charizard X ex",
+      "rarity": "legendary",
+      "image": "pool/me2-125.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 850,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-11",
+      "tcgId": "xy12-11",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/xy12-11.png",
+      "set": "Evolutions",
+      "marketPrice": 50,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-161",
+      "tcgId": "sv9-161",
+      "name": "Articuno",
+      "rarity": "legendary",
+      "image": "pool/sv9-161.png",
+      "set": "Journey Together",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-svp-173",
+      "tcgId": "svp-173",
+      "name": "Eevee",
+      "rarity": "rare",
+      "image": "pool/svp-173.png",
+      "set": "Scarlet & Violet Promos",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-173",
+      "tcgId": "sv3pt5-173",
+      "name": "Pikachu",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-173.png",
+      "set": "151",
+      "marketPrice": 50,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-105",
+      "tcgId": "me2-105",
+      "name": "Wigglytuff",
+      "rarity": "legendary",
+      "image": "pool/me2-105.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 7,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-167",
+      "tcgId": "sv9-167",
+      "name": "N's Reshiram",
+      "rarity": "legendary",
+      "image": "pool/sv9-167.png",
+      "set": "Journey Together",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-109",
+      "tcgId": "me2-109",
+      "name": "Mega Charizard X ex",
+      "rarity": "epic",
+      "image": "pool/me2-109.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 35,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-60",
+      "tcgId": "base2-60",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/base2-60.png",
+      "set": "Jungle",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-101",
+      "tcgId": "me2-101",
+      "name": "Flygon",
+      "rarity": "legendary",
+      "image": "pool/me2-101.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-169",
+      "tcgId": "sv3pt5-169",
+      "name": "Charmeleon",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-169.png",
+      "set": "151",
+      "marketPrice": 45,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-81",
+      "tcgId": "sv1-81",
+      "name": "Miraidon ex",
+      "rarity": "epic",
+      "image": "pool/sv1-81.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-102",
+      "tcgId": "sv1-102",
+      "name": "Flittle",
+      "rarity": "rare",
+      "image": "pool/sv1-102.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-171",
+      "tcgId": "sv3pt5-171",
+      "name": "Wartortle",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-171.png",
+      "set": "151",
+      "marketPrice": 44,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-162",
+      "tcgId": "sv9-162",
+      "name": "Wailord",
+      "rarity": "legendary",
+      "image": "pool/sv9-162.png",
+      "set": "Journey Together",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-168",
+      "tcgId": "sv3pt5-168",
+      "name": "Charmander",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-168.png",
+      "set": "151",
+      "marketPrice": 60,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-170",
+      "tcgId": "sv3pt5-170",
+      "name": "Squirtle",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-170.png",
+      "set": "151",
+      "marketPrice": 58,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-77",
+      "tcgId": "sv2-77",
+      "name": "Tadbulb",
+      "rarity": "rare",
+      "image": "pool/sv2-77.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-223",
+      "tcgId": "sv3-223",
+      "name": "Charizard ex",
+      "rarity": "legendary",
+      "image": "pool/sv3-223.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 105,
+      "source": "silphco"
+    },
+    {
+      "id": "card-mep-023",
+      "tcgId": "mep-023",
+      "name": "Mega Charizard X ex",
+      "rarity": "rare",
+      "image": "pool/mep-023.png",
+      "set": "ME: Mega Evolution Promo",
+      "marketPrice": 45,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv4-71",
+      "tcgId": "sv4-71",
+      "name": "Natu",
+      "rarity": "rare",
+      "image": "pool/sv4-71.png",
+      "set": "Paradox Rift",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me3-94",
+      "tcgId": "me3-94",
+      "name": "Clefairy",
+      "rarity": "legendary",
+      "image": "pool/me3-94.png",
+      "set": "Perfect Order",
+      "marketPrice": 34,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv4-78",
+      "tcgId": "sv4-78",
+      "name": "Gourgeist",
+      "rarity": "rare",
+      "image": "pool/sv4-78.png",
+      "set": "Paradox Rift",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm1-65",
+      "tcgId": "sm1-65",
+      "name": "Cosmoem",
+      "rarity": "rare",
+      "image": "pool/sm1-65.png",
+      "set": "Sun & Moon",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-97",
+      "tcgId": "sv1-97",
+      "name": "Fidough",
+      "rarity": "rare",
+      "image": "pool/sv1-97.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh4-138",
+      "tcgId": "swsh4-138",
+      "name": "Rayquaza",
+      "rarity": "rare",
+      "image": "pool/swsh4-138.png",
+      "set": "Vivid Voltage",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-199",
+      "tcgId": "sv3pt5-199",
+      "name": "Charizard ex",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-199.png",
+      "set": "151",
+      "marketPrice": 395,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-69",
+      "tcgId": "ex3-69",
+      "name": "Numel",
+      "rarity": "common",
+      "image": "pool/ex3-69.png",
+      "set": "Dragon",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-146",
+      "tcgId": "me1-146",
+      "name": "Marshadow",
+      "rarity": "legendary",
+      "image": "pool/me1-146.png",
+      "set": "Mega Evolution",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-78",
+      "tcgId": "swsh1-78",
+      "name": "Morpeko",
+      "rarity": "rare",
+      "image": "pool/swsh1-78.png",
+      "set": "Sword & Shield",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-112",
+      "tcgId": "sv9-112",
+      "name": "Bagon",
+      "rarity": "rare",
+      "image": "pool/sv9-112.png",
+      "set": "Journey Together",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm9-33",
+      "tcgId": "sm9-33",
+      "name": "Pikachu & Zekrom-GX",
+      "rarity": "epic",
+      "image": "pool/sm9-33.png",
+      "set": "Team Up",
+      "marketPrice": 130,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh11tg-TG06",
+      "tcgId": "swsh11tg-TG06",
+      "name": "Gengar",
+      "rarity": "epic",
+      "image": "pool/swsh11tg-TG06.png",
+      "set": "Lost Origin Trainer Gallery",
+      "marketPrice": 50,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-203",
+      "tcgId": "sv8-203",
+      "name": "Latios",
+      "rarity": "legendary",
+      "image": "pool/sv8-203.png",
+      "set": "Surging Sparks",
+      "marketPrice": 32,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-67",
+      "tcgId": "ex3-67",
+      "name": "Nincada",
+      "rarity": "common",
+      "image": "pool/ex3-67.png",
+      "set": "Dragon",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-53",
+      "tcgId": "xy12-53",
+      "name": "Mew",
+      "rarity": "epic",
+      "image": "pool/xy12-53.png",
+      "set": "Evolutions",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-80",
+      "tcgId": "sv1-80",
+      "name": "Miraidon",
+      "rarity": "rare",
+      "image": "pool/sv1-80.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-71",
+      "tcgId": "swsh1-71",
+      "name": "Galvantula",
+      "rarity": "rare",
+      "image": "pool/swsh1-71.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH291",
+      "tcgId": "swshp-SWSH291",
+      "name": "Lucario VSTAR",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH291.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-svp-174",
+      "tcgId": "svp-174",
+      "name": "Eevee ex",
+      "rarity": "rare",
+      "image": "pool/svp-174.png",
+      "set": "Scarlet & Violet Promos",
+      "marketPrice": 29,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-111",
+      "tcgId": "sv9-111",
+      "name": "Hop's Zacian ex",
+      "rarity": "epic",
+      "image": "pool/sv9-111.png",
+      "set": "Journey Together",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-150",
+      "tcgId": "me1-150",
+      "name": "Steelix",
+      "rarity": "legendary",
+      "image": "pool/me1-150.png",
+      "set": "Mega Evolution",
+      "marketPrice": 8,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-98",
+      "tcgId": "sv1-98",
+      "name": "Fidough",
+      "rarity": "rare",
+      "image": "pool/sv1-98.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH262",
+      "tcgId": "swshp-SWSH262",
+      "name": "Charizard VSTAR",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH262.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 90,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-134",
+      "tcgId": "me1-134",
+      "name": "Ivysaur",
+      "rarity": "legendary",
+      "image": "pool/me1-134.png",
+      "set": "Mega Evolution",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-5",
+      "tcgId": "base2-5",
+      "name": "Kangaskhan",
+      "rarity": "epic",
+      "image": "pool/base2-5.png",
+      "set": "Jungle",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv10-193",
+      "tcgId": "sv10-193",
+      "name": "Misty's Psyduck",
+      "rarity": "legendary",
+      "image": "pool/sv10-193.png",
+      "set": "Destined Rivals",
+      "marketPrice": 70,
+      "source": "silphco"
+    },
+    {
+      "id": "card-smp-SM210",
+      "tcgId": "smp-SM210",
+      "name": "Moltres & Zapdos & Articuno-GX",
+      "rarity": "rare",
+      "image": "pool/smp-SM210.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 150,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-107",
+      "tcgId": "sv8-107",
+      "name": "Gastrodon",
+      "rarity": "rare",
+      "image": "pool/sv8-107.png",
+      "set": "Surging Sparks",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG10",
+      "tcgId": "swsh12pt5gg-GG10",
+      "name": "Mew",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG10.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 68,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH260",
+      "tcgId": "swshp-SWSH260",
+      "name": "Charizard V",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH260.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 50,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh8-114",
+      "tcgId": "swsh8-114",
+      "name": "Mew VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh8-114.png",
+      "set": "Fusion Strike",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-104",
+      "tcgId": "sv1-104",
+      "name": "Greavard",
+      "rarity": "rare",
+      "image": "pool/sv1-104.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12-138",
+      "tcgId": "swsh12-138",
+      "name": "Lugia V",
+      "rarity": "epic",
+      "image": "pool/swsh12-138.png",
+      "set": "Silver Tempest",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5-20",
+      "tcgId": "swsh12pt5-20",
+      "name": "Radiant Charizard",
+      "rarity": "rare",
+      "image": "pool/swsh12pt5-20.png",
+      "set": "Crown Zenith",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2pt5-226",
+      "tcgId": "me2pt5-226",
+      "name": "Psyduck",
+      "rarity": "legendary",
+      "image": "pool/me2pt5-226.png",
+      "set": "Ascended Heroes",
+      "marketPrice": 88,
+      "source": "silphco"
+    },
+    {
+      "id": "card-mep-024",
+      "tcgId": "mep-024",
+      "name": "Oricorio ex",
+      "rarity": "common",
+      "image": "pool/mep-024.png",
+      "set": "ME: Mega Evolution Promo",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv10-229",
+      "tcgId": "sv10-229",
+      "name": "Team Rocket's Moltres ex",
+      "rarity": "legendary",
+      "image": "pool/sv10-229.png",
+      "set": "Destined Rivals",
+      "marketPrice": 95,
+      "source": "silphco"
+    },
+    {
+      "id": "card-svp-159",
+      "tcgId": "svp-159",
+      "name": "Magneton",
+      "rarity": "rare",
+      "image": "pool/svp-159.png",
+      "set": "Scarlet & Violet Black Star Promos",
+      "marketPrice": 10,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH029",
+      "tcgId": "swshp-SWSH029",
+      "name": "Rayquaza",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH029.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-89",
+      "tcgId": "sv1-89",
+      "name": "Drifloon",
+      "rarity": "rare",
+      "image": "pool/sv1-89.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh11tg-TG05",
+      "tcgId": "swsh11tg-TG05",
+      "name": "Pikachu",
+      "rarity": "epic",
+      "image": "pool/swsh11tg-TG05.png",
+      "set": "Lost Origin Trainer Gallery",
+      "marketPrice": 49,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH261",
+      "tcgId": "swshp-SWSH261",
+      "name": "Charizard VMAX",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH261.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 41,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-10",
+      "tcgId": "base3-10",
+      "name": "Lapras",
+      "rarity": "epic",
+      "image": "pool/base3-10.png",
+      "set": "Fossil",
+      "marketPrice": 11,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-138",
+      "tcgId": "me1-138",
+      "name": "Vulpix",
+      "rarity": "legendary",
+      "image": "pool/me1-138.png",
+      "set": "Mega Evolution",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH144",
+      "tcgId": "swshp-SWSH144",
+      "name": "Greninja ★",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH144.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 33,
+      "source": "silphco"
+    },
+    {
+      "id": "card-zsv10pt5-89",
+      "tcgId": "zsv10pt5-89",
+      "name": "Pansage",
+      "rarity": "legendary",
+      "image": "pool/zsv10pt5-89.png",
+      "set": "Black Bolt",
+      "marketPrice": 10,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-108",
+      "tcgId": "sv8-108",
+      "name": "Drilbur",
+      "rarity": "rare",
+      "image": "pool/sv8-108.png",
+      "set": "Surging Sparks",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-88_A",
+      "tcgId": "cel25c-88_A",
+      "name": "Mew ex",
+      "rarity": "common",
+      "image": "pool/cel25c-88_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-34",
+      "tcgId": "basep-34",
+      "name": "Entei",
+      "rarity": "rare",
+      "image": "pool/basep-34.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 21,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-90",
+      "tcgId": "sv1-90",
+      "name": "Drifblim",
+      "rarity": "rare",
+      "image": "pool/sv1-90.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-167",
+      "tcgId": "sv3pt5-167",
+      "name": "Ivysaur",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-167.png",
+      "set": "151",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-207",
+      "tcgId": "swsh1-207",
+      "name": "Bede",
+      "rarity": "rare",
+      "image": "pool/swsh1-207.png",
+      "set": "Sword & Shield",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-199",
+      "tcgId": "swsh1-199",
+      "name": "Bede",
+      "rarity": "epic",
+      "image": "pool/swsh1-199.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9-154",
+      "tcgId": "swsh9-154",
+      "name": "Charizard V",
+      "rarity": "epic",
+      "image": "pool/swsh9-154.png",
+      "set": "Brilliant Stars",
+      "marketPrice": 255,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-136",
+      "tcgId": "me1-136",
+      "name": "Shuckle",
+      "rarity": "legendary",
+      "image": "pool/me1-136.png",
+      "set": "Mega Evolution",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-1",
+      "tcgId": "base3-1",
+      "name": "Aerodactyl",
+      "rarity": "epic",
+      "image": "pool/base3-1.png",
+      "set": "Fossil",
+      "marketPrice": 23,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv4pt5-232",
+      "tcgId": "sv4pt5-232",
+      "name": "Mew ex",
+      "rarity": "legendary",
+      "image": "pool/sv4pt5-232.png",
+      "set": "Paldean Fates",
+      "marketPrice": 834,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG30",
+      "tcgId": "swsh12pt5gg-GG30",
+      "name": "Pikachu",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG30.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 45,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2pt5-269",
+      "tcgId": "me2pt5-269",
+      "name": "Mega Gengar ex",
+      "rarity": "rare",
+      "image": "pool/me2pt5-269.png",
+      "set": "Ascended Heroes",
+      "marketPrice": 88,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-70",
+      "tcgId": "sv5-70",
+      "name": "Solosis",
+      "rarity": "common",
+      "image": "pool/sv5-70.png",
+      "set": "Temporal Forces",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-154",
+      "tcgId": "me1-154",
+      "name": "Stufful",
+      "rarity": "legendary",
+      "image": "pool/me1-154.png",
+      "set": "Mega Evolution",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-105",
+      "tcgId": "sv1-105",
+      "name": "Greavard",
+      "rarity": "rare",
+      "image": "pool/sv1-105.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-51",
+      "tcgId": "xy12-51",
+      "name": "Mewtwo",
+      "rarity": "rare",
+      "image": "pool/xy12-51.png",
+      "set": "Evolutions",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-155",
+      "tcgId": "me1-155",
+      "name": "Mega Venusaur ex",
+      "rarity": "epic",
+      "image": "pool/me1-155.png",
+      "set": "Mega Evolution",
+      "marketPrice": 13,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh11tg-TG03",
+      "tcgId": "swsh11tg-TG03",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/swsh11tg-TG03.png",
+      "set": "Lost Origin Trainer Gallery",
+      "marketPrice": 29,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv10-190",
+      "tcgId": "sv10-190",
+      "name": "Ethan's Typhlosion",
+      "rarity": "legendary",
+      "image": "pool/sv10-190.png",
+      "set": "Destined Rivals",
+      "marketPrice": 30,
+      "source": "silphco"
+    },
+    {
+      "id": "card-hgss3-10",
+      "tcgId": "hgss3-10",
+      "name": "Umbreon",
+      "rarity": "epic",
+      "image": "pool/hgss3-10.png",
+      "set": "HS—Undaunted",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp5-70",
+      "tcgId": "dp5-70",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/dp5-70.png",
+      "set": "Majestic Dawn",
+      "marketPrice": 7,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-174",
+      "tcgId": "sv3pt5-174",
+      "name": "Nidoking",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-174.png",
+      "set": "151",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-197",
+      "tcgId": "sv8-197",
+      "name": "Ceruledge",
+      "rarity": "legendary",
+      "image": "pool/sv8-197.png",
+      "set": "Surging Sparks",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh8-157",
+      "tcgId": "swsh8-157",
+      "name": "Gengar VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh8-157.png",
+      "set": "Fusion Strike",
+      "marketPrice": 40,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-2_A",
+      "tcgId": "cel25c-2_A",
+      "name": "Blastoise",
+      "rarity": "common",
+      "image": "pool/cel25c-2_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-68",
+      "tcgId": "swsh1-68",
+      "name": "Chinchou",
+      "rarity": "rare",
+      "image": "pool/swsh1-68.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-8",
+      "tcgId": "basep-8",
+      "name": "Mew",
+      "rarity": "rare",
+      "image": "pool/basep-8.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-202",
+      "tcgId": "sv3-202",
+      "name": "Cleffa",
+      "rarity": "legendary",
+      "image": "pool/sv3-202.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 40,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-35",
+      "tcgId": "xy12-35",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/xy12-35.png",
+      "set": "Evolutions",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-bw11-105",
+      "tcgId": "bw11-105",
+      "name": "Cinccino",
+      "rarity": "epic",
+      "image": "pool/bw11-105.png",
+      "set": "Legendary Treasures",
+      "marketPrice": 7,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-75",
+      "tcgId": "sv6-75",
+      "name": "Wattrel",
+      "rarity": "common",
+      "image": "pool/sv6-75.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-82",
+      "tcgId": "sv1-82",
+      "name": "Drowzee",
+      "rarity": "rare",
+      "image": "pool/sv1-82.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv10-194",
+      "tcgId": "sv10-194",
+      "name": "Misty's Lapras",
+      "rarity": "legendary",
+      "image": "pool/sv10-194.png",
+      "set": "Destined Rivals",
+      "marketPrice": 35,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-13",
+      "tcgId": "base3-13",
+      "name": "Muk",
+      "rarity": "epic",
+      "image": "pool/base3-13.png",
+      "set": "Fossil",
+      "marketPrice": 7,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh4-25",
+      "tcgId": "swsh4-25",
+      "name": "Charizard",
+      "rarity": "rare",
+      "image": "pool/swsh4-25.png",
+      "set": "Vivid Voltage",
+      "marketPrice": 10,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv7-113",
+      "tcgId": "sv7-113",
+      "name": "Eevee",
+      "rarity": "rare",
+      "image": "pool/sv7-113.png",
+      "set": "Stellar Crown",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm9-131",
+      "tcgId": "sm9-131",
+      "name": "Lugia",
+      "rarity": "epic",
+      "image": "pool/sm9-131.png",
+      "set": "Team Up",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-5",
+      "tcgId": "base3-5",
+      "name": "Gengar",
+      "rarity": "epic",
+      "image": "pool/base3-5.png",
+      "set": "Fossil",
+      "marketPrice": 109,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-160",
+      "tcgId": "me1-160",
+      "name": "Mega Lucario ex",
+      "rarity": "epic",
+      "image": "pool/me1-160.png",
+      "set": "Mega Evolution",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-153",
+      "tcgId": "me1-153",
+      "name": "Gumshoos",
+      "rarity": "legendary",
+      "image": "pool/me1-153.png",
+      "set": "Mega Evolution",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-11",
+      "tcgId": "base2-11",
+      "name": "Snorlax",
+      "rarity": "epic",
+      "image": "pool/base2-11.png",
+      "set": "Jungle",
+      "marketPrice": 72,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv10-213",
+      "tcgId": "sv10-213",
+      "name": "Team Rocket's Mewtwo ex",
+      "rarity": "epic",
+      "image": "pool/sv10-213.png",
+      "set": "Destined Rivals",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-102",
+      "tcgId": "sv6-102",
+      "name": "Probopass",
+      "rarity": "rare",
+      "image": "pool/sv6-102.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-4",
+      "tcgId": "base2-4",
+      "name": "Jolteon",
+      "rarity": "epic",
+      "image": "pool/base2-4.png",
+      "set": "Jungle",
+      "marketPrice": 45,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-205",
+      "tcgId": "sv3pt5-205",
+      "name": "Mew ex",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-205.png",
+      "set": "151",
+      "marketPrice": 29,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG35",
+      "tcgId": "swsh12pt5gg-GG35",
+      "name": "Leafeon VSTAR",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG35.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 75,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy7-21",
+      "tcgId": "xy7-21",
+      "name": "Gyarados",
+      "rarity": "epic",
+      "image": "pool/xy7-21.png",
+      "set": "Ancient Origins",
+      "marketPrice": 46,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-228",
+      "tcgId": "sv3-228",
+      "name": "Charizard ex",
+      "rarity": "legendary",
+      "image": "pool/sv3-228.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 40,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH050",
+      "tcgId": "swshp-SWSH050",
+      "name": "Charizard V",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH050.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 14,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH087",
+      "tcgId": "swshp-SWSH087",
+      "name": "Eevee VMAX",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH087.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25-6",
+      "tcgId": "cel25-6",
+      "name": "Flying Pikachu V",
+      "rarity": "epic",
+      "image": "pool/cel25-6.png",
+      "set": "Celebrations",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-12",
+      "tcgId": "base3-12",
+      "name": "Moltres",
+      "rarity": "epic",
+      "image": "pool/base3-12.png",
+      "set": "Fossil",
+      "marketPrice": 38,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-76_A",
+      "tcgId": "cel25c-76_A",
+      "name": "M Rayquaza-EX",
+      "rarity": "rare",
+      "image": "pool/cel25c-76_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 41,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-83",
+      "tcgId": "sv1-83",
+      "name": "Hypno",
+      "rarity": "rare",
+      "image": "pool/sv1-83.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-188",
+      "tcgId": "swsh1-188",
+      "name": "Torkoal V",
+      "rarity": "epic",
+      "image": "pool/swsh1-188.png",
+      "set": "Sword & Shield",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-218",
+      "tcgId": "sv8-218",
+      "name": "Black Kyurem ex",
+      "rarity": "epic",
+      "image": "pool/sv8-218.png",
+      "set": "Surging Sparks",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-73",
+      "tcgId": "swsh1-73",
+      "name": "Yamper",
+      "rarity": "rare",
+      "image": "pool/swsh1-73.png",
+      "set": "Sword & Shield",
+      "marketPrice": 75,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG44",
+      "tcgId": "swsh12pt5gg-GG44",
+      "name": "Mewtwo VSTAR",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG44.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 265,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-4",
+      "tcgId": "basep-4",
+      "name": "Pikachu",
+      "rarity": "rare",
+      "image": "pool/basep-4.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-195",
+      "tcgId": "swsh1-195",
+      "name": "Zacian V",
+      "rarity": "epic",
+      "image": "pool/swsh1-195.png",
+      "set": "Sword & Shield",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-77",
+      "tcgId": "swsh1-77",
+      "name": "Pincurchin",
+      "rarity": "rare",
+      "image": "pool/swsh1-77.png",
+      "set": "Sword & Shield",
+      "marketPrice": 51,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-166",
+      "tcgId": "sv3pt5-166",
+      "name": "Bulbasaur",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-166.png",
+      "set": "151",
+      "marketPrice": 78,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ecard3-10",
+      "tcgId": "ecard3-10",
+      "name": "Gengar",
+      "rarity": "rare",
+      "image": "pool/ecard3-10.png",
+      "set": "Skyridge",
+      "marketPrice": 213,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-68",
+      "tcgId": "ex3-68",
+      "name": "Nincada",
+      "rarity": "common",
+      "image": "pool/ex3-68.png",
+      "set": "Dragon",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy6-20",
+      "tcgId": "xy6-20",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/xy6-20.png",
+      "set": "Roaring Skies",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-6",
+      "tcgId": "base3-6",
+      "name": "Haunter",
+      "rarity": "epic",
+      "image": "pool/base3-6.png",
+      "set": "Fossil",
+      "marketPrice": 34,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh11tg-TG10",
+      "tcgId": "swsh11tg-TG10",
+      "name": "Snorlax",
+      "rarity": "epic",
+      "image": "pool/swsh11tg-TG10.png",
+      "set": "Lost Origin Trainer Gallery",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-180",
+      "tcgId": "swsh1-180",
+      "name": "Rare Candy",
+      "rarity": "rare",
+      "image": "pool/swsh1-180.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-74",
+      "tcgId": "ex3-74",
+      "name": "Spoink",
+      "rarity": "common",
+      "image": "pool/ex3-74.png",
+      "set": "Dragon",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-65",
+      "tcgId": "sv9-65",
+      "name": "Oricorio",
+      "rarity": "rare",
+      "image": "pool/sv9-65.png",
+      "set": "Journey Together",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me3-121",
+      "tcgId": "me3-121",
+      "name": "Meowth ex",
+      "rarity": "legendary",
+      "image": "pool/me3-121.png",
+      "set": "Perfect Order",
+      "marketPrice": 185,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-9",
+      "tcgId": "base3-9",
+      "name": "Kabutops",
+      "rarity": "epic",
+      "image": "pool/base3-9.png",
+      "set": "Fossil",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-109",
+      "tcgId": "sv6-109",
+      "name": "Glimmora",
+      "rarity": "rare",
+      "image": "pool/sv6-109.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-219",
+      "tcgId": "sv8-219",
+      "name": "Pikachu ex",
+      "rarity": "epic",
+      "image": "pool/sv8-219.png",
+      "set": "Surging Sparks",
+      "marketPrice": 28,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH284",
+      "tcgId": "swshp-SWSH284",
+      "name": "Galarian Moltres",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH284.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 17,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-8_A",
+      "tcgId": "cel25c-8_A",
+      "name": "Dark Gyarados",
+      "rarity": "common",
+      "image": "pool/cel25c-8_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh4-131",
+      "tcgId": "swsh4-131",
+      "name": "Snorlax",
+      "rarity": "epic",
+      "image": "pool/swsh4-131.png",
+      "set": "Vivid Voltage",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-rsv10pt5-87",
+      "tcgId": "rsv10pt5-87",
+      "name": "Sewaddle",
+      "rarity": "legendary",
+      "image": "pool/rsv10pt5-87.png",
+      "set": "White Flare",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-21",
+      "tcgId": "base5-21",
+      "name": "Dark Charizard",
+      "rarity": "rare",
+      "image": "pool/base5-21.png",
+      "set": "Team Rocket",
+      "marketPrice": 79,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-3",
+      "tcgId": "base5-3",
+      "name": "Dark Blastoise",
+      "rarity": "epic",
+      "image": "pool/base5-3.png",
+      "set": "Team Rocket",
+      "marketPrice": 98,
+      "source": "silphco"
+    },
+    {
+      "id": "card-svp-131",
+      "tcgId": "svp-131",
+      "name": "Kingdra ex",
+      "rarity": "rare",
+      "image": "pool/svp-131.png",
+      "set": "Scarlet & Violet Black Star Promos",
+      "marketPrice": 85,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-15",
+      "tcgId": "swsh1-15",
+      "name": "Rillaboom",
+      "rarity": "rare",
+      "image": "pool/swsh1-15.png",
+      "set": "Sword & Shield",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25-11",
+      "tcgId": "cel25-11",
+      "name": "Mew",
+      "rarity": "epic",
+      "image": "pool/cel25-11.png",
+      "set": "Celebrations",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG45",
+      "tcgId": "swsh12pt5gg-GG45",
+      "name": "Deoxys VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG45.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 65,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm1-73",
+      "tcgId": "sm1-73",
+      "name": "Passimian",
+      "rarity": "rare",
+      "image": "pool/sm1-73.png",
+      "set": "Sun & Moon",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-175",
+      "tcgId": "sv3pt5-175",
+      "name": "Psyduck",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-175.png",
+      "set": "151",
+      "marketPrice": 42,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-115",
+      "tcgId": "sv8-115",
+      "name": "Glimmora",
+      "rarity": "rare",
+      "image": "pool/sv8-115.png",
+      "set": "Surging Sparks",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-101",
+      "tcgId": "xy12-101",
+      "name": "M Charizard-EX",
+      "rarity": "epic",
+      "image": "pool/xy12-101.png",
+      "set": "Evolutions",
+      "marketPrice": 111,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-20",
+      "tcgId": "base3-20",
+      "name": "Gengar",
+      "rarity": "rare",
+      "image": "pool/base3-20.png",
+      "set": "Fossil",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv10-231",
+      "tcgId": "sv10-231",
+      "name": "Team Rocket's Mewtwo ex",
+      "rarity": "legendary",
+      "image": "pool/sv10-231.png",
+      "set": "Destined Rivals",
+      "marketPrice": 540,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-129",
+      "tcgId": "me2-129",
+      "name": "Dawn",
+      "rarity": "legendary",
+      "image": "pool/me2-129.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 28,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-10",
+      "tcgId": "base2-10",
+      "name": "Scyther",
+      "rarity": "epic",
+      "image": "pool/base2-10.png",
+      "set": "Jungle",
+      "marketPrice": 29,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv7-148",
+      "tcgId": "sv7-148",
+      "name": "Squirtle",
+      "rarity": "legendary",
+      "image": "pool/sv7-148.png",
+      "set": "Stellar Crown",
+      "marketPrice": 115,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy10-10",
+      "tcgId": "xy10-10",
+      "name": "Fennekin",
+      "rarity": "common",
+      "image": "pool/xy10-10.png",
+      "set": "Fates Collide",
+      "marketPrice": 8,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-6",
+      "tcgId": "base2-6",
+      "name": "Mr. Mime",
+      "rarity": "epic",
+      "image": "pool/base2-6.png",
+      "set": "Jungle",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-10",
+      "tcgId": "basep-10",
+      "name": "Meowth",
+      "rarity": "rare",
+      "image": "pool/basep-10.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 42,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12tg-TG29",
+      "tcgId": "swsh12tg-TG29",
+      "name": "Rayquaza VMAX",
+      "rarity": "legendary",
+      "image": "pool/swsh12tg-TG29.png",
+      "set": "Silver Tempest Trainer Gallery",
+      "marketPrice": 28,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-3",
+      "tcgId": "base3-3",
+      "name": "Ditto",
+      "rarity": "epic",
+      "image": "pool/base3-3.png",
+      "set": "Fossil",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-194",
+      "tcgId": "swsh1-194",
+      "name": "Sableye V",
+      "rarity": "epic",
+      "image": "pool/swsh1-194.png",
+      "set": "Sword & Shield",
+      "marketPrice": 11,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base6-10",
+      "tcgId": "base6-10",
+      "name": "Flareon",
+      "rarity": "epic",
+      "image": "pool/base6-10.png",
+      "set": "Legendary Collection",
+      "marketPrice": 30,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2pt5-276",
+      "tcgId": "me2pt5-276",
+      "name": "Pikachu ex",
+      "rarity": "legendary",
+      "image": "pool/me2pt5-276.png",
+      "set": "Ascended Heroes",
+      "marketPrice": 1030,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-121",
+      "tcgId": "sv9-121",
+      "name": "Dudunsparce ex",
+      "rarity": "epic",
+      "image": "pool/sv9-121.png",
+      "set": "Journey Together",
+      "marketPrice": 120,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-188",
+      "tcgId": "sv6-188",
+      "name": "Eevee",
+      "rarity": "legendary",
+      "image": "pool/sv6-188.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 80,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv7-143",
+      "tcgId": "sv7-143",
+      "name": "Bulbasaur",
+      "rarity": "legendary",
+      "image": "pool/sv7-143.png",
+      "set": "Stellar Crown",
+      "marketPrice": 106,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-1",
+      "tcgId": "basep-1",
+      "name": "Pikachu",
+      "rarity": "rare",
+      "image": "pool/basep-1.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-65",
+      "tcgId": "ex3-65",
+      "name": "Mudkip",
+      "rarity": "common",
+      "image": "pool/ex3-65.png",
+      "set": "Dragon",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-si1-1",
+      "tcgId": "si1-1",
+      "name": "Mew",
+      "rarity": "rare",
+      "image": "pool/si1-1.png",
+      "set": "Southern Islands",
+      "marketPrice": 118,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv9-103",
+      "tcgId": "sv9-103",
+      "name": "N's Klink",
+      "rarity": "common",
+      "image": "pool/sv9-103.png",
+      "set": "Journey Together",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-hgss3-2",
+      "tcgId": "hgss3-2",
+      "name": "Espeon",
+      "rarity": "epic",
+      "image": "pool/hgss3-2.png",
+      "set": "HS—Undaunted",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex9-9",
+      "tcgId": "ex9-9",
+      "name": "Rayquaza",
+      "rarity": "epic",
+      "image": "pool/ex9-9.png",
+      "set": "Emerald",
+      "marketPrice": 140,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-50",
+      "tcgId": "base2-50",
+      "name": "Cubone",
+      "rarity": "common",
+      "image": "pool/base2-50.png",
+      "set": "Jungle",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH133",
+      "tcgId": "swshp-SWSH133",
+      "name": "Lance's Charizard V",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH133.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 11,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-150",
+      "tcgId": "sv3pt5-150",
+      "name": "Mewtwo",
+      "rarity": "rare",
+      "image": "pool/sv3pt5-150.png",
+      "set": "151",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8pt5-161",
+      "tcgId": "sv8pt5-161",
+      "name": "Umbreon ex",
+      "rarity": "legendary",
+      "image": "pool/sv8pt5-161.png",
+      "set": "Prismatic Evolutions",
+      "marketPrice": 1316,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25-25",
+      "tcgId": "cel25-25",
+      "name": "Mew",
+      "rarity": "epic",
+      "image": "pool/cel25-25.png",
+      "set": "Celebrations",
+      "marketPrice": 67,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-86",
+      "tcgId": "swsh1-86",
+      "name": "Wobbuffet V",
+      "rarity": "epic",
+      "image": "pool/swsh1-86.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-176",
+      "tcgId": "sv3pt5-176",
+      "name": "Poliwhirl",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-176.png",
+      "set": "151",
+      "marketPrice": 47,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-110",
+      "tcgId": "sv6-110",
+      "name": "Ting-Lu",
+      "rarity": "rare",
+      "image": "pool/sv6-110.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-204",
+      "tcgId": "swsh1-204",
+      "name": "Morpeko VMAX",
+      "rarity": "rare",
+      "image": "pool/swsh1-204.png",
+      "set": "Sword & Shield",
+      "marketPrice": 13,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-106",
+      "tcgId": "sv6-106",
+      "name": "Greninja ex",
+      "rarity": "epic",
+      "image": "pool/sv6-106.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-1",
+      "tcgId": "base2-1",
+      "name": "Clefable",
+      "rarity": "epic",
+      "image": "pool/base2-1.png",
+      "set": "Jungle",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-42",
+      "tcgId": "base2-42",
+      "name": "Persian",
+      "rarity": "common",
+      "image": "pool/base2-42.png",
+      "set": "Jungle",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-bw11-30",
+      "tcgId": "bw11-30",
+      "name": "Magikarp",
+      "rarity": "common",
+      "image": "pool/bw11-30.png",
+      "set": "Legendary Treasures",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-8",
+      "tcgId": "sv3pt5-8",
+      "name": "Wartortle",
+      "rarity": "epic",
+      "image": "pool/sv3pt5-8.png",
+      "set": "151",
+      "marketPrice": 128,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh45sv-SV107",
+      "tcgId": "swsh45sv-SV107",
+      "name": "Charizard VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh45sv-SV107.png",
+      "set": "Shining Fates Shiny Vault",
+      "marketPrice": 129,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-101",
+      "tcgId": "sv1-101",
+      "name": "Flittle",
+      "rarity": "rare",
+      "image": "pool/sv1-101.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-197",
+      "tcgId": "swsh1-197",
+      "name": "Snorlax V",
+      "rarity": "epic",
+      "image": "pool/swsh1-197.png",
+      "set": "Sword & Shield",
+      "marketPrice": 24,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-2",
+      "tcgId": "base5-2",
+      "name": "Dark Arbok",
+      "rarity": "epic",
+      "image": "pool/base5-2.png",
+      "set": "Team Rocket",
+      "marketPrice": 22,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-8",
+      "tcgId": "base2-8",
+      "name": "Pidgeot",
+      "rarity": "epic",
+      "image": "pool/base2-8.png",
+      "set": "Jungle",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-83",
+      "tcgId": "sv5-83",
+      "name": "Medicham",
+      "rarity": "rare",
+      "image": "pool/sv5-83.png",
+      "set": "Temporal Forces",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-8",
+      "tcgId": "base3-8",
+      "name": "Hypno",
+      "rarity": "epic",
+      "image": "pool/base3-8.png",
+      "set": "Fossil",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-smp-SM248",
+      "tcgId": "smp-SM248",
+      "name": "Pikachu & Zekrom-GX",
+      "rarity": "rare",
+      "image": "pool/smp-SM248.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 35,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-95",
+      "tcgId": "sv2-95",
+      "name": "Sandygast",
+      "rarity": "rare",
+      "image": "pool/sv2-95.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 109,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-76",
+      "tcgId": "sv2-76",
+      "name": "Pawmot",
+      "rarity": "rare",
+      "image": "pool/sv2-76.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-79",
+      "tcgId": "sv1-79",
+      "name": "Kilowattrel",
+      "rarity": "common",
+      "image": "pool/sv1-79.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-76",
+      "tcgId": "sv6-76",
+      "name": "Kilowattrel",
+      "rarity": "rare",
+      "image": "pool/sv6-76.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh10tg-TG13",
+      "tcgId": "swsh10tg-TG13",
+      "name": "Starmie V",
+      "rarity": "epic",
+      "image": "pool/swsh10tg-TG13.png",
+      "set": "Astral Radiance Trainer Gallery",
+      "marketPrice": 95,
+      "source": "silphco"
+    },
+    {
+      "id": "card-mep-031",
+      "tcgId": "mep-031",
+      "name": "Ns Zekrom",
+      "rarity": "common",
+      "image": "pool/mep-031.png",
+      "set": "ME: Mega Evolution Promo",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG16",
+      "tcgId": "swsh9tg-TG16",
+      "name": "Mimikyu V",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG16.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 72,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-34",
+      "tcgId": "xy12-34",
+      "name": "Gyarados",
+      "rarity": "epic",
+      "image": "pool/xy12-34.png",
+      "set": "Evolutions",
+      "marketPrice": 8,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pl3-120",
+      "tcgId": "pl3-120",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/pl3-120.png",
+      "set": "Supreme Victors",
+      "marketPrice": 10,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-177",
+      "tcgId": "me1-177",
+      "name": "Mega Venusaur ex",
+      "rarity": "legendary",
+      "image": "pool/me1-177.png",
+      "set": "Mega Evolution",
+      "marketPrice": 148,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex12-10",
+      "tcgId": "ex12-10",
+      "name": "Mew",
+      "rarity": "epic",
+      "image": "pool/ex12-10.png",
+      "set": "Legend Maker",
+      "marketPrice": 61,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-70",
+      "tcgId": "swsh1-70",
+      "name": "Joltik",
+      "rarity": "epic",
+      "image": "pool/swsh1-70.png",
+      "set": "Sword & Shield",
+      "marketPrice": 149,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-53",
+      "tcgId": "base3-53",
+      "name": "Psyduck",
+      "rarity": "common",
+      "image": "pool/base3-53.png",
+      "set": "Fossil",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-55",
+      "tcgId": "base5-55",
+      "name": "Eevee",
+      "rarity": "common",
+      "image": "pool/base5-55.png",
+      "set": "Team Rocket",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG38",
+      "tcgId": "swsh12pt5gg-GG38",
+      "name": "Suicune V",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG38.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 59,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex6-10",
+      "tcgId": "ex6-10",
+      "name": "Pidgeot",
+      "rarity": "epic",
+      "image": "pool/ex6-10.png",
+      "set": "FireRed & LeafGreen",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25-10",
+      "tcgId": "cel25-10",
+      "name": "Zekrom",
+      "rarity": "rare",
+      "image": "pool/cel25-10.png",
+      "set": "Celebrations",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG02",
+      "tcgId": "swsh9tg-TG02",
+      "name": "Vaporeon",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG02.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 21,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12-131",
+      "tcgId": "swsh12-131",
+      "name": "Dragonite",
+      "rarity": "epic",
+      "image": "pool/swsh12-131.png",
+      "set": "Silver Tempest",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv7-57",
+      "tcgId": "sv7-57",
+      "name": "Slowpoke",
+      "rarity": "common",
+      "image": "pool/sv7-57.png",
+      "set": "Stellar Crown",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH039",
+      "tcgId": "swshp-SWSH039",
+      "name": "Pikachu",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH039.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-14",
+      "tcgId": "basep-14",
+      "name": "Mewtwo",
+      "rarity": "rare",
+      "image": "pool/basep-14.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv6-104",
+      "tcgId": "sv6-104",
+      "name": "Gurdurr",
+      "rarity": "rare",
+      "image": "pool/sv6-104.png",
+      "set": "Twilight Masquerade",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-13",
+      "tcgId": "me2-13",
+      "name": "Mega Charizard X ex",
+      "rarity": "epic",
+      "image": "pool/me2-13.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-11",
+      "tcgId": "base3-11",
+      "name": "Magneton",
+      "rarity": "epic",
+      "image": "pool/base3-11.png",
+      "set": "Fossil",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-213",
+      "tcgId": "sv8-213",
+      "name": "Kecleon",
+      "rarity": "legendary",
+      "image": "pool/sv8-213.png",
+      "set": "Surging Sparks",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-78",
+      "tcgId": "sv2-78",
+      "name": "Tadbulb",
+      "rarity": "rare",
+      "image": "pool/sv2-78.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-94",
+      "tcgId": "sv3pt5-94",
+      "name": "Gengar",
+      "rarity": "rare",
+      "image": "pool/sv3pt5-94.png",
+      "set": "151",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv4-75",
+      "tcgId": "sv4-75",
+      "name": "Yamask",
+      "rarity": "common",
+      "image": "pool/sv4-75.png",
+      "set": "Paradox Rift",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-13",
+      "tcgId": "base2-13",
+      "name": "Venomoth",
+      "rarity": "epic",
+      "image": "pool/base2-13.png",
+      "set": "Jungle",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-7",
+      "tcgId": "base2-7",
+      "name": "Nidoqueen",
+      "rarity": "epic",
+      "image": "pool/base2-7.png",
+      "set": "Jungle",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-179",
+      "tcgId": "me1-179",
+      "name": "Mega Lucario ex",
+      "rarity": "legendary",
+      "image": "pool/me1-179.png",
+      "set": "Mega Evolution",
+      "marketPrice": 214,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm115-44",
+      "tcgId": "sm115-44",
+      "name": "Moltres & Zapdos & Articuno-GX",
+      "rarity": "epic",
+      "image": "pool/sm115-44.png",
+      "set": "Hidden Fates",
+      "marketPrice": 41,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-74",
+      "tcgId": "sv3-74",
+      "name": "Tadbulb",
+      "rarity": "rare",
+      "image": "pool/sv3-74.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-7",
+      "tcgId": "sv3pt5-7",
+      "name": "Squirtle",
+      "rarity": "rare",
+      "image": "pool/sv3pt5-7.png",
+      "set": "151",
+      "marketPrice": 44,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-83",
+      "tcgId": "base5-83",
+      "name": "Dark Raichu",
+      "rarity": "legendary",
+      "image": "pool/base5-83.png",
+      "set": "Team Rocket",
+      "marketPrice": 85,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy10-63",
+      "tcgId": "xy10-63",
+      "name": "Lucario",
+      "rarity": "epic",
+      "image": "pool/xy10-63.png",
+      "set": "Fates Collide",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp2-2",
+      "tcgId": "dp2-2",
+      "name": "Alakazam",
+      "rarity": "epic",
+      "image": "pool/dp2-2.png",
+      "set": "Mysterious Treasures",
+      "marketPrice": 30,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-50",
+      "tcgId": "base5-50",
+      "name": "Charmander",
+      "rarity": "common",
+      "image": "pool/base5-50.png",
+      "set": "Team Rocket",
+      "marketPrice": 8,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp3-1",
+      "tcgId": "dp3-1",
+      "name": "Ampharos",
+      "rarity": "epic",
+      "image": "pool/dp3-1.png",
+      "set": "Secret Wonders",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-76",
+      "tcgId": "sv5-76",
+      "name": "Ribombee",
+      "rarity": "epic",
+      "image": "pool/sv5-76.png",
+      "set": "Temporal Forces",
+      "marketPrice": 120,
+      "source": "silphco"
+    },
+    {
+      "id": "card-hgss1-10",
+      "tcgId": "hgss1-10",
+      "name": "Raichu",
+      "rarity": "epic",
+      "image": "pool/hgss1-10.png",
+      "set": "HeartGold & SoulSilver",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-neo1-12",
+      "tcgId": "neo1-12",
+      "name": "Pichu",
+      "rarity": "epic",
+      "image": "pool/neo1-12.png",
+      "set": "Neo Genesis",
+      "marketPrice": 47,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-5",
+      "tcgId": "base5-5",
+      "name": "Dark Dragonite",
+      "rarity": "epic",
+      "image": "pool/base5-5.png",
+      "set": "Team Rocket",
+      "marketPrice": 91,
+      "source": "silphco"
+    },
+    {
+      "id": "card-neo1-8",
+      "tcgId": "neo1-8",
+      "name": "Kingdra",
+      "rarity": "epic",
+      "image": "pool/neo1-8.png",
+      "set": "Neo Genesis",
+      "marketPrice": 14,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG05",
+      "tcgId": "swsh9tg-TG05",
+      "name": "Zekrom",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG05.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 16,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG04",
+      "tcgId": "swsh9tg-TG04",
+      "name": "Jolteon",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG04.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-svp-132",
+      "tcgId": "svp-132",
+      "name": "Greninja ex",
+      "rarity": "rare",
+      "image": "pool/svp-132.png",
+      "set": "Scarlet & Violet Black Star Promos",
+      "marketPrice": 97,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-133",
+      "tcgId": "sv3pt5-133",
+      "name": "Eevee",
+      "rarity": "common",
+      "image": "pool/sv3pt5-133.png",
+      "set": "151",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG01",
+      "tcgId": "swsh9tg-TG01",
+      "name": "Flareon",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG01.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG36",
+      "tcgId": "swsh12pt5gg-GG36",
+      "name": "Entei V",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG36.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 51,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ecard1-6",
+      "tcgId": "ecard1-6",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/ecard1-6.png",
+      "set": "Expedition Base Set",
+      "marketPrice": 43,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-100",
+      "tcgId": "sv1-100",
+      "name": "Flittle",
+      "rarity": "rare",
+      "image": "pool/sv1-100.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-7",
+      "tcgId": "base3-7",
+      "name": "Hitmonlee",
+      "rarity": "epic",
+      "image": "pool/base3-7.png",
+      "set": "Fossil",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-178",
+      "tcgId": "me1-178",
+      "name": "Mega Gardevoir ex",
+      "rarity": "legendary",
+      "image": "pool/me1-178.png",
+      "set": "Mega Evolution",
+      "marketPrice": 180,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-51",
+      "tcgId": "base2-51",
+      "name": "Eevee",
+      "rarity": "common",
+      "image": "pool/base2-51.png",
+      "set": "Jungle",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH134",
+      "tcgId": "swshp-SWSH134",
+      "name": "Dark Sylveon V",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH134.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 10,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-68",
+      "tcgId": "base5-68",
+      "name": "Squirtle",
+      "rarity": "common",
+      "image": "pool/base5-68.png",
+      "set": "Team Rocket",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-85",
+      "tcgId": "sv1-85",
+      "name": "Kirlia",
+      "rarity": "rare",
+      "image": "pool/sv1-85.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 46,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-29",
+      "tcgId": "base3-29",
+      "name": "Raichu",
+      "rarity": "rare",
+      "image": "pool/base3-29.png",
+      "set": "Fossil",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-8",
+      "tcgId": "base5-8",
+      "name": "Dark Gyarados",
+      "rarity": "epic",
+      "image": "pool/base5-8.png",
+      "set": "Team Rocket",
+      "marketPrice": 28,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base6-3",
+      "tcgId": "base6-3",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/base6-3.png",
+      "set": "Legendary Collection",
+      "marketPrice": 66,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-142",
+      "tcgId": "swsh1-142",
+      "name": "Snorlax VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh1-142.png",
+      "set": "Sword & Shield",
+      "marketPrice": 37,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-16",
+      "tcgId": "base2-16",
+      "name": "Wigglytuff",
+      "rarity": "epic",
+      "image": "pool/base2-16.png",
+      "set": "Jungle",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pl4-1",
+      "tcgId": "pl4-1",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/pl4-1.png",
+      "set": "Arceus",
+      "marketPrice": 21,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-9",
+      "tcgId": "base2-9",
+      "name": "Pinsir",
+      "rarity": "epic",
+      "image": "pool/base2-9.png",
+      "set": "Jungle",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm115-68",
+      "tcgId": "sm115-68",
+      "name": "Jessie & James",
+      "rarity": "epic",
+      "image": "pool/sm115-68.png",
+      "set": "Hidden Fates",
+      "marketPrice": 75,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh3-20",
+      "tcgId": "swsh3-20",
+      "name": "Charizard VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh3-20.png",
+      "set": "Darkness Ablaze",
+      "marketPrice": 38,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-112",
+      "tcgId": "sv8-112",
+      "name": "Clobbopus",
+      "rarity": "rare",
+      "image": "pool/sv8-112.png",
+      "set": "Surging Sparks",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-198",
+      "tcgId": "swsh1-198",
+      "name": "Cramorant V",
+      "rarity": "epic",
+      "image": "pool/swsh1-198.png",
+      "set": "Sword & Shield",
+      "marketPrice": 44,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG11",
+      "tcgId": "swsh9tg-TG11",
+      "name": "Eevee",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG11.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9-122",
+      "tcgId": "swsh9-122",
+      "name": "Arceus V",
+      "rarity": "epic",
+      "image": "pool/swsh9-122.png",
+      "set": "Brilliant Stars",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-75",
+      "tcgId": "ex3-75",
+      "name": "Swablu",
+      "rarity": "common",
+      "image": "pool/ex3-75.png",
+      "set": "Dragon",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp3-10",
+      "tcgId": "dp3-10",
+      "name": "Ho-Oh",
+      "rarity": "epic",
+      "image": "pool/dp3-10.png",
+      "set": "Secret Wonders",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm10-20",
+      "tcgId": "sm10-20",
+      "name": "Reshiram & Charizard-GX",
+      "rarity": "epic",
+      "image": "pool/sm10-20.png",
+      "set": "Unbroken Bonds",
+      "marketPrice": 50,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me3-93",
+      "tcgId": "me3-93",
+      "name": "Dedenne",
+      "rarity": "legendary",
+      "image": "pool/me3-93.png",
+      "set": "Perfect Order",
+      "marketPrice": 7,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pl1-10",
+      "tcgId": "pl1-10",
+      "name": "Giratina",
+      "rarity": "epic",
+      "image": "pool/pl1-10.png",
+      "set": "Platinum",
+      "marketPrice": 29,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pgo-10",
+      "tcgId": "pgo-10",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/pgo-10.png",
+      "set": "Pokémon GO",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-10",
+      "tcgId": "base5-10",
+      "name": "Dark Machamp",
+      "rarity": "epic",
+      "image": "pool/base5-10.png",
+      "set": "Team Rocket",
+      "marketPrice": 32,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex6-1",
+      "tcgId": "ex6-1",
+      "name": "Beedrill",
+      "rarity": "epic",
+      "image": "pool/ex6-1.png",
+      "set": "FireRed & LeafGreen",
+      "marketPrice": 10,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH061",
+      "tcgId": "swshp-SWSH061",
+      "name": "Pikachu V",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH061.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-130",
+      "tcgId": "sv3-130",
+      "name": "Umbreon",
+      "rarity": "rare",
+      "image": "pool/sv3-130.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 56,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ecard1-124",
+      "tcgId": "ecard1-124",
+      "name": "Pikachu",
+      "rarity": "rare",
+      "image": "pool/ecard1-124.png",
+      "set": "Expedition Base Set",
+      "marketPrice": 69,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base1-63",
+      "tcgId": "base1-63",
+      "name": "Squirtle",
+      "rarity": "common",
+      "image": "pool/base1-63.png",
+      "set": "Base",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex10-17",
+      "tcgId": "ex10-17",
+      "name": "Typhlosion",
+      "rarity": "epic",
+      "image": "pool/ex10-17.png",
+      "set": "Unseen Forces",
+      "marketPrice": 35,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-149",
+      "tcgId": "sv3pt5-149",
+      "name": "Dragonite",
+      "rarity": "rare",
+      "image": "pool/sv3pt5-149.png",
+      "set": "151",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-54",
+      "tcgId": "base2-54",
+      "name": "Jigglypuff",
+      "rarity": "common",
+      "image": "pool/base2-54.png",
+      "set": "Jungle",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy3-70",
+      "tcgId": "xy3-70",
+      "name": "Clefairy",
+      "rarity": "common",
+      "image": "pool/xy3-70.png",
+      "set": "Furious Fists",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-109",
+      "tcgId": "sv8-109",
+      "name": "Excadrill",
+      "rarity": "rare",
+      "image": "pool/sv8-109.png",
+      "set": "Surging Sparks",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5-109",
+      "tcgId": "swsh12pt5-109",
+      "name": "Snorlax",
+      "rarity": "rare",
+      "image": "pool/swsh12pt5-109.png",
+      "set": "Crown Zenith",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex6-4",
+      "tcgId": "ex6-4",
+      "name": "Ditto",
+      "rarity": "epic",
+      "image": "pool/ex6-4.png",
+      "set": "FireRed & LeafGreen",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-130",
+      "tcgId": "me2-130",
+      "name": "Mega Charizard X ex",
+      "rarity": "legendary",
+      "image": "pool/me2-130.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 341,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-72",
+      "tcgId": "sv2-72",
+      "name": "Pincurchin",
+      "rarity": "rare",
+      "image": "pool/sv2-72.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-gym1-9",
+      "tcgId": "gym1-9",
+      "name": "Misty's Seadra",
+      "rarity": "epic",
+      "image": "pool/gym1-9.png",
+      "set": "Gym Heroes",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv2-203",
+      "tcgId": "sv2-203",
+      "name": "Magikarp",
+      "rarity": "legendary",
+      "image": "pool/sv2-203.png",
+      "set": "Paldea Evolved",
+      "marketPrice": 350,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-75",
+      "tcgId": "swsh1-75",
+      "name": "Boltund",
+      "rarity": "epic",
+      "image": "pool/swsh1-75.png",
+      "set": "Sword & Shield",
+      "marketPrice": 120,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-95",
+      "tcgId": "swsh1-95",
+      "name": "Hitmonchan",
+      "rarity": "epic",
+      "image": "pool/swsh1-95.png",
+      "set": "Sword & Shield",
+      "marketPrice": 239,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-14",
+      "tcgId": "base2-14",
+      "name": "Victreebel",
+      "rarity": "epic",
+      "image": "pool/base2-14.png",
+      "set": "Jungle",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm9-14",
+      "tcgId": "sm9-14",
+      "name": "Charizard",
+      "rarity": "rare",
+      "image": "pool/sm9-14.png",
+      "set": "Team Up",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-42",
+      "tcgId": "xy12-42",
+      "name": "Zapdos",
+      "rarity": "epic",
+      "image": "pool/xy12-42.png",
+      "set": "Evolutions",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12tg-TG20",
+      "tcgId": "swsh12tg-TG20",
+      "name": "Rayquaza VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh12tg-TG20.png",
+      "set": "Silver Tempest Trainer Gallery",
+      "marketPrice": 180,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv4pt5-234",
+      "tcgId": "sv4pt5-234",
+      "name": "Charizard ex",
+      "rarity": "legendary",
+      "image": "pool/sv4pt5-234.png",
+      "set": "Paldean Fates",
+      "marketPrice": 290,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm35-28",
+      "tcgId": "sm35-28",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/sm35-28.png",
+      "set": "Shining Legends",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy4-70",
+      "tcgId": "xy4-70",
+      "name": "Dedenne",
+      "rarity": "common",
+      "image": "pool/xy4-70.png",
+      "set": "Phantom Forces",
+      "marketPrice": 5,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm1-32",
+      "tcgId": "sm1-32",
+      "name": "Poliwrath",
+      "rarity": "epic",
+      "image": "pool/sm1-32.png",
+      "set": "Sun & Moon",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv7-131",
+      "tcgId": "sv7-131",
+      "name": "Area Zero Underdepths",
+      "rarity": "epic",
+      "image": "pool/sv7-131.png",
+      "set": "Stellar Crown",
+      "marketPrice": 120,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-81",
+      "tcgId": "swsh1-81",
+      "name": "Galarian Ponyta",
+      "rarity": "common",
+      "image": "pool/swsh1-81.png",
+      "set": "Sword & Shield",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG50",
+      "tcgId": "swsh12pt5gg-GG50",
+      "name": "Darkrai VSTAR",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG50.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 100,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG41",
+      "tcgId": "swsh12pt5gg-GG41",
+      "name": "Raikou V",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG41.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm1-60",
+      "tcgId": "sm1-60",
+      "name": "Hypno",
+      "rarity": "common",
+      "image": "pool/sm1-60.png",
+      "set": "Sun & Moon",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-smp-SM168",
+      "tcgId": "smp-SM168",
+      "name": "Pikachu & Zekrom-GX",
+      "rarity": "rare",
+      "image": "pool/smp-SM168.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 200,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm115-19",
+      "tcgId": "sm115-19",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/sm115-19.png",
+      "set": "Hidden Fates",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25-2",
+      "tcgId": "cel25-2",
+      "name": "Reshiram",
+      "rarity": "rare",
+      "image": "pool/cel25-2.png",
+      "set": "Celebrations",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh11-143",
+      "tcgId": "swsh11-143",
+      "name": "Snorlax",
+      "rarity": "epic",
+      "image": "pool/swsh11-143.png",
+      "set": "Lost Origin",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-4_A",
+      "tcgId": "cel25c-4_A",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/cel25c-4_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 219,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3-84",
+      "tcgId": "sv3-84",
+      "name": "Togetic",
+      "rarity": "rare",
+      "image": "pool/sv3-84.png",
+      "set": "Obsidian Flames",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pop4-4",
+      "tcgId": "pop4-4",
+      "name": "Mew",
+      "rarity": "rare",
+      "image": "pool/pop4-4.png",
+      "set": "POP Series 4",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-140",
+      "tcgId": "swsh1-140",
+      "name": "Snorlax",
+      "rarity": "rare",
+      "image": "pool/swsh1-140.png",
+      "set": "Sword & Shield",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2pt5-271",
+      "tcgId": "me2pt5-271",
+      "name": "Mega Dragonite ex",
+      "rarity": "rare",
+      "image": "pool/me2pt5-271.png",
+      "set": "Ascended Heroes",
+      "marketPrice": 60,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh8-271",
+      "tcgId": "swsh8-271",
+      "name": "Gengar VMAX",
+      "rarity": "rare",
+      "image": "pool/swsh8-271.png",
+      "set": "Fusion Strike",
+      "marketPrice": 850,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp2-94",
+      "tcgId": "dp2-94",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/dp2-94.png",
+      "set": "Mysterious Treasures",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-177",
+      "tcgId": "sv3pt5-177",
+      "name": "Machoke",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-177.png",
+      "set": "151",
+      "marketPrice": 13,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-132",
+      "tcgId": "sv3pt5-132",
+      "name": "Ditto",
+      "rarity": "rare",
+      "image": "pool/sv3pt5-132.png",
+      "set": "151",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp6-2",
+      "tcgId": "dp6-2",
+      "name": "Dragonite",
+      "rarity": "epic",
+      "image": "pool/dp6-2.png",
+      "set": "Legends Awakened",
+      "marketPrice": 25,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-99",
+      "tcgId": "sv1-99",
+      "name": "Dachsbun",
+      "rarity": "common",
+      "image": "pool/sv1-99.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-neo1-14",
+      "tcgId": "neo1-14",
+      "name": "Slowking",
+      "rarity": "epic",
+      "image": "pool/neo1-14.png",
+      "set": "Neo Genesis",
+      "marketPrice": 55,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp5-9",
+      "tcgId": "dp5-9",
+      "name": "Mewtwo",
+      "rarity": "epic",
+      "image": "pool/dp5-9.png",
+      "set": "Majestic Dawn",
+      "marketPrice": 22,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base2-56",
+      "tcgId": "base2-56",
+      "name": "Meowth",
+      "rarity": "common",
+      "image": "pool/base2-56.png",
+      "set": "Jungle",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-182",
+      "tcgId": "me1-182",
+      "name": "Mega Kangaskhan ex",
+      "rarity": "legendary",
+      "image": "pool/me1-182.png",
+      "set": "Mega Evolution",
+      "marketPrice": 60,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy10-9",
+      "tcgId": "xy10-9",
+      "name": "Moltres",
+      "rarity": "rare",
+      "image": "pool/xy10-9.png",
+      "set": "Fates Collide",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-30",
+      "tcgId": "base3-30",
+      "name": "Zapdos",
+      "rarity": "rare",
+      "image": "pool/base3-30.png",
+      "set": "Fossil",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pop3-2",
+      "tcgId": "pop3-2",
+      "name": "Flareon",
+      "rarity": "rare",
+      "image": "pool/pop3-2.png",
+      "set": "POP Series 3",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh7-111",
+      "tcgId": "swsh7-111",
+      "name": "Rayquaza VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh7-111.png",
+      "set": "Evolving Skies",
+      "marketPrice": 12,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-108",
+      "tcgId": "xy12-108",
+      "name": "Misty's Determination",
+      "rarity": "epic",
+      "image": "pool/xy12-108.png",
+      "set": "Evolutions",
+      "marketPrice": 31,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2pt5-290",
+      "tcgId": "me2pt5-290",
+      "name": "Mega Dragonite ex",
+      "rarity": "legendary",
+      "image": "pool/me2pt5-290.png",
+      "set": "Ascended Heroes",
+      "marketPrice": 691,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-45",
+      "tcgId": "base5-45",
+      "name": "Dark Vaporeon",
+      "rarity": "common",
+      "image": "pool/base5-45.png",
+      "set": "Team Rocket",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-hgss4-94",
+      "tcgId": "hgss4-94",
+      "name": "Gengar",
+      "rarity": "rare",
+      "image": "pool/hgss4-94.png",
+      "set": "HS—Triumphant",
+      "marketPrice": 360,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-223",
+      "tcgId": "sv8-223",
+      "name": "Hydreigon ex",
+      "rarity": "epic",
+      "image": "pool/sv8-223.png",
+      "set": "Surging Sparks",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv4pt5-54",
+      "tcgId": "sv4pt5-54",
+      "name": "Charizard ex",
+      "rarity": "epic",
+      "image": "pool/sv4pt5-54.png",
+      "set": "Paldean Fates",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-gym1-58",
+      "tcgId": "gym1-58",
+      "name": "Sabrina's Haunter",
+      "rarity": "common",
+      "image": "pool/gym1-58.png",
+      "set": "Gym Heroes",
+      "marketPrice": 13,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-103",
+      "tcgId": "swsh1-103",
+      "name": "Claydol",
+      "rarity": "rare",
+      "image": "pool/swsh1-103.png",
+      "set": "Sword & Shield",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy1-8",
+      "tcgId": "xy1-8",
+      "name": "Volbeat",
+      "rarity": "common",
+      "image": "pool/xy1-8.png",
+      "set": "XY",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-18",
+      "tcgId": "base3-18",
+      "name": "Ditto",
+      "rarity": "rare",
+      "image": "pool/base3-18.png",
+      "set": "Fossil",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swshp-SWSH229",
+      "tcgId": "swshp-SWSH229",
+      "name": "Mewtwo V",
+      "rarity": "rare",
+      "image": "pool/swshp-SWSH229.png",
+      "set": "SWSH Black Star Promos",
+      "marketPrice": 9,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm1-101",
+      "tcgId": "sm1-101",
+      "name": "Eevee",
+      "rarity": "common",
+      "image": "pool/sm1-101.png",
+      "set": "Sun & Moon",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-169",
+      "tcgId": "me1-169",
+      "name": "Lillie's Determination",
+      "rarity": "epic",
+      "image": "pool/me1-169.png",
+      "set": "Mega Evolution",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh7-125",
+      "tcgId": "swsh7-125",
+      "name": "Eevee",
+      "rarity": "common",
+      "image": "pool/swsh7-125.png",
+      "set": "Evolving Skies",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv1-121",
+      "tcgId": "sv1-121",
+      "name": "Stonjourner",
+      "rarity": "common",
+      "image": "pool/sv1-121.png",
+      "set": "Scarlet & Violet",
+      "marketPrice": 1,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-114_A",
+      "tcgId": "cel25c-114_A",
+      "name": "Zekrom",
+      "rarity": "common",
+      "image": "pool/cel25c-114_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 20,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12-186",
+      "tcgId": "swsh12-186",
+      "name": "Lugia V",
+      "rarity": "epic",
+      "image": "pool/swsh12-186.png",
+      "set": "Silver Tempest",
+      "marketPrice": 525,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-2",
+      "tcgId": "swsh1-2",
+      "name": "Roselia",
+      "rarity": "rare",
+      "image": "pool/swsh1-2.png",
+      "set": "Sword & Shield",
+      "marketPrice": 76,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-20",
+      "tcgId": "base5-20",
+      "name": "Dark Blastoise",
+      "rarity": "rare",
+      "image": "pool/base5-20.png",
+      "set": "Team Rocket",
+      "marketPrice": 23,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG40",
+      "tcgId": "swsh12pt5gg-GG40",
+      "name": "Glaceon VSTAR",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG40.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 58,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy8-60",
+      "tcgId": "xy8-60",
+      "name": "Gengar",
+      "rarity": "epic",
+      "image": "pool/xy8-60.png",
+      "set": "BREAKthrough",
+      "marketPrice": 27,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh9tg-TG23",
+      "tcgId": "swsh9tg-TG23",
+      "name": "Umbreon VMAX",
+      "rarity": "epic",
+      "image": "pool/swsh9tg-TG23.png",
+      "set": "Brilliant Stars Trainer Gallery",
+      "marketPrice": 85,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me1-181",
+      "tcgId": "me1-181",
+      "name": "Mega Latias ex",
+      "rarity": "legendary",
+      "image": "pool/me1-181.png",
+      "set": "Mega Evolution",
+      "marketPrice": 78,
+      "source": "silphco"
+    },
+    {
+      "id": "card-pop3-6",
+      "tcgId": "pop3-6",
+      "name": "Vaporeon",
+      "rarity": "rare",
+      "image": "pool/pop3-6.png",
+      "set": "POP Series 3",
+      "marketPrice": 4,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sm1-7",
+      "tcgId": "sm1-7",
+      "name": "Surskit",
+      "rarity": "rare",
+      "image": "pool/sm1-7.png",
+      "set": "Sun & Moon",
+      "marketPrice": 87,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-17",
+      "tcgId": "base5-17",
+      "name": "Rainbow Energy",
+      "rarity": "epic",
+      "image": "pool/base5-17.png",
+      "set": "Team Rocket",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-50",
+      "tcgId": "base3-50",
+      "name": "Kabuto",
+      "rarity": "common",
+      "image": "pool/base3-50.png",
+      "set": "Fossil",
+      "marketPrice": 11,
+      "source": "silphco"
+    },
+    {
+      "id": "card-cel25c-113_A",
+      "tcgId": "cel25c-113_A",
+      "name": "Reshiram",
+      "rarity": "common",
+      "image": "pool/cel25c-113_A.png",
+      "set": "Celebrations: Classic Collection",
+      "marketPrice": 18,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12tg-TG02",
+      "tcgId": "swsh12tg-TG02",
+      "name": "Milotic",
+      "rarity": "epic",
+      "image": "pool/swsh12tg-TG02.png",
+      "set": "Silver Tempest Trainer Gallery",
+      "marketPrice": 8,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-68",
+      "tcgId": "sv5-68",
+      "name": "Bronzor",
+      "rarity": "rare",
+      "image": "pool/sv5-68.png",
+      "set": "Temporal Forces",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-svp-123",
+      "tcgId": "svp-123",
+      "name": "Teal Mask Ogerpon",
+      "rarity": "rare",
+      "image": "pool/svp-123.png",
+      "set": "Scarlet & Violet Black Star Promos",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ecard1-9",
+      "tcgId": "ecard1-9",
+      "name": "Dragonite",
+      "rarity": "epic",
+      "image": "pool/ecard1-9.png",
+      "set": "Expedition Base Set",
+      "marketPrice": 45,
+      "source": "silphco"
+    },
+    {
+      "id": "card-me2-56",
+      "tcgId": "me2-56",
+      "name": "Mega Gengar ex",
+      "rarity": "epic",
+      "image": "pool/me2-56.png",
+      "set": "Phantasmal Flames",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base1-46",
+      "tcgId": "base1-46",
+      "name": "Charmander",
+      "rarity": "common",
+      "image": "pool/base1-46.png",
+      "set": "Base",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-32",
+      "tcgId": "base5-32",
+      "name": "Dark Charmeleon",
+      "rarity": "common",
+      "image": "pool/base5-32.png",
+      "set": "Team Rocket",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv5-88",
+      "tcgId": "sv5-88",
+      "name": "Golurk",
+      "rarity": "rare",
+      "image": "pool/sv5-88.png",
+      "set": "Temporal Forces",
+      "marketPrice": 94,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy1-42",
+      "tcgId": "xy1-42",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/xy1-42.png",
+      "set": "XY",
+      "marketPrice": 8,
+      "source": "silphco"
+    },
+    {
+      "id": "card-dp1-6",
+      "tcgId": "dp1-6",
+      "name": "Lucario",
+      "rarity": "epic",
+      "image": "pool/dp1-6.png",
+      "set": "Diamond & Pearl",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv3pt5-179",
+      "tcgId": "sv3pt5-179",
+      "name": "Mr. Mime",
+      "rarity": "legendary",
+      "image": "pool/sv3pt5-179.png",
+      "set": "151",
+      "marketPrice": 13,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy1-50",
+      "tcgId": "xy1-50",
+      "name": "Grumpig",
+      "rarity": "rare",
+      "image": "pool/xy1-50.png",
+      "set": "XY",
+      "marketPrice": 120,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base5-67",
+      "tcgId": "base5-67",
+      "name": "Slowpoke",
+      "rarity": "common",
+      "image": "pool/base5-67.png",
+      "set": "Team Rocket",
+      "marketPrice": 3,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex16-9",
+      "tcgId": "ex16-9",
+      "name": "Gardevoir",
+      "rarity": "epic",
+      "image": "pool/ex16-9.png",
+      "set": "Power Keepers",
+      "marketPrice": 33,
+      "source": "silphco"
+    },
+    {
+      "id": "card-ex3-73",
+      "tcgId": "ex3-73",
+      "name": "Spoink",
+      "rarity": "common",
+      "image": "pool/ex3-73.png",
+      "set": "Dragon",
+      "marketPrice": 2,
+      "source": "silphco"
+    },
+    {
+      "id": "card-sv8-207",
+      "tcgId": "sv8-207",
+      "name": "Clobbopus",
+      "rarity": "legendary",
+      "image": "pool/sv8-207.png",
+      "set": "Surging Sparks",
+      "marketPrice": 6,
+      "source": "silphco"
+    },
+    {
+      "id": "card-base3-27",
+      "tcgId": "base3-27",
+      "name": "Moltres",
+      "rarity": "rare",
+      "image": "pool/base3-27.png",
+      "set": "Fossil",
+      "marketPrice": 7,
+      "source": "silphco"
+    },
+    {
+      "id": "card-gym2-29",
+      "tcgId": "gym2-29",
+      "name": "Sabrina's Gengar",
+      "rarity": "rare",
+      "image": "pool/gym2-29.png",
+      "set": "Gym Challenge",
+      "marketPrice": 280,
+      "source": "silphco"
+    },
+    {
+      "id": "card-basep-3",
+      "tcgId": "basep-3",
+      "name": "Mewtwo",
+      "rarity": "rare",
+      "image": "pool/basep-3.png",
+      "set": "Wizards Black Star Promos",
+      "marketPrice": 19,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh12pt5gg-GG22",
+      "tcgId": "swsh12pt5gg-GG22",
+      "name": "Ditto",
+      "rarity": "epic",
+      "image": "pool/swsh12pt5gg-GG22.png",
+      "set": "Crown Zenith Galarian Gallery",
+      "marketPrice": 15,
+      "source": "silphco"
+    },
+    {
+      "id": "card-swsh1-191",
+      "tcgId": "swsh1-191",
+      "name": "Wobbuffet V",
+      "rarity": "epic",
+      "image": "pool/swsh1-191.png",
+      "set": "Sword & Shield",
+      "marketPrice": 48,
+      "source": "silphco"
+    },
+    {
+      "id": "card-xy12-63",
+      "tcgId": "xy12-63",
+      "name": "Clefairy",
+      "rarity": "epic",
+      "image": "pool/xy12-63.png",
+      "set": "Evolutions",
+      "marketPrice": 4,
+      "source": "silphco"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "pair-base1-4-g1-RC5",
+      "pokemon": "Charizard",
+      "real": {
+        "id": "real-base1-4",
+        "tcgId": "base1-4",
+        "name": "Charizard",
+        "rarity": "epic",
+        "image": "pool/base1-4.png",
+        "set": "Base",
+        "marketPrice": 630
+      },
+      "fake": {
+        "id": "fake-g1-RC5",
+        "tcgId": "g1-RC5",
+        "name": "Charizard",
+        "rarity": "common",
+        "image": "pool/g1-RC5.png",
+        "set": "Generations",
+        "marketPrice": 67
+      }
+    },
+    {
+      "id": "pair-base1-58-mcd19-6",
+      "pokemon": "Pikachu",
+      "real": {
+        "id": "real-base1-58",
+        "tcgId": "base1-58",
+        "name": "Pikachu",
+        "rarity": "common",
+        "image": "pool/base1-58.png",
+        "set": "Base",
+        "marketPrice": 7
+      },
+      "fake": {
+        "id": "fake-mcd19-6",
+        "tcgId": "mcd19-6",
+        "name": "Pikachu",
+        "rarity": "common",
+        "image": "pool/mcd19-6.png",
+        "set": "McDonald's Collection 2019",
+        "marketPrice": 33
+      }
+    },
+    {
+      "id": "pair-base1-15-ru1-1",
+      "pokemon": "Venusaur",
+      "real": {
+        "id": "real-base1-15",
+        "tcgId": "base1-15",
+        "name": "Venusaur",
+        "rarity": "epic",
+        "image": "pool/base1-15.png",
+        "set": "Base",
+        "marketPrice": 156
+      },
+      "fake": {
+        "id": "fake-ru1-1",
+        "tcgId": "ru1-1",
+        "name": "Venusaur",
+        "rarity": "common",
+        "image": "pool/ru1-1.png",
+        "set": "Pokémon Rumble",
+        "marketPrice": 280
+      }
+    },
+    {
+      "id": "pair-base1-2-pop3-1",
+      "pokemon": "Blastoise",
+      "real": {
+        "id": "real-base1-2",
+        "tcgId": "base1-2",
+        "name": "Blastoise",
+        "rarity": "epic",
+        "image": "pool/base1-2.png",
+        "set": "Base",
+        "marketPrice": 226
+      },
+      "fake": {
+        "id": "fake-pop3-1",
+        "tcgId": "pop3-1",
+        "name": "Blastoise",
+        "rarity": "rare",
+        "image": "pool/pop3-1.png",
+        "set": "POP Series 3",
+        "marketPrice": 218
+      }
+    },
+    {
+      "id": "pair-base1-10-ru1-9",
+      "pokemon": "Mewtwo",
+      "real": {
+        "id": "real-base1-10",
+        "tcgId": "base1-10",
+        "name": "Mewtwo",
+        "rarity": "epic",
+        "image": "pool/base1-10.png",
+        "set": "Base",
+        "marketPrice": 79
+      },
+      "fake": {
+        "id": "fake-ru1-9",
+        "tcgId": "ru1-9",
+        "name": "Mewtwo",
+        "rarity": "common",
+        "image": "pool/ru1-9.png",
+        "set": "Pokémon Rumble",
+        "marketPrice": 550
+      }
+    },
+    {
+      "id": "pair-base1-6-ru1-6",
+      "pokemon": "Gyarados",
+      "real": {
+        "id": "real-base1-6",
+        "tcgId": "base1-6",
+        "name": "Gyarados",
+        "rarity": "epic",
+        "image": "pool/base1-6.png",
+        "set": "Base",
+        "marketPrice": 54
+      },
+      "fake": {
+        "id": "fake-ru1-6",
+        "tcgId": "ru1-6",
+        "name": "Gyarados",
+        "rarity": "common",
+        "image": "pool/ru1-6.png",
+        "set": "Pokémon Rumble",
+        "marketPrice": 270
+      }
+    },
+    {
+      "id": "pair-base1-16-ru1-8",
+      "pokemon": "Zapdos",
+      "real": {
+        "id": "real-base1-16",
+        "tcgId": "base1-16",
+        "name": "Zapdos",
+        "rarity": "epic",
+        "image": "pool/base1-16.png",
+        "set": "Base",
+        "marketPrice": 55
+      },
+      "fake": {
+        "id": "fake-ru1-8",
+        "tcgId": "ru1-8",
+        "name": "Zapdos",
+        "rarity": "common",
+        "image": "pool/ru1-8.png",
+        "set": "Pokémon Rumble",
+        "marketPrice": 300
+      }
+    },
+    {
+      "id": "pair-base1-12-ru1-3",
+      "pokemon": "Ninetales",
+      "real": {
+        "id": "real-base1-12",
+        "tcgId": "base1-12",
+        "name": "Ninetales",
+        "rarity": "epic",
+        "image": "pool/base1-12.png",
+        "set": "Base",
+        "marketPrice": 37
+      },
+      "fake": {
+        "id": "fake-ru1-3",
+        "tcgId": "ru1-3",
+        "name": "Ninetales",
+        "rarity": "common",
+        "image": "pool/ru1-3.png",
+        "set": "Pokémon Rumble",
+        "marketPrice": 310
+      }
+    },
+    {
+      "id": "pair-base1-8-det1-13",
+      "pokemon": "Machamp",
+      "real": {
+        "id": "real-base1-8",
+        "tcgId": "base1-8",
+        "name": "Machamp",
+        "rarity": "epic",
+        "image": "pool/base1-8.png",
+        "set": "Base",
+        "marketPrice": 113
+      },
+      "fake": {
+        "id": "fake-det1-13",
+        "tcgId": "det1-13",
+        "name": "Machamp",
+        "rarity": "rare",
+        "image": "pool/det1-13.png",
+        "set": "Detective Pikachu",
+        "marketPrice": 2
+      }
+    },
+    {
+      "id": "pair-base1-14-pop9-3",
+      "pokemon": "Raichu",
+      "real": {
+        "id": "real-base1-14",
+        "tcgId": "base1-14",
+        "name": "Raichu",
+        "rarity": "epic",
+        "image": "pool/base1-14.png",
+        "set": "Base",
+        "marketPrice": 73
+      },
+      "fake": {
+        "id": "fake-pop9-3",
+        "tcgId": "pop9-3",
+        "name": "Raichu",
+        "rarity": "rare",
+        "image": "pool/pop9-3.png",
+        "set": "POP Series 9",
+        "marketPrice": 11
+      }
+    },
+    {
+      "id": "pair-base1-4-smp-SM60",
+      "pokemon": "Charizard",
+      "real": {
+        "id": "real-base1-4",
+        "tcgId": "base1-4",
+        "name": "Charizard",
+        "rarity": "epic",
+        "image": "pool/base1-4.png",
+        "set": "Base",
+        "marketPrice": 630
+      },
+      "fake": {
+        "id": "fake-smp-SM60",
+        "tcgId": "smp-SM60",
+        "name": "Charizard-GX",
+        "rarity": "rare",
+        "image": "pool/smp-SM60.png",
+        "set": "SM Black Star Promos",
+        "marketPrice": 52
+      }
+    },
+    {
+      "id": "pair-base1-58-smp-SM04",
+      "pokemon": "Pikachu",
+      "real": {
+        "id": "real-base1-58",
+        "tcgId": "base1-58",
+        "name": "Pikachu",
+        "rarity": "common",
+        "image": "pool/base1-58.png",
+        "set": "Base",
+        "marketPrice": 7
+      },
+      "fake": {
+        "id": "fake-smp-SM04",
+        "tcgId": "smp-SM04",
+        "name": "Pikachu",
+        "rarity": "rare",
+        "image": "pool/smp-SM04.png",
+        "set": "SM Black Star Promos",
+        "marketPrice": 13
+      }
+    },
+    {
+      "id": "pair-base1-10-smp-SM228",
+      "pokemon": "Mewtwo",
+      "real": {
+        "id": "real-base1-10",
+        "tcgId": "base1-10",
+        "name": "Mewtwo",
+        "rarity": "epic",
+        "image": "pool/base1-10.png",
+        "set": "Base",
+        "marketPrice": 79
+      },
+      "fake": {
+        "id": "fake-smp-SM228",
+        "tcgId": "smp-SM228",
+        "name": "Armored Mewtwo",
+        "rarity": "rare",
+        "image": "pool/smp-SM228.png",
+        "set": "SM Black Star Promos",
+        "marketPrice": 258
+      }
+    },
+    {
+      "id": "pair-base1-2-base4-2",
+      "pokemon": "Blastoise",
+      "real": {
+        "id": "real-base1-2",
+        "tcgId": "base1-2",
+        "name": "Blastoise",
+        "rarity": "epic",
+        "image": "pool/base1-2.png",
+        "set": "Base",
+        "marketPrice": 226
+      },
+      "fake": {
+        "id": "fake-base4-2",
+        "tcgId": "base4-2",
+        "name": "Blastoise",
+        "rarity": "epic",
+        "image": "pool/base4-2.png",
+        "set": "Base Set 2",
+        "marketPrice": 133
+      }
+    },
+    {
+      "id": "pair-base1-12-base4-13",
+      "pokemon": "Ninetales",
+      "real": {
+        "id": "real-base1-12",
+        "tcgId": "base1-12",
+        "name": "Ninetales",
+        "rarity": "epic",
+        "image": "pool/base1-12.png",
+        "set": "Base",
+        "marketPrice": 37
+      },
+      "fake": {
+        "id": "fake-base4-13",
+        "tcgId": "base4-13",
+        "name": "Ninetales",
+        "rarity": "epic",
+        "image": "pool/base4-13.png",
+        "set": "Base Set 2",
+        "marketPrice": 30
+      }
+    }
+  ],
+  "real": [
+    {
+      "id": "real-base1-4",
+      "tcgId": "base1-4",
+      "name": "Charizard",
+      "rarity": "epic",
+      "image": "pool/base1-4.png",
+      "set": "Base",
+      "marketPrice": 630
+    },
+    {
+      "id": "real-base1-58",
+      "tcgId": "base1-58",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/base1-58.png",
+      "set": "Base",
+      "marketPrice": 7
+    },
+    {
+      "id": "real-base1-15",
+      "tcgId": "base1-15",
+      "name": "Venusaur",
+      "rarity": "epic",
+      "image": "pool/base1-15.png",
+      "set": "Base",
+      "marketPrice": 156
+    },
+    {
+      "id": "real-base1-2",
+      "tcgId": "base1-2",
+      "name": "Blastoise",
+      "rarity": "epic",
+      "image": "pool/base1-2.png",
+      "set": "Base",
+      "marketPrice": 226
+    },
+    {
+      "id": "real-base1-10",
+      "tcgId": "base1-10",
+      "name": "Mewtwo",
+      "rarity": "epic",
+      "image": "pool/base1-10.png",
+      "set": "Base",
+      "marketPrice": 79
+    },
+    {
+      "id": "real-base1-6",
+      "tcgId": "base1-6",
+      "name": "Gyarados",
+      "rarity": "epic",
+      "image": "pool/base1-6.png",
+      "set": "Base",
+      "marketPrice": 54
+    },
+    {
+      "id": "real-base1-16",
+      "tcgId": "base1-16",
+      "name": "Zapdos",
+      "rarity": "epic",
+      "image": "pool/base1-16.png",
+      "set": "Base",
+      "marketPrice": 55
+    },
+    {
+      "id": "real-base1-12",
+      "tcgId": "base1-12",
+      "name": "Ninetales",
+      "rarity": "epic",
+      "image": "pool/base1-12.png",
+      "set": "Base",
+      "marketPrice": 37
+    },
+    {
+      "id": "real-base1-8",
+      "tcgId": "base1-8",
+      "name": "Machamp",
+      "rarity": "epic",
+      "image": "pool/base1-8.png",
+      "set": "Base",
+      "marketPrice": 113
+    },
+    {
+      "id": "real-base1-14",
+      "tcgId": "base1-14",
+      "name": "Raichu",
+      "rarity": "epic",
+      "image": "pool/base1-14.png",
+      "set": "Base",
+      "marketPrice": 73
+    }
+  ],
+  "fake": [
+    {
+      "id": "fake-g1-RC5",
+      "tcgId": "g1-RC5",
+      "name": "Charizard",
+      "rarity": "common",
+      "image": "pool/g1-RC5.png",
+      "set": "Generations",
+      "marketPrice": 67
+    },
+    {
+      "id": "fake-mcd19-6",
+      "tcgId": "mcd19-6",
+      "name": "Pikachu",
+      "rarity": "common",
+      "image": "pool/mcd19-6.png",
+      "set": "McDonald's Collection 2019",
+      "marketPrice": 33
+    },
+    {
+      "id": "fake-ru1-1",
+      "tcgId": "ru1-1",
+      "name": "Venusaur",
+      "rarity": "common",
+      "image": "pool/ru1-1.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 280
+    },
+    {
+      "id": "fake-pop3-1",
+      "tcgId": "pop3-1",
+      "name": "Blastoise",
+      "rarity": "rare",
+      "image": "pool/pop3-1.png",
+      "set": "POP Series 3",
+      "marketPrice": 218
+    },
+    {
+      "id": "fake-ru1-9",
+      "tcgId": "ru1-9",
+      "name": "Mewtwo",
+      "rarity": "common",
+      "image": "pool/ru1-9.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 550
+    },
+    {
+      "id": "fake-ru1-6",
+      "tcgId": "ru1-6",
+      "name": "Gyarados",
+      "rarity": "common",
+      "image": "pool/ru1-6.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 270
+    },
+    {
+      "id": "fake-ru1-8",
+      "tcgId": "ru1-8",
+      "name": "Zapdos",
+      "rarity": "common",
+      "image": "pool/ru1-8.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 300
+    },
+    {
+      "id": "fake-ru1-3",
+      "tcgId": "ru1-3",
+      "name": "Ninetales",
+      "rarity": "common",
+      "image": "pool/ru1-3.png",
+      "set": "Pokémon Rumble",
+      "marketPrice": 310
+    },
+    {
+      "id": "fake-det1-13",
+      "tcgId": "det1-13",
+      "name": "Machamp",
+      "rarity": "rare",
+      "image": "pool/det1-13.png",
+      "set": "Detective Pikachu",
+      "marketPrice": 2
+    },
+    {
+      "id": "fake-pop9-3",
+      "tcgId": "pop9-3",
+      "name": "Raichu",
+      "rarity": "rare",
+      "image": "pool/pop9-3.png",
+      "set": "POP Series 9",
+      "marketPrice": 11
+    },
+    {
+      "id": "fake-smp-SM60",
+      "tcgId": "smp-SM60",
+      "name": "Charizard-GX",
+      "rarity": "rare",
+      "image": "pool/smp-SM60.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 52
+    },
+    {
+      "id": "fake-smp-SM04",
+      "tcgId": "smp-SM04",
+      "name": "Pikachu",
+      "rarity": "rare",
+      "image": "pool/smp-SM04.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 13
+    },
+    {
+      "id": "fake-smp-SM228",
+      "tcgId": "smp-SM228",
+      "name": "Armored Mewtwo",
+      "rarity": "rare",
+      "image": "pool/smp-SM228.png",
+      "set": "SM Black Star Promos",
+      "marketPrice": 258
+    },
+    {
+      "id": "fake-base4-2",
+      "tcgId": "base4-2",
+      "name": "Blastoise",
+      "rarity": "epic",
+      "image": "pool/base4-2.png",
+      "set": "Base Set 2",
+      "marketPrice": 133
+    },
+    {
+      "id": "fake-base4-13",
+      "tcgId": "base4-13",
+      "name": "Ninetales",
+      "rarity": "epic",
+      "image": "pool/base4-13.png",
+      "set": "Base Set 2",
+      "marketPrice": 30
+    }
+  ]
+}
