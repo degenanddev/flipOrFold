@@ -70,13 +70,8 @@ export async function searchTradingCardsCached(
   })
 
   if (error) {
-    const fallback = await supabase.rpc('search_trading_cards', { p_query: q, p_limit: limit })
-    if (fallback.error) {
-      if (import.meta.env.DEV) console.warn('[search_trading_cards]', fallback.error.message)
-      return []
-    }
-    const rows = (Array.isArray(fallback.data) ? fallback.data : []) as TradingCardSearchRow[]
-    return game ? rows.filter((r) => r.game === game) : rows
+    if (import.meta.env.DEV) console.warn('[search_trading_cards]', error.message)
+    return []
   }
 
   if (!Array.isArray(data)) return []

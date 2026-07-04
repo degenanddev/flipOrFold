@@ -1,9 +1,21 @@
-const API_BASE = 'https://silphcoanalytics.xyz/api/v3'
+import cardsManifest from '../assets/cards/cards.json'
+import { resolveCardImageUrl } from '../systems/cardLoader'
+
+const DIRECT_API_BASE = 'https://silphcoanalytics.xyz/api/v3'
+const PROXY_API_BASE = import.meta.env.VITE_SILPHCO_PROXY_URL?.trim() || '/api/silphco'
 
 export type SilphcoGame = 'pokemon' | 'onepiece'
 
 export function hasSilphcoApiKey(): boolean {
-  return Boolean(import.meta.env.VITE_SILPHCO_API_KEY?.trim())
+  if (import.meta.env.DEV) {
+    return Boolean(import.meta.env.VITE_SILPHCO_API_KEY?.trim())
+  }
+  // Production: /api/silphco on Vercel uses server-side SILPHCO_API_KEY
+  return true
+}
+
+function getApiBase(): string {
+  return typeof window !== 'undefined' ? PROXY_API_BASE : DIRECT_API_BASE
 }
 
 function getApiKey(): string {
@@ -19,17 +31,20 @@ interface SilphcoEnvelope<T> {
 }
 
 async function silphcoGet<T>(path: string, params: Record<string, string | number | undefined> = {}): Promise<T> {
-  const url = new URL(`${API_BASE}${path}`)
+  const base = getApiBase()
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'http://localhost'
+  const url = new URL(`${base}${path}`, base.startsWith('http') ? undefined : origin)
   for (const [k, v] of Object.entries(params)) {
     if (v !== undefined && v !== null && v !== '') url.searchParams.set(k, String(v))
   }
 
-  const res = await fetch(url.toString(), {
-    headers: {
-      accept: 'application/json',
-      authorization: `Bearer ${getApiKey()}`,
-    },
-  })
+  const headers: Record<string, string> = { accept: 'application/json' }
+  // Dev vite proxy forwards the client key; prod Vercel function injects server key
+  if (import.meta.env.DEV) {
+    headers.authorization = `Bearer ${getApiKey()}`
+  }
+
+  const res = await fetch(url.toString(), { headers })
 
   const body = (await res.json()) as SilphcoEnvelope<T> & { error?: string; message?: string }
 
@@ -146,10 +161,17 @@ export async function searchSilphcoCards(
   const q = query.trim()
   if (q.length < 2) return []
 
-  const data = await silphcoGet<{ results?: RawSearchRow[] }>('/search', { q, limit, game })
-  return (data.results ?? [])
-    .map((row) => mapBrief(row, game))
-    .filter((c): c is SilphcoCardBrief => Boolean(c && c.imageUrl))
+  try {
+    const data = await silphcoGet<{ results?: RawSearchRow[] }>('/search', { q, limit, game })
+    return (data.results ?? [])
+      .map((row) => mapBrief(row, game))
+      .filter((c): c is SilphcoCardBrief => Boolean(c && c.imageUrl))
+  } catch (err) {
+    if (game === 'onepiece') {
+      return searchLocalOnePieceCards(q, limit)
+    }
+    throw err
+  }
 }
 
 export async function getSilphcoCard(id: string, game: SilphcoGame = 'pokemon'): Promise<SilphcoCardDetail | null> {
@@ -163,4 +185,27 @@ export async function getSilphcoCard(id: string, game: SilphcoGame = 'pokemon'):
 export function silphcoCardUrl(id: string, game: SilphcoGame = 'pokemon'): string {
   const params = game === 'onepiece' ? '?game=onepiece' : ''
   return `https://silphcoanalytics.xyz/cards/${encodeURIComponent(id)}${params}`
+}
+
+/** Offline fallback — 79 bundled One Piece singles when SilphCo is unreachable */
+function searchLocalOnePieceCards(query: string, limit: number): SilphcoCardBrief[] {
+  const cards = (cardsManifest as { cards?: Array<Record<string, unknown>> }).cards ?? []
+  const q = query.toLowerCase()
+  return cards
+    .filter((c) => c.game === 'one-piece' && String(c.name ?? '').toLowerCase().includes(q))
+    .slice(0, limit)
+    .map((c) => {
+      const tcgId = String(c.tcgId ?? c.id ?? '').replace(/^card-/, '')
+      const imageUrl = resolveCardImageUrl(String(c.image ?? ''), tcgId)
+      return {
+        id: tcgId,
+        name: String(c.name ?? ''),
+        setName: String(c.set ?? ''),
+        imageUrl,
+        game: 'onepiece' as const,
+        rarity: c.rarity as string | undefined,
+        tvwapPriceUsd: c.marketPrice as number | undefined,
+      }
+    })
+    .filter((c) => c.id && c.imageUrl)
 }

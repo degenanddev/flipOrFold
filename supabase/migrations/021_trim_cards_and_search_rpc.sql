@@ -102,7 +102,7 @@ stable
 set search_path = public
 as $$
   select coalesce(
-    json_agg(row_to_json(t) order by t.market_price_usd desc),
+    json_agg(row_to_json(t) order by t."marketPrice" desc),
     '[]'::json
   )
   from (
