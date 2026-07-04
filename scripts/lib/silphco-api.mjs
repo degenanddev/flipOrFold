@@ -60,13 +60,37 @@ export async function silphcoSql(sql) {
   return body.data?.rows ?? []
 }
 
-export async function listSilphcoCards({ limit = 200, offset = 0, sort = 'volume' } = {}) {
-  const data = await silphcoGet('/cards', { limit, offset, sort })
+export async function listSilphcoCards({ limit = 200, offset = 0, sort = 'volume', game = 'pokemon' } = {}) {
+  const data = await silphcoGet('/cards', { limit, offset, sort, game })
   return data?.results ?? []
 }
 
-export function rarityFromSilphco(rarity, priceUsd) {
+/** Sealed products use op-{digits} only; playable singles include set codes (op-OP01-064). */
+export function isIndividualOnePieceCard(tcgCardId) {
+  if (!tcgCardId?.startsWith('op-')) return false
+  return !/^op-\d+$/i.test(tcgCardId)
+}
+
+const SEALED_NAME = /\b(booster box|booster pack|case|display|starter deck display|sealed)\b/i
+
+export function isSealedProduct(row) {
+  const id = String(row.tcg_card_id ?? '')
+  const name = String(row.name ?? '')
+  if (/^op-\d+$/i.test(id)) return true
+  return SEALED_NAME.test(name)
+}
+
+export function rarityFromSilphco(rarity, priceUsd, game = 'pokemon') {
   const r = String(rarity ?? '').toLowerCase()
+  if (game === 'onepiece') {
+    if (r.includes('sec') || r.includes('secret') || r.includes('sp') || r.includes('manga')) return 'legendary'
+    if (r.includes('sr') || r.includes('super rare') || r === 'l' || r.includes('leader')) return 'epic'
+    if (r === 'r' || r.includes('rare') || r === 'uc' || r.includes('uncommon')) return 'rare'
+    if (priceUsd >= 200) return 'legendary'
+    if (priceUsd >= 60) return 'epic'
+    if (priceUsd >= 15) return 'rare'
+    return 'common'
+  }
   if (r.includes('secret') || r.includes('hyper') || r.includes('illustration rare') || r.includes('special art')) {
     return 'legendary'
   }

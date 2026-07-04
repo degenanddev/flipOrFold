@@ -12,6 +12,7 @@
     "enrich-prices": "node scripts/enrich-prices.mjs",
     "expand-silphco-pool": "node scripts/expand-silphco-classic-pool.mjs",
     "materialize-pool-images": "node scripts/materialize-classic-pool-images.mjs --prune-failed",
+    "expand-onepiece-pool": "node scripts/expand-onepiece-classic-pool.mjs",
     "sync-renaiss-cards": "node scripts/sync-renaiss-cards.mjs",
     "seed-renaiss-cards": "node scripts/seed-renaiss-cards.mjs",
     "record-journey": "node scripts/user-journey-video.mjs"

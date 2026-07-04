@@ -1,5 +1,7 @@
 const API_BASE = 'https://silphcoanalytics.xyz/api/v3'
 
+export type SilphcoGame = 'pokemon' | 'onepiece'
+
 export function hasSilphcoApiKey(): boolean {
   return Boolean(import.meta.env.VITE_SILPHCO_API_KEY?.trim())
 }
@@ -51,6 +53,7 @@ export interface SilphcoCardBrief {
   name: string
   setName: string
   imageUrl: string
+  game?: SilphcoGame
   rarity?: string
   avgPriceUsd?: number
   tvwapPriceUsd?: number
@@ -75,16 +78,20 @@ export interface SilphcoCardDetail extends SilphcoCardBrief {
 
 type RawSearchRow = Record<string, unknown>
 
-function mapBrief(row: RawSearchRow): SilphcoCardBrief | null {
+function mapBrief(row: RawSearchRow, game: SilphcoGame = 'pokemon'): SilphcoCardBrief | null {
   const id = String(row.tcg_card_id ?? '')
   const name = String(row.name ?? '')
   if (!id || !name) return null
+
+  const imageUrl = String(row.image_small ?? row.image_url ?? row.image ?? '')
+  if (!imageUrl) return null
 
   return {
     id,
     name,
     setName: String(row.set_name ?? ''),
-    imageUrl: String(row.image_small ?? ''),
+    imageUrl,
+    game,
     rarity: row.rarity as string | undefined,
     avgPriceUsd: row.avg_price_usd as number | undefined,
     tvwapPriceUsd: row.tvwap_price_usd as number | undefined,
@@ -110,8 +117,8 @@ function mapGrades(raw: unknown): SilphcoGradeRow[] {
     .filter((g) => g.gradeLabel)
 }
 
-function mapDetail(row: RawSearchRow): SilphcoCardDetail | null {
-  const brief = mapBrief(row)
+function mapDetail(row: RawSearchRow, game: SilphcoGame = 'pokemon'): SilphcoCardDetail | null {
+  const brief = mapBrief(row, game)
   if (!brief) return null
 
   return {
@@ -131,21 +138,29 @@ function mapDetail(row: RawSearchRow): SilphcoCardDetail | null {
   }
 }
 
-export async function searchSilphcoCards(query: string, limit = 24): Promise<SilphcoCardBrief[]> {
+export async function searchSilphcoCards(
+  query: string,
+  limit = 24,
+  game: SilphcoGame = 'pokemon',
+): Promise<SilphcoCardBrief[]> {
   const q = query.trim()
   if (q.length < 2) return []
 
-  const data = await silphcoGet<{ results?: RawSearchRow[] }>('/search', { q, limit })
-  return (data.results ?? []).map(mapBrief).filter((c): c is SilphcoCardBrief => Boolean(c && c.imageUrl))
+  const data = await silphcoGet<{ results?: RawSearchRow[] }>('/search', { q, limit, game })
+  return (data.results ?? [])
+    .map((row) => mapBrief(row, game))
+    .filter((c): c is SilphcoCardBrief => Boolean(c && c.imageUrl))
 }
 
-export async function getSilphcoCard(id: string): Promise<SilphcoCardDetail | null> {
+export async function getSilphcoCard(id: string, game: SilphcoGame = 'pokemon'): Promise<SilphcoCardDetail | null> {
   const data = await silphcoGet<RawSearchRow>(`/cards/${encodeURIComponent(id)}`, {
     include: 'price_history',
+    game,
   })
-  return mapDetail(data)
+  return mapDetail(data, game)
 }
 
-export function silphcoCardUrl(id: string): string {
-  return `https://silphcoanalytics.xyz/cards/${encodeURIComponent(id)}`
+export function silphcoCardUrl(id: string, game: SilphcoGame = 'pokemon'): string {
+  const params = game === 'onepiece' ? '?game=onepiece' : ''
+  return `https://silphcoanalytics.xyz/cards/${encodeURIComponent(id)}${params}`
 }

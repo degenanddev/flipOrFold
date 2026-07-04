@@ -13,6 +13,7 @@ interface ManifestEntry {
   image: string
   set?: string
   marketPrice?: number
+  game?: string
 }
 
 interface CardsManifest {
@@ -40,7 +41,10 @@ const FALLBACK: Record<Rarity, number> = {
 function resolveImageUrl(relativePath: string, tcgId?: string): string {
   const candidates: string[] = []
   if (relativePath) candidates.push(relativePath.replace(/\\/g, '/'))
-  if (tcgId) candidates.push(`pool/${tcgId.replace(/[^a-z0-9-]/gi, '_')}.png`)
+  if (tcgId) {
+    const safe = tcgId.replace(/[^a-z0-9-]/gi, '_')
+    candidates.push(`pool/${safe}.png`, `pool/${safe}.jpg`, `pool/${safe}.webp`)
+  }
 
   for (const normalized of candidates) {
     if (normalized.startsWith('http://') || normalized.startsWith('https://')) continue
@@ -66,7 +70,7 @@ function toCardData(entry: ManifestEntry): CardData {
     name: entry.name,
     set: entry.set,
     marketPrice: entry.marketPrice ?? FALLBACK[entry.rarity],
-    game: 'pokemon',
+    game: entry.game === 'one-piece' ? 'one-piece' : 'pokemon',
   }
 }
 

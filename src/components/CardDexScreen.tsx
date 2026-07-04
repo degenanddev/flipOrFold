@@ -41,6 +41,7 @@ export function CardDexScreen() {
   const debounced = useDebounce(query, 300)
   const [selectedTcgId, setSelectedTcgId] = useState<string | null>(null)
   const [selectedSilphcoId, setSelectedSilphcoId] = useState<string | null>(null)
+  const [selectedOnePieceId, setSelectedOnePieceId] = useState<string | null>(null)
   const [selectedGraded, setSelectedGraded] = useState<TradingCardSearchRow | null>(null)
   const [liveRenaiss, setLiveRenaiss] = useState<RenaissSearchHit[] | null>(null)
   const [liveRate, setLiveRate] = useState<RenaissRateLimit | null>(() => getRenaissRateLimit())
@@ -64,8 +65,15 @@ export function CardDexScreen() {
   })
 
   const onePieceSearch = useQuery({
-    queryKey: ['onepiece-search', debounced],
-    queryFn: () => searchTradingCardsCached(debounced, 20, 'one-piece'),
+    queryKey: ['silphco-onepiece-search', debounced],
+    queryFn: () => searchSilphcoCards(debounced, 24, 'onepiece'),
+    enabled: tab === 'onepiece' && hasSilphcoApiKey() && debounced.trim().length >= 2,
+    staleTime: 5 * 60_000,
+  })
+
+  const onePieceCached = useQuery({
+    queryKey: ['onepiece-cache-search', debounced],
+    queryFn: () => searchTradingCardsCached(debounced, 8, 'one-piece'),
     enabled: tab === 'onepiece' && debounced.trim().length >= 2,
     staleTime: 60_000,
   })
@@ -84,6 +92,13 @@ export function CardDexScreen() {
     staleTime: 10 * 60_000,
   })
 
+  const onePieceDetail = useQuery({
+    queryKey: ['silphco-onepiece-card', selectedOnePieceId],
+    queryFn: () => getSilphcoCard(selectedOnePieceId!, 'onepiece'),
+    enabled: !!selectedOnePieceId && hasSilphcoApiKey(),
+    staleTime: 10 * 60_000,
+  })
+
   const tcgSilphcoMarket = useQuery({
     queryKey: ['silphco-card', selectedTcgId],
     queryFn: () => getSilphcoCard(selectedTcgId!),
@@ -94,6 +109,7 @@ export function CardDexScreen() {
   const showDetail =
     (tab === 'pokemon' && !!selectedTcgId) ||
     (tab === 'market' && !!selectedSilphcoId) ||
+    (tab === 'onepiece' && !!selectedOnePieceId) ||
     (tab === 'onepiece' && !!selectedGraded)
 
   const handleLiveRenaissSearch = async (name: string) => {
@@ -113,6 +129,7 @@ export function CardDexScreen() {
   const clearDetail = () => {
     setSelectedTcgId(null)
     setSelectedSilphcoId(null)
+    setSelectedOnePieceId(null)
     setSelectedGraded(null)
     setLiveRenaiss(null)
     setLiveError(null)
@@ -157,7 +174,7 @@ export function CardDexScreen() {
         <p className="text-[10px] font-semibold text-[#b185db] text-center shrink-0">
           {tab === 'pokemon' && 'TCGdex cards + SilphCo market on detail'}
           {tab === 'market' && 'SilphCo — Pokémon graded sales & TV-WAP (live API)'}
-          {tab === 'onepiece' && 'Renaiss graded slabs — cache + live search'}
+          {tab === 'onepiece' && 'SilphCo One Piece market + Renaiss graded slabs'}
         </p>
 
         {!showDetail && (
@@ -170,7 +187,7 @@ export function CardDexScreen() {
                   ? 'Search Pokémon cards…'
                   : tab === 'market'
                     ? 'Search Pokémon market…'
-                    : 'Search One Piece slabs…'
+                    : 'Search One Piece cards…'
               }
               className="w-full bg-white border-2 border-[#e0c3fc] rounded-xl px-3 py-2 text-sm font-display font-bold text-[#4a3568] focus:outline-none focus:border-[#ff6b9d] shrink-0"
               autoFocus
@@ -199,14 +216,29 @@ export function CardDexScreen() {
                     onSelect={(id) => setSelectedSilphcoId(id)}
                   />
                 )
+              ) : !hasSilphcoApiKey() ? (
+                <p className="text-center text-sm font-bold text-[#b185db] py-6 px-2">
+                  Add <code className="text-[#9b5de5]">VITE_SILPHCO_API_KEY</code> for One Piece market search.
+                </p>
               ) : (
                 <>
-                  <GradedResults
+                  <SilphcoResults
                     loading={onePieceSearch.isLoading}
+                    error={onePieceSearch.error}
                     items={onePieceSearch.data ?? []}
-                    onSelect={setSelectedGraded}
-                    emptyHint="No cached One Piece slabs. Try live Renaiss search below."
+                    onSelect={(id) => setSelectedOnePieceId(id)}
                   />
+                  {(onePieceCached.data?.length ?? 0) > 0 && (
+                    <div className="mt-3 pt-3 border-t-2 border-white/80">
+                      <p className="text-[10px] font-bold text-[#9b5de5] uppercase mb-2">Renaiss graded cache</p>
+                      <GradedResults
+                        loading={onePieceCached.isLoading}
+                        items={onePieceCached.data ?? []}
+                        onSelect={setSelectedGraded}
+                        emptyHint=""
+                      />
+                    </div>
+                  )}
                   {debounced.trim().length >= 2 && (
                     <div className="mt-3 pt-3 border-t-2 border-white/80">
                       <RenaissGradedPanel
@@ -215,7 +247,7 @@ export function CardDexScreen() {
                         liveLoading={liveLoading}
                         liveError={liveError}
                         onSearch={() => void handleLiveRenaissSearch(debounced)}
-                        label="🔍 Search Renaiss live (One Piece & more)"
+                        label="🔍 Search Renaiss graded (live)"
                       />
                     </div>
                   )}
@@ -253,7 +285,21 @@ export function CardDexScreen() {
           />
         )}
 
-        {showDetail && tab === 'onepiece' && selectedGraded && (
+        {showDetail && tab === 'onepiece' && selectedOnePieceId && (
+          <SilphcoDetailView
+            loading={onePieceDetail.isLoading}
+            card={onePieceDetail.data ?? null}
+            game="onepiece"
+            onBack={clearDetail}
+            liveRenaiss={liveRenaiss}
+            liveRate={liveRate}
+            liveLoading={liveLoading}
+            liveError={liveError}
+            onSearchRenaiss={() => onePieceDetail.data && void handleLiveRenaissSearch(onePieceDetail.data.name)}
+          />
+        )}
+
+        {showDetail && tab === 'onepiece' && selectedGraded && !selectedOnePieceId && (
           <GradedDetailView
             row={selectedGraded}
             live={gradedLiveDetail}
@@ -564,6 +610,7 @@ function TcgDetailView({
 function SilphcoDetailView({
   loading,
   card,
+  game = 'pokemon',
   onBack,
   liveRenaiss,
   liveRate,
@@ -573,6 +620,7 @@ function SilphcoDetailView({
 }: {
   loading: boolean
   card: SilphcoCardDetail | null
+  game?: 'pokemon' | 'onepiece'
   onBack: () => void
   liveRenaiss: RenaissSearchHit[] | null
   liveRate: RenaissRateLimit | null
@@ -603,6 +651,9 @@ function SilphcoDetailView({
           {card.psa10PriceUsd != null && (
             <p className="text-xl font-black text-[#ff6b9d] mt-1">PSA 10 · ${card.psa10PriceUsd.toLocaleString()}</p>
           )}
+          {card.psa10PriceUsd == null && card.tvwapPriceUsd != null && (
+            <p className="text-xl font-black text-[#ff6b9d] mt-1">TV-WAP ${card.tvwapPriceUsd.toFixed(0)}</p>
+          )}
         </div>
       </div>
 
@@ -619,7 +670,7 @@ function SilphcoDetailView({
             value={g.avgPriceUsd != null ? `$${g.avgPriceUsd.toFixed(0)} · ${g.salesCount} sales` : `${g.salesCount} sales`}
           />
         ))}
-        <a href={silphcoCardUrl(card.id)} target="_blank" rel="noreferrer" className="inline-block mt-2 text-xs font-bold text-[#4cc9f0] underline">
+        <a href={silphcoCardUrl(card.id, game)} target="_blank" rel="noreferrer" className="inline-block mt-2 text-xs font-bold text-[#4cc9f0] underline">
           Full analytics on SilphCo ↗
         </a>
       </InfoBlock>
