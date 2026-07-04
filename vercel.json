@@ -1,10 +1,11 @@
 {
   "functions": {
-    "api/silphco/[...slug].js": {
+    "api/silphco-handler.js": {
       "maxDuration": 15
     }
   },
   "rewrites": [
+    { "source": "/api/silphco/:path*", "destination": "/api/silphco-handler?path=:path*" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
