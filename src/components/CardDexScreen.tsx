@@ -14,19 +14,47 @@ import {
 } from '../services/silphco'
 import { searchTradingCardsCached, type TradingCardSearchRow } from '../supabase/tradingCards'
 import {
-  fetchRenaissCardDetail,
   getRenaissRateLimit,
-  renaissIndexUrl,
   searchRenaissLive,
-  type RenaissCardDetail,
   type RenaissRateLimit,
   type RenaissSearchHit,
 } from '../services/renaissBrowser'
 import { RenaissGradedPanel } from './carddex/RenaissGradedPanel'
-import { RARITY_COLORS } from '../utils/constants'
-import type { Rarity } from '../types'
+import { RenaissGradedDetail, type GradedPreview } from './carddex/RenaissGradedDetail'
 
-type DexTab = 'pokemon' | 'market' | 'onepiece'
+type DexTab = 'renaiss' | 'pokemon' | 'market' | 'onepiece'
+
+function rowToPreview(row: TradingCardSearchRow): GradedPreview {
+  return {
+    href: row.renaissHref,
+    name: row.name,
+    image: row.image,
+    marketPrice: row.marketPrice,
+    gradeLabel: row.gradeLabel,
+    game: row.game,
+    set: row.set,
+    rarity: row.rarity,
+    deltaPct: row.deltaPct,
+  }
+}
+
+function hitToPreview(hit: RenaissSearchHit): GradedPreview {
+  return {
+    href: hit.href,
+    name: hit.name,
+    image: hit.imageUrl ?? '',
+    marketPrice: hit.priceUsdCents != null ? Math.round(hit.priceUsdCents / 100) : 0,
+    gradeLabel: hit.gradeLabel,
+    game: hit.game,
+    set: hit.setName,
+  }
+}
+
+function cacheGameForTab(tab: DexTab): string | null {
+  if (tab === 'onepiece') return 'one-piece'
+  if (tab === 'pokemon' || tab === 'market') return 'pokemon'
+  return null
+}
 
 const PLACEHOLDER =
   'data:image/svg+xml,' +
@@ -36,19 +64,17 @@ const PLACEHOLDER =
 
 export function CardDexScreen() {
   const setScreen = useGameStore((s) => s.setScreen)
-  const [tab, setTab] = useState<DexTab>('pokemon')
+  const [tab, setTab] = useState<DexTab>('renaiss')
   const [query, setQuery] = useState('')
   const debounced = useDebounce(query, 300)
   const [selectedTcgId, setSelectedTcgId] = useState<string | null>(null)
   const [selectedSilphcoId, setSelectedSilphcoId] = useState<string | null>(null)
   const [selectedOnePieceId, setSelectedOnePieceId] = useState<string | null>(null)
-  const [selectedGraded, setSelectedGraded] = useState<TradingCardSearchRow | null>(null)
+  const [gradedPreview, setGradedPreview] = useState<GradedPreview | null>(null)
   const [liveRenaiss, setLiveRenaiss] = useState<RenaissSearchHit[] | null>(null)
   const [liveRate, setLiveRate] = useState<RenaissRateLimit | null>(() => getRenaissRateLimit())
   const [liveLoading, setLiveLoading] = useState(false)
   const [liveError, setLiveError] = useState<string | null>(null)
-  const [gradedLiveDetail, setGradedLiveDetail] = useState<RenaissCardDetail | null>(null)
-  const [gradedLiveLoading, setGradedLiveLoading] = useState(false)
 
   const tcgSearch = useQuery({
     queryKey: ['tcgdex-search', debounced],
@@ -64,18 +90,18 @@ export function CardDexScreen() {
     staleTime: 5 * 60_000,
   })
 
+  const renaissCached = useQuery({
+    queryKey: ['renaiss-cache-search', debounced, tab],
+    queryFn: () => searchTradingCardsCached(debounced, 12, cacheGameForTab(tab)),
+    enabled: debounced.trim().length >= 2,
+    staleTime: 60_000,
+  })
+
   const onePieceSearch = useQuery({
     queryKey: ['silphco-onepiece-search', debounced],
     queryFn: () => searchSilphcoCards(debounced, 24, 'onepiece'),
     enabled: tab === 'onepiece' && hasSilphcoApiKey() && debounced.trim().length >= 2,
     staleTime: 5 * 60_000,
-  })
-
-  const onePieceCached = useQuery({
-    queryKey: ['onepiece-cache-search', debounced],
-    queryFn: () => searchTradingCardsCached(debounced, 8, 'one-piece'),
-    enabled: tab === 'onepiece' && debounced.trim().length >= 2,
-    staleTime: 60_000,
   })
 
   const tcgDetail = useQuery({
@@ -107,10 +133,10 @@ export function CardDexScreen() {
   })
 
   const showDetail =
+    !!gradedPreview ||
     (tab === 'pokemon' && !!selectedTcgId) ||
     (tab === 'market' && !!selectedSilphcoId) ||
-    (tab === 'onepiece' && !!selectedOnePieceId) ||
-    (tab === 'onepiece' && !!selectedGraded)
+    (tab === 'onepiece' && !!selectedOnePieceId)
 
   const handleLiveRenaissSearch = async (name: string) => {
     setLiveLoading(true)
@@ -130,32 +156,28 @@ export function CardDexScreen() {
     setSelectedTcgId(null)
     setSelectedSilphcoId(null)
     setSelectedOnePieceId(null)
-    setSelectedGraded(null)
+    setGradedPreview(null)
     setLiveRenaiss(null)
     setLiveError(null)
-    setGradedLiveDetail(null)
   }
 
-  const refreshGradedLive = async (href: string) => {
-    setGradedLiveLoading(true)
-    try {
-      const { card, rate } = await fetchRenaissCardDetail(href)
-      setGradedLiveDetail(card)
-      setLiveRate(rate)
-    } catch (e) {
-      setLiveError(e instanceof Error ? e.message : 'Renaiss refresh failed')
-    } finally {
-      setGradedLiveLoading(false)
-    }
+  const openGraded = (preview: GradedPreview) => {
+    setGradedPreview(preview)
+    setSelectedTcgId(null)
+    setSelectedSilphcoId(null)
+    setSelectedOnePieceId(null)
   }
 
   return (
     <ScreenLayout>
-      <Title subtitle="Search cards · raw & graded market data" compact />
+      <Title subtitle="Renaiss Index graded slabs · SilphCo raw market · TCGdex" compact />
 
       <Panel className="w-full max-w-lg flex flex-col gap-3 !p-3 sm:!p-4 animate-pop-in max-h-[min(88vh,720px)]">
         <div className="flex items-center justify-between gap-2 shrink-0">
           <div className="flex gap-1.5 flex-wrap justify-center">
+            <TabChip active={tab === 'renaiss'} onClick={() => { setTab('renaiss'); clearDetail() }}>
+              Renaiss
+            </TabChip>
             <TabChip active={tab === 'pokemon'} onClick={() => { setTab('pokemon'); clearDetail() }}>
               Pokémon
             </TabChip>
@@ -172,9 +194,10 @@ export function CardDexScreen() {
         </div>
 
         <p className="text-[10px] font-semibold text-[#b185db] text-center shrink-0">
-          {tab === 'pokemon' && 'TCGdex cards + SilphCo market on detail'}
-          {tab === 'market' && 'SilphCo — Pokémon graded sales & TV-WAP (live API)'}
-          {tab === 'onepiece' && 'SilphCo One Piece market + Renaiss graded slabs'}
+          {tab === 'renaiss' && 'Renaiss OS Index API — graded slabs, trades & price history'}
+          {tab === 'pokemon' && 'Renaiss graded first · then TCGdex + SilphCo raw'}
+          {tab === 'market' && 'Renaiss graded first · then SilphCo Pokémon market'}
+          {tab === 'onepiece' && 'Renaiss graded first · then SilphCo One Piece market'}
         </p>
 
         {!showDetail && (
@@ -183,11 +206,13 @@ export function CardDexScreen() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={
-                tab === 'pokemon'
-                  ? 'Search Pokémon cards…'
-                  : tab === 'market'
-                    ? 'Search Pokémon market…'
-                    : 'Search One Piece cards…'
+                tab === 'renaiss'
+                  ? 'Search graded slabs on Renaiss Index…'
+                  : tab === 'pokemon'
+                    ? 'Search Pokémon cards…'
+                    : tab === 'market'
+                      ? 'Search Pokémon market…'
+                      : 'Search One Piece cards…'
               }
               className="w-full bg-white border-2 border-[#e0c3fc] rounded-xl px-3 py-2 text-sm font-display font-bold text-[#4a3568] focus:outline-none focus:border-[#ff6b9d] shrink-0"
               autoFocus
@@ -196,25 +221,68 @@ export function CardDexScreen() {
             <div className="flex-1 min-h-0 overflow-y-auto -mx-1 px-1">
               {debounced.trim().length < 2 ? (
                 <p className="text-center text-sm font-bold text-[#b185db] py-8">Type 2+ characters to search</p>
-              ) : tab === 'pokemon' ? (
-                <TcgResults
-                  loading={tcgSearch.isLoading}
-                  error={tcgSearch.error}
-                  items={tcgSearch.data ?? []}
-                  onSelect={(id) => setSelectedTcgId(id)}
+              ) : tab === 'renaiss' ? (
+                <RenaissSearchSection
+                  cachedLoading={renaissCached.isLoading}
+                  cachedItems={renaissCached.data ?? []}
+                  onSelectCached={(row) => openGraded(rowToPreview(row))}
+                  liveRenaiss={liveRenaiss}
+                  liveRate={liveRate}
+                  liveLoading={liveLoading}
+                  liveError={liveError}
+                  onLiveSearch={() => void handleLiveRenaissSearch(debounced)}
+                  onSelectLive={(hit) => openGraded(hitToPreview(hit))}
+                  liveLabel="🔍 Search Renaiss Index live"
                 />
+              ) : tab === 'pokemon' ? (
+                <>
+                  <RenaissSearchSection
+                    cachedLoading={renaissCached.isLoading}
+                    cachedItems={renaissCached.data ?? []}
+                    onSelectCached={(row) => openGraded(rowToPreview(row))}
+                    liveRenaiss={liveRenaiss}
+                    liveRate={liveRate}
+                    liveLoading={liveLoading}
+                    liveError={liveError}
+                    onLiveSearch={() => void handleLiveRenaissSearch(debounced)}
+                    onSelectLive={(hit) => openGraded(hitToPreview(hit))}
+                    compact
+                  />
+                  <SectionDivider label="Raw singles · TCGdex" />
+                  <TcgResults
+                    loading={tcgSearch.isLoading}
+                    error={tcgSearch.error}
+                    items={tcgSearch.data ?? []}
+                    onSelect={(id) => setSelectedTcgId(id)}
+                  />
+                </>
               ) : tab === 'market' ? (
                 !hasSilphcoApiKey() ? (
                   <p className="text-center text-sm font-bold text-[#b185db] py-6 px-2">
                     Add <code className="text-[#9b5de5]">VITE_SILPHCO_API_KEY</code> to your .env to enable SilphCo search.
                   </p>
                 ) : (
-                  <SilphcoResults
-                    loading={silphcoSearch.isLoading}
-                    error={silphcoSearch.error}
-                    items={silphcoSearch.data ?? []}
-                    onSelect={(id) => setSelectedSilphcoId(id)}
-                  />
+                  <>
+                    <RenaissSearchSection
+                      cachedLoading={renaissCached.isLoading}
+                      cachedItems={renaissCached.data ?? []}
+                      onSelectCached={(row) => openGraded(rowToPreview(row))}
+                      liveRenaiss={liveRenaiss}
+                      liveRate={liveRate}
+                      liveLoading={liveLoading}
+                      liveError={liveError}
+                      onLiveSearch={() => void handleLiveRenaissSearch(debounced)}
+                      onSelectLive={(hit) => openGraded(hitToPreview(hit))}
+                      compact
+                    />
+                    <SectionDivider label="Raw market · SilphCo" />
+                    <SilphcoResults
+                      loading={silphcoSearch.isLoading}
+                      error={silphcoSearch.error}
+                      items={silphcoSearch.data ?? []}
+                      onSelect={(id) => setSelectedSilphcoId(id)}
+                    />
+                  </>
                 )
               ) : !hasSilphcoApiKey() ? (
                 <p className="text-center text-sm font-bold text-[#b185db] py-6 px-2">
@@ -222,42 +290,36 @@ export function CardDexScreen() {
                 </p>
               ) : (
                 <>
+                  <RenaissSearchSection
+                    cachedLoading={renaissCached.isLoading}
+                    cachedItems={renaissCached.data ?? []}
+                    onSelectCached={(row) => openGraded(rowToPreview(row))}
+                    liveRenaiss={liveRenaiss}
+                    liveRate={liveRate}
+                    liveLoading={liveLoading}
+                    liveError={liveError}
+                    onLiveSearch={() => void handleLiveRenaissSearch(debounced)}
+                    onSelectLive={(hit) => openGraded(hitToPreview(hit))}
+                    compact
+                  />
+                  <SectionDivider label="Raw singles · SilphCo One Piece" />
                   <SilphcoResults
                     loading={onePieceSearch.isLoading}
                     error={onePieceSearch.error}
                     items={onePieceSearch.data ?? []}
                     onSelect={(id) => setSelectedOnePieceId(id)}
                   />
-                  {(onePieceCached.data?.length ?? 0) > 0 && (
-                    <div className="mt-3 pt-3 border-t-2 border-white/80">
-                      <p className="text-[10px] font-bold text-[#9b5de5] uppercase mb-2">Renaiss graded cache</p>
-                      <GradedResults
-                        loading={onePieceCached.isLoading}
-                        items={onePieceCached.data ?? []}
-                        onSelect={setSelectedGraded}
-                        emptyHint=""
-                      />
-                    </div>
-                  )}
-                  {debounced.trim().length >= 2 && (
-                    <div className="mt-3 pt-3 border-t-2 border-white/80">
-                      <RenaissGradedPanel
-                        liveRenaiss={liveRenaiss}
-                        liveRate={liveRate}
-                        liveLoading={liveLoading}
-                        liveError={liveError}
-                        onSearch={() => void handleLiveRenaissSearch(debounced)}
-                        label="🔍 Search Renaiss graded (live)"
-                      />
-                    </div>
-                  )}
                 </>
               )}
             </div>
           </>
         )}
 
-        {showDetail && tab === 'pokemon' && selectedTcgId && (
+        {gradedPreview && (
+          <RenaissGradedDetail preview={gradedPreview} onBack={clearDetail} />
+        )}
+
+        {!gradedPreview && showDetail && tab === 'pokemon' && selectedTcgId && (
           <TcgDetailView
             loading={tcgDetail.isLoading}
             card={tcgDetail.data ?? null}
@@ -269,10 +331,11 @@ export function CardDexScreen() {
             liveLoading={liveLoading}
             liveError={liveError}
             onSearchRenaiss={() => tcgDetail.data && void handleLiveRenaissSearch(tcgDetail.data.name)}
+            onSelectRenaiss={(hit) => openGraded(hitToPreview(hit))}
           />
         )}
 
-        {showDetail && tab === 'market' && selectedSilphcoId && (
+        {!gradedPreview && showDetail && tab === 'market' && selectedSilphcoId && (
           <SilphcoDetailView
             loading={silphcoDetail.isLoading}
             card={silphcoDetail.data ?? null}
@@ -282,10 +345,11 @@ export function CardDexScreen() {
             liveLoading={liveLoading}
             liveError={liveError}
             onSearchRenaiss={() => silphcoDetail.data && void handleLiveRenaissSearch(silphcoDetail.data.name)}
+            onSelectRenaiss={(hit) => openGraded(hitToPreview(hit))}
           />
         )}
 
-        {showDetail && tab === 'onepiece' && selectedOnePieceId && (
+        {!gradedPreview && showDetail && tab === 'onepiece' && selectedOnePieceId && (
           <SilphcoDetailView
             loading={onePieceDetail.isLoading}
             card={onePieceDetail.data ?? null}
@@ -296,18 +360,7 @@ export function CardDexScreen() {
             liveLoading={liveLoading}
             liveError={liveError}
             onSearchRenaiss={() => onePieceDetail.data && void handleLiveRenaissSearch(onePieceDetail.data.name)}
-          />
-        )}
-
-        {showDetail && tab === 'onepiece' && selectedGraded && !selectedOnePieceId && (
-          <GradedDetailView
-            row={selectedGraded}
-            live={gradedLiveDetail}
-            loading={gradedLiveLoading}
-            rate={liveRate}
-            liveError={liveError}
-            onBack={clearDetail}
-            onRefreshLive={() => void refreshGradedLive(selectedGraded.renaissHref)}
+            onSelectRenaiss={(hit) => openGraded(hitToPreview(hit))}
           />
         )}
       </Panel>
@@ -318,6 +371,66 @@ export function CardDexScreen() {
         </p>
       )}
     </ScreenLayout>
+  )
+}
+
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div className="mt-4 pt-3 border-t-2 border-white/80 mb-2">
+      <p className="text-[10px] font-bold text-[#9b5de5] uppercase">{label}</p>
+    </div>
+  )
+}
+
+function RenaissSearchSection({
+  cachedLoading,
+  cachedItems,
+  onSelectCached,
+  liveRenaiss,
+  liveRate,
+  liveLoading,
+  liveError,
+  onLiveSearch,
+  onSelectLive,
+  liveLabel = '🔍 Search Renaiss Index live',
+  compact = false,
+}: {
+  cachedLoading: boolean
+  cachedItems: TradingCardSearchRow[]
+  onSelectCached: (row: TradingCardSearchRow) => void
+  liveRenaiss: RenaissSearchHit[] | null
+  liveRate: RenaissRateLimit | null
+  liveLoading: boolean
+  liveError: string | null
+  onLiveSearch: () => void
+  onSelectLive: (hit: RenaissSearchHit) => void
+  liveLabel?: string
+  compact?: boolean
+}) {
+  return (
+    <div className={compact ? 'mb-1' : ''}>
+      {!compact && (
+        <p className="text-[10px] font-bold text-[#ff6b9d] uppercase mb-2">Renaiss Index · graded slabs</p>
+      )}
+      {compact && <p className="text-[10px] font-bold text-[#ff6b9d] uppercase mb-2">Renaiss Index (graded)</p>}
+      <GradedResults
+        loading={cachedLoading}
+        items={cachedItems}
+        onSelect={onSelectCached}
+        emptyHint="No cached slabs — try live search below."
+      />
+      <div className="mt-3">
+        <RenaissGradedPanel
+          liveRenaiss={liveRenaiss}
+          liveRate={liveRate}
+          liveLoading={liveLoading}
+          liveError={liveError}
+          onSearch={onLiveSearch}
+          onSelectHit={onSelectLive}
+          label={liveLabel}
+        />
+      </div>
+    </div>
   )
 }
 
@@ -480,6 +593,7 @@ function TcgDetailView({
   liveLoading,
   liveError,
   onSearchRenaiss,
+  onSelectRenaiss,
 }: {
   loading: boolean
   card: TcgCardDetail | null
@@ -491,6 +605,7 @@ function TcgDetailView({
   liveLoading: boolean
   liveError: string | null
   onSearchRenaiss: () => void
+  onSelectRenaiss: (hit: RenaissSearchHit) => void
 }) {
   if (loading || !card) {
     return <p className="text-center text-sm font-bold text-[#9b5de5] py-8 animate-pulse">Loading card…</p>
@@ -563,8 +678,20 @@ function TcgDetailView({
         </InfoBlock>
       )}
 
+      <InfoBlock title="Renaiss Index (graded)">
+        <RenaissGradedPanel
+          liveRenaiss={liveRenaiss}
+          liveRate={liveRate}
+          liveLoading={liveLoading}
+          liveError={liveError}
+          onSearch={onSearchRenaiss}
+          onSelectHit={onSelectRenaiss}
+          label="🔍 Search Renaiss graded slabs"
+        />
+      </InfoBlock>
+
       {(silphcoLoading || silphco) && (
-        <InfoBlock title="Graded market (SilphCo)">
+        <InfoBlock title="Raw graded market (SilphCo)">
           {silphcoLoading && <p className="text-xs font-bold text-[#9b5de5] animate-pulse">Loading market data…</p>}
           {silphco && (
             <>
@@ -593,16 +720,6 @@ function TcgDetailView({
           )}
         </InfoBlock>
       )}
-
-      <InfoBlock title="Graded market (Renaiss)">
-        <RenaissGradedPanel
-          liveRenaiss={liveRenaiss}
-          liveRate={liveRate}
-          liveLoading={liveLoading}
-          liveError={liveError}
-          onSearch={onSearchRenaiss}
-        />
-      </InfoBlock>
     </div>
   )
 }
@@ -617,6 +734,7 @@ function SilphcoDetailView({
   liveLoading,
   liveError,
   onSearchRenaiss,
+  onSelectRenaiss,
 }: {
   loading: boolean
   card: SilphcoCardDetail | null
@@ -627,6 +745,7 @@ function SilphcoDetailView({
   liveLoading: boolean
   liveError: string | null
   onSearchRenaiss: () => void
+  onSelectRenaiss: (hit: RenaissSearchHit) => void
 }) {
   if (loading || !card) {
     return <p className="text-center text-sm font-bold text-[#9b5de5] py-8 animate-pulse">Loading market data…</p>
@@ -657,7 +776,19 @@ function SilphcoDetailView({
         </div>
       </div>
 
-      <InfoBlock title="SilphCo market">
+      <InfoBlock title="Renaiss Index (graded)">
+        <RenaissGradedPanel
+          liveRenaiss={liveRenaiss}
+          liveRate={liveRate}
+          liveLoading={liveLoading}
+          liveError={liveError}
+          onSearch={onSearchRenaiss}
+          onSelectHit={onSelectRenaiss}
+          label="🔍 Search Renaiss graded slabs"
+        />
+      </InfoBlock>
+
+      <InfoBlock title="Raw market (SilphCo)">
         <DetailRow label="TV-WAP" value={card.tvwapPriceUsd != null ? `$${card.tvwapPriceUsd.toFixed(0)}` : undefined} />
         <DetailRow label="Avg sale" value={card.avgPriceUsd != null ? `$${card.avgPriceUsd.toFixed(2)}` : undefined} />
         <DetailRow label="Total sales" value={card.totalSales?.toLocaleString()} />
@@ -674,104 +805,6 @@ function SilphcoDetailView({
           Full analytics on SilphCo ↗
         </a>
       </InfoBlock>
-
-      <InfoBlock title="Graded market (Renaiss)">
-        <RenaissGradedPanel
-          liveRenaiss={liveRenaiss}
-          liveRate={liveRate}
-          liveLoading={liveLoading}
-          liveError={liveError}
-          onSearch={onSearchRenaiss}
-        />
-      </InfoBlock>
-    </div>
-  )
-}
-
-function GradedDetailView({
-  row,
-  live,
-  loading,
-  rate,
-  liveError,
-  onBack,
-  onRefreshLive,
-}: {
-  row: TradingCardSearchRow
-  live: RenaissCardDetail | null
-  loading: boolean
-  rate: RenaissRateLimit | null
-  liveError: string | null
-  onBack: () => void
-  onRefreshLive: () => void
-}) {
-  const rarityColor = RARITY_COLORS[row.rarity as Rarity] ?? RARITY_COLORS.rare
-
-  return (
-    <div className="flex-1 min-h-0 overflow-y-auto space-y-3 -mx-1 px-1">
-      <button type="button" onClick={onBack} className="text-xs font-bold text-[#9b5de5] hover:text-[#ff6b9d]">
-        ← Back to results
-      </button>
-
-      <div className="flex gap-3">
-        <img
-          src={row.image}
-          alt={row.name}
-          className="w-28 rounded-xl border-2 border-white shadow-md shrink-0"
-          style={{ boxShadow: `0 4px 0 ${rarityColor}44` }}
-          onError={(e) => { e.currentTarget.src = PLACEHOLDER }}
-        />
-        <div>
-          <h2 className="font-display text-lg font-black text-[#4a3568] leading-tight">{row.name}</h2>
-          <p className="text-xs font-bold text-[#9b5de5]">{row.gradeLabel}</p>
-          <p className="text-2xl font-black text-[#ff6b9d] mt-1">${row.marketPrice.toLocaleString()}</p>
-          {row.deltaPct != null && (
-            <p className={`text-xs font-bold ${row.deltaPct >= 0 ? 'text-[#7ec850]' : 'text-red-500'}`}>
-              {row.deltaPct >= 0 ? '+' : ''}
-              {row.deltaPct.toFixed(1)}%
-            </p>
-          )}
-        </div>
-      </div>
-
-      <InfoBlock title="From your cache">
-        <DetailRow label="Set" value={row.set} />
-        <DetailRow label="Game" value={row.game} />
-        <DetailRow label="Rarity" value={row.rarity} />
-      </InfoBlock>
-
-      {loading && <p className="text-xs font-bold text-[#9b5de5] animate-pulse">Refreshing from Renaiss…</p>}
-
-      {!live && !loading && (
-        <KawaiiButton variant="yellow" onClick={onRefreshLive} className="w-full !py-2 text-sm">
-          🔄 Refresh live from Renaiss (uses API quota)
-        </KawaiiButton>
-      )}
-
-      {liveError && <p className="text-[10px] font-bold text-red-500">{liveError}</p>}
-
-      {live && !loading && (
-        <InfoBlock title="Live Renaiss detail">
-          <DetailRow label="Grade" value={live.gradeLabel ?? live.grade} />
-          <DetailRow label="Company" value={live.company} />
-          <DetailRow label="Confidence" value={live.confidence} />
-          <DetailRow label="Last sale" value={live.lastSaleAt ? new Date(live.lastSaleAt).toLocaleDateString() : undefined} />
-          <a
-            href={renaissIndexUrl(row.renaissHref)}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block mt-2 text-xs font-bold text-[#4cc9f0] underline"
-          >
-            View on Renaiss Index ↗
-          </a>
-        </InfoBlock>
-      )}
-
-      {rate && (
-        <p className="text-[9px] font-semibold text-[#b185db] text-center">
-          Renaiss API: {rate.remaining}/{rate.limit} left today
-        </p>
-      )}
     </div>
   )
 }

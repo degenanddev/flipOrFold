@@ -35,6 +35,44 @@ export interface RenaissCardDetail {
   lastSaleAt?: string
 }
 
+export interface RenaissTrade {
+  source?: string
+  observedAt?: string
+  kind?: string
+  priceUsdCents?: number | null
+  currency?: string
+  detail?: string | null
+  sourceUrl?: string | null
+  company?: string
+  gradeLabel?: string
+}
+
+export interface RenaissOverviewGrade {
+  company?: string
+  grade?: string
+  gradeLabel: string
+  priceUsdCents?: number | null
+  deltaPct?: number | null
+  confidence?: string | null
+  sourceCount?: number | null
+}
+
+export interface RenaissOverview {
+  name: string
+  setName?: string | null
+  grades: RenaissOverviewGrade[]
+}
+
+export interface RenaissGradedBundle {
+  detail: RenaissCardDetail | null
+  trades: RenaissTrade[]
+  tradesTotal: number
+  overview: RenaissOverview | null
+  rate: RenaissRateLimit | null
+}
+
+const bundleCache = new Map<string, RenaissGradedBundle>()
+
 function readStoredRate(): RenaissRateLimit | null {
   try {
     const raw = sessionStorage.getItem(RATE_KEY)
@@ -130,6 +168,56 @@ export function parseRenaissHref(href: string): { game: string; set: string; car
   return { game: m[1], set: m[2], card: m[3] }
 }
 
+function mapCardDetail(data: Record<string, unknown>, href: string, game: string): RenaissCardDetail {
+  return {
+    name: String(data.name ?? ''),
+    href,
+    game,
+    setName: (data.setName ?? data.set_name) as string | undefined,
+    imageUrl: (data.imageUrl ?? data.image_url) as string | undefined,
+    priceUsdCents: (data.priceUsdCents ?? data.price_usd_cents) as number | undefined,
+    gradeLabel: (data.gradeLabel ?? data.grade_label) as string | undefined,
+    company: data.company as string | undefined,
+    grade: data.grade as string | undefined,
+    deltaPct: data.deltaPct as number | undefined,
+    confidence: data.confidence as string | undefined,
+    lastSaleAt: (data.lastSaleAt ?? data.last_sale_at) as string | undefined,
+  }
+}
+
+function mapTrade(row: Record<string, unknown>): RenaissTrade {
+  return {
+    source: row.source as string | undefined,
+    observedAt: (row.observedAt ?? row.observed_at) as string | undefined,
+    kind: row.kind as string | undefined,
+    priceUsdCents: (row.priceUsdCents ?? row.price_usd_cents) as number | null | undefined,
+    currency: row.currency as string | undefined,
+    detail: row.detail as string | null | undefined,
+    sourceUrl: (row.sourceUrl ?? row.source_url) as string | null | undefined,
+    company: row.company as string | undefined,
+    gradeLabel: (row.gradeLabel ?? row.grade_label) as string | undefined,
+  }
+}
+
+function mapOverview(data: Record<string, unknown>): RenaissOverview {
+  const gradesRaw = (data.grades ?? []) as Record<string, unknown>[]
+  return {
+    name: String(data.name ?? ''),
+    setName: (data.setName ?? data.set_name) as string | null | undefined,
+    grades: gradesRaw
+      .map((g) => ({
+        company: g.company as string | undefined,
+        grade: g.grade as string | undefined,
+        gradeLabel: String(g.gradeLabel ?? g.grade_label ?? ''),
+        priceUsdCents: (g.priceUsdCents ?? g.price_usd_cents) as number | null | undefined,
+        deltaPct: g.deltaPct as number | null | undefined,
+        confidence: g.confidence as string | null | undefined,
+        sourceCount: g.sourceCount as number | null | undefined,
+      }))
+      .filter((g) => g.gradeLabel),
+  }
+}
+
 export async function fetchRenaissCardDetail(href: string): Promise<{
   card: RenaissCardDetail | null
   rate: RenaissRateLimit | null
@@ -143,21 +231,65 @@ export async function fetchRenaissCardDetail(href: string): Promise<{
 
   return {
     rate,
-    card: {
-      name: String(data.name ?? ''),
-      href,
-      game: parts.game,
-      setName: (data.setName ?? data.set_name) as string | undefined,
-      imageUrl: (data.imageUrl ?? data.image_url) as string | undefined,
-      priceUsdCents: (data.priceUsdCents ?? data.price_usd_cents) as number | undefined,
-      gradeLabel: (data.gradeLabel ?? data.grade_label) as string | undefined,
-      company: data.company as string | undefined,
-      grade: data.grade as string | undefined,
-      deltaPct: data.deltaPct as number | undefined,
-      confidence: data.confidence as string | undefined,
-      lastSaleAt: (data.lastSaleAt ?? data.last_sale_at) as string | undefined,
-    },
+    card: mapCardDetail(data, href, parts.game),
   }
+}
+
+export async function fetchRenaissTrades(
+  href: string,
+  limit = 12,
+): Promise<{ trades: RenaissTrade[]; total: number; rate: RenaissRateLimit | null }> {
+  const parts = parseRenaissHref(href)
+  if (!parts) return { trades: [], total: 0, rate: getRenaissRateLimit() }
+
+  const { data, rate } = await renaissGet<{ trades?: unknown[]; total?: number }>(
+    `/v1/cards/${parts.game}/${parts.set}/${parts.card}/trades`,
+    { limit },
+  )
+
+  const trades = (data.trades ?? []).map((row) => mapTrade(row as Record<string, unknown>))
+  return { trades, total: Number(data.total ?? trades.length), rate }
+}
+
+export async function fetchRenaissOverview(href: string): Promise<{
+  overview: RenaissOverview | null
+  rate: RenaissRateLimit | null
+}> {
+  const parts = parseRenaissHref(href)
+  if (!parts) return { overview: null, rate: getRenaissRateLimit() }
+
+  const { data, rate } = await renaissGet<Record<string, unknown>>(
+    `/v1/cards/${parts.game}/${parts.set}/${parts.card}/overview`,
+  )
+
+  return { overview: mapOverview(data), rate }
+}
+
+/** Detail + trades + overview in parallel (3 API calls). Cached per session. */
+export async function fetchRenaissGradedBundle(
+  href: string,
+  opts?: { force?: boolean },
+): Promise<RenaissGradedBundle> {
+  if (!opts?.force && bundleCache.has(href)) {
+    return bundleCache.get(href)!
+  }
+
+  const [detailRes, tradesRes, overviewRes] = await Promise.all([
+    fetchRenaissCardDetail(href),
+    fetchRenaissTrades(href, 10),
+    fetchRenaissOverview(href),
+  ])
+
+  const bundle: RenaissGradedBundle = {
+    detail: detailRes.card,
+    trades: tradesRes.trades,
+    tradesTotal: tradesRes.total,
+    overview: overviewRes.overview,
+    rate: overviewRes.rate ?? tradesRes.rate ?? detailRes.rate,
+  }
+
+  bundleCache.set(href, bundle)
+  return bundle
 }
 
 export function renaissIndexUrl(href: string): string {
@@ -177,4 +309,9 @@ export function renaissIndexUrl(href: string): string {
 
   const path = href.startsWith('/') ? href : `/${href}`
   return `${INDEX_BASE}${path}`
+}
+
+export function formatRenaissUsd(cents?: number | null): string {
+  if (cents == null || !Number.isFinite(cents)) return '—'
+  return `$${Math.round(cents / 100).toLocaleString()}`
 }
