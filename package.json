@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
+    "push": "git add . && git commit -m 'update' && git push",
     "fetch-cards": "node scripts/fetch-pokemon-cards.mjs",
     "enrich-prices": "node scripts/enrich-prices.mjs",
     "expand-silphco-pool": "node scripts/expand-silphco-classic-pool.mjs",

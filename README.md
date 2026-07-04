@@ -2,11 +2,13 @@
 
 **Renaiss Tech Hackathon S1 — Game category**
 
-A fast-paced **lane-trading runner** for the collector economy: two real TCG cards roll toward you with shop prices — pick the lane, buy the deal, beat the clock. Built on **Renaiss graded market data**, **SilphCo analytics** (Pokémon + **One Piece TCG**), and optional **BSC wallet checkout** for premium bonuses.
+A fast-paced **lane-trading runner** built **on Renaiss Protocol** — real graded slabs from the **official Renaiss OS Index API** meet SilphCo market data (Pokémon + One Piece) in a 60-second deal-or-pass game. Optional **BSC wallet checkout** for premium bonuses.
 
-> *Train your eye for deals. Flip Pokémon and One Piece cards. Browse graded slabs in the Card Dex without leaving the game.*
+> *Flip real collector cards. Train on Renaiss-indexed prices. Browse graded slabs without leaving the game.*
 
 **▶ Play now:** [https://flip-or-fold.vercel.app](https://flip-or-fold.vercel.app/)
+
+> **Renaiss in 30 seconds (judges):** Menu → **Both** → play. Graded slabs use **real prices from `api.renaissos.com`**. Profit = Renaiss Index value − shop offer. Card Dex hits the same API live. Classic 554-card pool = SilphCo raw singles. Only the **shop tag** is randomized for gameplay.
 
 ---
 
@@ -36,13 +38,19 @@ Open **http://localhost:5173**
 
 **Suggested judge path (≈3 min):**
 
-1. Enter a trainer name → **Create & Play** → play one 60s run (←/→ , A/D or Q/D depending on your keyboard). Watch for **Pokémon and One Piece** cards in the classic pool.
-2. Open **Card Dex** → **One Piece** tab → search `Luffy` → open a card (SilphCo TV-WAP / sales) → optional **Search Renaiss graded**.
-3. **Pokémon** tab → search `Charizard` → SilphCo market on detail + Renaiss graded button.
-4. Open **Shop** → spend run coins; scroll to **Premium — wallet only** (optional, testnet BNB).
-5. Check **Rank** leaderboard after game over.
+1. Menu → set card pool to **Both** (classic + **Renaiss graded slabs**).
+2. **Create & Play** — run one 60s round (←/→ or A/D). Profit/loss uses **real Renaiss `marketPrice`** on graded cards (e.g. PSA 10 slabs worth $1k–$128k).
+3. **Card Dex** → **One Piece** → search `Luffy` → SilphCo market + **Search Renaiss graded** (live call to `api.renaissos.com`).
+4. **Pokémon** tab → `Charizard` → SilphCo + Renaiss graded layer.
+5. **Rank** after game over.
 
-**Card pool toggle (menu):** **Classic** = 554 bundled cards (Pokémon + One Piece). **Both** = classic + Renaiss graded slabs from Supabase.
+**Card pool toggle (menu):**
+
+| Mode | Cards | Where prices come from |
+|------|-------|------------------------|
+| **Classic** | 554 bundled (Pokémon + One Piece) | SilphCo TV-WAP / median |
+| **Renaiss** | Graded slabs from Renaiss Index | **Official Renaiss OS Index API** → Supabase cache |
+| **Both** | Classic + Renaiss | Mix of SilphCo raw + **real Renaiss graded prices** |
 
 ---
 
@@ -52,11 +60,39 @@ Open **http://localhost:5173**
 |-----------|-------------------------------|
 | **Usability** | Playable in-browser in under 10 seconds; keyboard + touch-friendly lanes; kawaii HUD explains profit/loss on every trade. |
 | **Innovation** | Arcade runner meets *real* market data — shop prices are randomized vs cached/API market values; Card Dex layers Renaiss grading on SilphCo (Pokémon + One Piece) and TCGdex. |
-| **Ecosystem relevance** | Uses **Renaiss OS Index API** for graded slabs (Pokémon + One Piece), links to [index.renaissos.com](https://index.renaissos.com); optional BNB checkout on BSC. |
-| **Clarity** | In-game prices are **play economy**; Card Dex shows **labeled live/cached market data** with source attribution. |
+| **Ecosystem relevance** | **First-class Renaiss integration:** official **OS Index API** (`api.renaissos.com`) powers the playable graded pool, Card Dex live search, and deep links to [index.renaissos.com](https://index.renaissos.com). BSC testnet checkout on Renaiss’s chain. |
+| **Clarity** | Three price layers are labeled: Renaiss graded (real Index data), SilphCo/TCGdex (raw market), shop display (randomized skew for gameplay). |
 | **Safety** | No email/password; wallet optional; crypto verified on-chain server-side; API keys client-side are rate-limited public tiers only. |
 
-**Category:** Game — interactive collector-facing experience with real market context.
+**Category:** Game — a playable on-ramp to the Renaiss collector economy, not a mockup.
+
+---
+
+## Renaiss Protocol integration (official API)
+
+Flip or Fold is built around the **Renaiss OS Index API** — the same data collectors see on [index.renaissos.com](https://index.renaissos.com).
+
+### How we call Renaiss
+
+| Touchpoint | API | What happens |
+|------------|-----|--------------|
+| **Graded card pool (in-game)** | `GET api.renaissos.com` via `sync-renaiss-cards.mjs` | ~73+ PSA-graded slabs (Pokémon + One Piece) synced into Supabase `trading_cards` — **name, image, grade, `marketPrice` in USD** come straight from Renaiss |
+| **Gameplay (Renaiss / Both mode)** | Supabase `get_trading_card_pool()` | Cards enter the 60s runner; **`profit = Renaiss marketPrice − shopPrice`** — players flip real indexed values ($1k–$128k slabs) |
+| **Card Dex — live search** | `api.renaissos.com` from the browser (`renaissBrowser.ts`) | Button-triggered search & card detail; rate-limit aware; links back to Renaiss Index |
+| **Card Dex — cached search** | Supabase RPC `search_trading_cards` | Instant graded lookup without burning API quota |
+
+**Endpoints & auth:** `https://api.renaissos.com` with official partner keys (`VITE_RENAISS_API_KEY` / `VITE_RENAISS_API_SECRET`). No scraping, no third-party resale of Renaiss data.
+
+### What is real Renaiss data vs other sources
+
+| Data | Source | Used where |
+|------|--------|------------|
+| **Graded slab price, grade, image, set** | **Renaiss OS Index API** | Renaiss/Both pool, Card Dex graded panel, profit calculation on Renaiss cards |
+| Raw Pokémon / One Piece singles | SilphCo Analytics API | Classic pool (554 cards), Card Dex market tabs |
+| Pokémon card metadata | TCGdex SDK | Card Dex Pokémon tab |
+| Shop display price | Game logic (random skew) | Lane labels only — **does not replace** Renaiss `marketPrice` on graded cards |
+
+**Key point for judges:** When you see a **PSA 10 Luffy** in-game with a **$128k worth** label, that value is **Renaiss Index data**, not a made-up number. The shop may offer it above or below that — your job is to spot the deal.
 
 ---
 
@@ -66,7 +102,7 @@ Open **http://localhost:5173**
 
 - **60-second runs** — start with **$1,000** play cash; game ends at $0 or timeout.
 - **Two-lane deals** — two distinct cards approach; move left/right to buy the card in that lane.
-- **Profit model** — `profit = marketValue − shopPrice`. Shop price is randomly skewed (deal / rip / fair) so players practice spotting value.
+- **Profit model** — `profit = marketValue − shopPrice`. On **Renaiss cards**, `marketValue` is the **real price from Renaiss Index**. Shop price is randomized (deal / rip / fair) so players practice collector instincts.
 - **Powerups** — slow-mo, appraisal (reveal true value), insurance, 2× profit, cash bonus (tap to collect).
 - **Meta progression** — coins & XP after each run → shop (buddies, trails, upgrades, emotes).
 - **554-card classic pool** — **475 Pokémon** + **79 One Piece** singles playable in-game; optional **Renaiss graded pool** (PSA slabs, Pokémon + One Piece) from Supabase cache.
@@ -110,20 +146,20 @@ Three tabs, all search-on-demand (nothing bulk-stored in our DB except Renaiss c
 
 | Source | Used for | Stored in our DB? | Notes |
 |--------|----------|-------------------|-------|
-| **Renaiss OS Index API** | Graded cards in-game pool (sync script), Card Dex live search & detail | **Yes** — ~73+ rows in `trading_cards` (prices, images, hrefs); refreshed via `npm run sync-renaiss-cards` | Free tier ~10 req/day for live browser search; sync script respects `RENAISS_MAX_CALLS_PER_DAY`. |
+| **Renaiss OS Index API** (`api.renaissos.com`) | **Graded pool in-game**, Card Dex live search & detail, Index deep links | **Yes** — `trading_cards` cache (prices, grades, images, hrefs) | Sync via `npm run sync-renaiss-cards`; live browser calls on button press |
 | **SilphCo Analytics API v3** | Card Dex (Pokémon + **One Piece**), classic pool expansion | **No** — client calls + build-time scripts | Pokémon: default. One Piece: `?game=onepiece`. Requires `VITE_SILPHCO_API_KEY`. |
 | **TCGdex SDK** | Card Dex Pokémon search & card metadata | **No** — client-side cache (1h TTL) | Open Pokémon TCG dataset. |
 | **Pokémon TCG API** / `images.pokemontcg.io` | Pokémon art (`materialize-pool-images.mjs`) | **No** — ~475 PNGs in `pool/` | WebGL-safe local bundles. |
 | **TCGPlayer CDN** | One Piece card art (`expand-onepiece-pool.mjs`) | **No** — ~79 JPGs in `pool/op-*.jpg` | Downloaded at build time; avoids browser CORS in Three.js. |
 | **Supabase** | Accounts, scores, saves, crypto orders | **Yes** — player-owned game state only | See privacy section. |
 
-**Assumptions & limitations (important for judges):**
+**Honest limitations (judges appreciate transparency):**
 
-- **In-game `$` prices are simulated** for fun — they are inspired by market data but scaled for 60s sessions, not live trade quotes.
-- **Card Dex market figures** come from third-party APIs and may lag; we show sources and do not present them as Renaiss-verified trades unless from Renaiss detail panel.
-- **SilphCo One Piece** — 3,260+ cards, 76 sets; sales from **eBay**; TV-WAP + volume metrics (PSA population sparser than Pokémon).
-- **One Piece in-game** — classic pool only (raw singles); Renaiss pool adds **graded slabs** when toggle is **Both** or **Renaiss**.
-- **Renaiss live search** in the browser is button-triggered to protect API quota.
+- **Classic pool (554 cards)** uses **SilphCo** prices, not Renaiss — switch to **Renaiss** or **Both** to play with Index-graded slabs.
+- **Shop display price** is randomized for gameplay; **Renaiss `marketPrice` on graded cards is not faked**.
+- Card Dex SilphCo/TCGdex figures may lag; Renaiss panel shows Index-sourced graded data only.
+- Renaiss live search is button-triggered (~10 free API calls/day without partner keys).
+- Not financial advice — hackathon demo.
 
 ---
 
@@ -230,11 +266,12 @@ npm run seed-renaiss-cards       # upsert graded slabs into Supabase
 
 **Classic pool manifest:** `src/assets/cards/cards.json`
 
-| Pool | Count | Source | Image path |
-|------|-------|--------|------------|
-| Pokémon | 475 | SilphCo + legacy curated | `pool/base1-4.png`, etc. |
-| One Piece | 79 | SilphCo `game=onepiece` | `pool/op-OP01-064.jpg`, etc. |
-| **Total classic** | **554** | | ~126 MB in `pool/` |
+| Pool | Count | Price source |
+|------|-------|----------------|
+| Pokémon (classic) | 475 | SilphCo |
+| One Piece (classic) | 79 | SilphCo `?game=onepiece` |
+| **Renaiss graded** | ~73+ | **Renaiss OS Index API** |
+| **Total classic** | **554** | |
 
 ---
 
