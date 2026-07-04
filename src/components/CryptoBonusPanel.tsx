@@ -252,15 +252,14 @@ export function CryptoBonusPanel() {
               : ' — plain BNB, not a custom token'}
           </p>
           <p
-            className={`text-xs font-semibold mt-1 ${
-              walletStatus.tone === 'ok'
-                ? 'text-[#7ec850]'
-                : walletStatus.tone === 'warn'
-                  ? 'text-[#d97706]'
-                  : walletStatus.tone === 'info'
-                    ? 'text-[#4cc9f0]'
-                    : 'text-[#9b5de5]'
-            }`}
+            className={`text-xs font-semibold mt-1 ${walletStatus.tone === 'ok'
+              ? 'text-[#7ec850]'
+              : walletStatus.tone === 'warn'
+                ? 'text-[#d97706]'
+                : walletStatus.tone === 'info'
+                  ? 'text-[#4cc9f0]'
+                  : 'text-[#9b5de5]'
+              }`}
           >
             {walletStatus.text}
           </p>
@@ -354,58 +353,57 @@ export function CryptoBonusPanel() {
             <div key={item.id} className="space-y-2">
               {showPremiumHeader && (
                 <p className="text-[10px] font-black uppercase tracking-widest text-[#ffd166] pt-1 flex items-center gap-1.5">
-                  <span>🔥</span> Premium — wallet only
+                  <span>🔥</span> Premium
                 </p>
               )}
-            <div
-              className={`flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl p-3 border-2 ${
-                isOp
+              <div
+                className={`flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl p-3 border-2 ${isOp
                   ? 'bg-gradient-to-r from-[#fff9e6] to-[#f3e8ff] border-[#ffd166] shadow-[0_0_12px_rgba(255,209,102,0.35)]'
                   : 'bg-white/90 border-white'
-              }`}
-            >
-              <div className="flex items-center gap-3 flex-1 min-w-0">
-                <span className="text-3xl shrink-0">{item.icon}</span>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <p className="font-display font-bold text-[#4a3568]">{item.name}</p>
-                    {isOp && (
-                      <span className="text-[9px] font-black uppercase tracking-wide bg-gradient-to-r from-[#ffd166] to-[#ff6b9d] text-white px-2 py-0.5 rounded-full">
-                        OP
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-xs text-[#9b5de5] line-clamp-2">{item.description}</p>
-                  <p className={`text-[10px] font-bold mt-1 ${isOp ? 'text-[#d97706]' : 'text-[#b185db]'}`}>
-                    {formatBnbFromWei(item.price_wei)} · {activeBscChain.currency}
-                  </p>
-                </div>
-              </div>
-              <KawaiiButton
-                variant={isOp ? 'yellow' : 'green'}
-                disabled={!web3Ready || busy || isPurchasing || (!walletMatches && isConnected && !needsLink)}
-                onClick={() => {
-                  if (!isConnected) {
-                    handleConnect()
-                    return
-                  }
-                  if (needsLink) {
-                    void handleLinkWallet()
-                    return
-                  }
-                  void handleBuy(item.id, item.price_wei)
-                }}
-                className="text-xs px-4 py-2 w-full sm:w-auto shrink-0 disabled:opacity-50"
+                  }`}
               >
-                {!isConnected
-                  ? 'Connect'
-                  : needsLink
-                    ? 'Link first'
-                    : isPurchasing
-                      ? 'Processing…'
-                      : `Buy ${formatBnbFromWei(item.price_wei)}`}
-              </KawaiiButton>
-            </div>
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  <span className="text-3xl shrink-0">{item.icon}</span>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="font-display font-bold text-[#4a3568]">{item.name}</p>
+                      {isOp && (
+                        <span className="text-[9px] font-black uppercase tracking-wide bg-gradient-to-r from-[#ffd166] to-[#ff6b9d] text-white px-2 py-0.5 rounded-full">
+                          OP
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-[#9b5de5] line-clamp-2">{item.description}</p>
+                    <p className={`text-[10px] font-bold mt-1 ${isOp ? 'text-[#d97706]' : 'text-[#b185db]'}`}>
+                      {formatBnbFromWei(item.price_wei)} · {activeBscChain.currency}
+                    </p>
+                  </div>
+                </div>
+                <KawaiiButton
+                  variant={isOp ? 'yellow' : 'green'}
+                  disabled={!web3Ready || busy || isPurchasing || (!walletMatches && isConnected && !needsLink)}
+                  onClick={() => {
+                    if (!isConnected) {
+                      handleConnect()
+                      return
+                    }
+                    if (needsLink) {
+                      void handleLinkWallet()
+                      return
+                    }
+                    void handleBuy(item.id, item.price_wei)
+                  }}
+                  className="text-xs px-4 py-2 w-full sm:w-auto shrink-0 disabled:opacity-50"
+                >
+                  {!isConnected
+                    ? 'Connect'
+                    : needsLink
+                      ? 'Link first'
+                      : isPurchasing
+                        ? 'Processing…'
+                        : `Buy ${formatBnbFromWei(item.price_wei)}`}
+                </KawaiiButton>
+              </div>
             </div>
           )
         })}
@@ -432,13 +430,12 @@ function WalletFlowStatus({
 
   return (
     <div
-      className={`rounded-xl px-4 py-3 border-2 flex items-center gap-3 ${
-        isSuccess
-          ? 'bg-[#dcfce7] border-[#7ec850]'
-          : isError
-            ? 'bg-[#fee2e2] border-red-300'
-            : 'bg-white/95 border-[#e0c3fc] shadow-sm'
-      }`}
+      className={`rounded-xl px-4 py-3 border-2 flex items-center gap-3 ${isSuccess
+        ? 'bg-[#dcfce7] border-[#7ec850]'
+        : isError
+          ? 'bg-[#fee2e2] border-red-300'
+          : 'bg-white/95 border-[#e0c3fc] shadow-sm'
+        }`}
       role="status"
       aria-live="polite"
     >
@@ -453,9 +450,8 @@ function WalletFlowStatus({
 
       <div className="min-w-0 flex-1">
         <p
-          className={`text-sm font-display font-bold leading-snug ${
-            isSuccess ? 'text-[#166534]' : isError ? 'text-red-700' : 'text-[#4a3568]'
-          }`}
+          className={`text-sm font-display font-bold leading-snug ${isSuccess ? 'text-[#166534]' : isError ? 'text-red-700' : 'text-[#4a3568]'
+            }`}
         >
           {message ?? (loading ? 'Working…' : '')}
         </p>
