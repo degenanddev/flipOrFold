@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/silphco/[...slug].js": {
+      "maxDuration": 15
+    }
+  },
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]

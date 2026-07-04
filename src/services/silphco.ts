@@ -2,7 +2,8 @@ import cardsManifest from '../assets/cards/cards.json'
 import { resolveCardImageUrl } from '../systems/cardLoader'
 
 const DIRECT_API_BASE = 'https://silphcoanalytics.xyz/api/v3'
-const PROXY_API_BASE = import.meta.env.VITE_SILPHCO_PROXY_URL?.trim() || '/api/silphco'
+/** Same-origin proxy — required in prod (Vercel `api/silphco/`) and dev (Vite proxy). */
+const PROXY_API_BASE = '/api/silphco'
 
 export type SilphcoGame = 'pokemon' | 'onepiece'
 

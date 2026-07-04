@@ -670,9 +670,9 @@ function SilphcoDetailView({
             value={g.avgPriceUsd != null ? `$${g.avgPriceUsd.toFixed(0)} · ${g.salesCount} sales` : `${g.salesCount} sales`}
           />
         ))}
-        {/* <a href={silphcoCardUrl(card.id, game)} target="_blank" rel="noreferrer" className="inline-block mt-2 text-xs font-bold text-[#4cc9f0] underline">
+        <a href={silphcoCardUrl(card.id, game)} target="_blank" rel="noreferrer" className="inline-block mt-2 text-xs font-bold text-[#4cc9f0] underline">
           Full analytics on SilphCo ↗
-        </a> */}
+        </a>
       </InfoBlock>
 
       <InfoBlock title="Graded market (Renaiss)">
