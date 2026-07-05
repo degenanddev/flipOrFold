@@ -52,12 +52,12 @@ export function MenuScreen() {
   const canStart = user
     ? !starting && !authLoading
     : trimmed.length >= 2 &&
-      !starting &&
-      !authLoading &&
-      usernameStatus !== 'checking' &&
-      usernameStatus !== 'taken' &&
-      usernameStatus !== 'banned' &&
-      usernameStatus !== 'invalid'
+    !starting &&
+    !authLoading &&
+    usernameStatus !== 'checking' &&
+    usernameStatus !== 'taken' &&
+    usernameStatus !== 'banned' &&
+    usernameStatus !== 'invalid'
 
   const handlePlay = useCallback(async () => {
     if (!canStart) return
@@ -161,7 +161,7 @@ export function MenuScreen() {
         </div>
       </Panel>
 
-      <p className="shrink-0 mt-3 text-[9px] sm:text-[10px] font-semibold text-[#b185db] text-center max-w-sm">
+      <p className="shrink-0 mt-3 text-[7px] sm:text-[8px] font-semibold text-[#b185db] text-center max-w-sm">
         Progress is tied to this browser — link a wallet in Shop → Crypto to recover on other devices
       </p>
     </ScreenLayout>
@@ -210,11 +210,10 @@ function CardPoolToggle({
             key={opt.id}
             type="button"
             onClick={() => onChange(opt.id)}
-            className={`rounded-lg py-1.5 px-1 text-[10px] sm:text-xs font-bold border-2 transition-colors ${
-              mode === opt.id
-                ? 'bg-[#ff6b9d] text-white border-[#ff6b9d]'
-                : 'bg-white text-[#9b5de5] border-[#e0c3fc] hover:border-[#ff6b9d]'
-            }`}
+            className={`rounded-lg py-1.5 px-1 text-[10px] sm:text-xs font-bold border-2 transition-colors ${mode === opt.id
+              ? 'bg-[#ff6b9d] text-white border-[#ff6b9d]'
+              : 'bg-white text-[#9b5de5] border-[#e0c3fc] hover:border-[#ff6b9d]'
+              }`}
           >
             {opt.label}
           </button>
