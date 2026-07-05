@@ -242,7 +242,7 @@ export function CryptoBonusPanel() {
     <div className="space-y-2">
       <div className="bg-[#f3e8ff] rounded-xl p-3 border-2 border-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <div className="min-w-0">
-          <p className="text-[10px] font-bold uppercase tracking-wide text-[#9b5de5]">
+          <p className="text-[10px] font-bold uppercase tracking-wide text-kawaii-purple">
             {activeBscChain.name} · {activeBscChain.currency}
           </p>
           <p className="text-[10px] font-semibold text-[#b185db] mt-0.5 leading-snug">
@@ -253,12 +253,12 @@ export function CryptoBonusPanel() {
           </p>
           <p
             className={`text-xs font-semibold mt-1 ${walletStatus.tone === 'ok'
-              ? 'text-[#7ec850]'
+              ? 'text-kawaii-green'
               : walletStatus.tone === 'warn'
                 ? 'text-[#d97706]'
                 : walletStatus.tone === 'info'
-                  ? 'text-[#4cc9f0]'
-                  : 'text-[#9b5de5]'
+                  ? 'text-kawaii-blue'
+                  : 'text-kawaii-purple'
               }`}
           >
             {walletStatus.text}
@@ -270,7 +270,7 @@ export function CryptoBonusPanel() {
               variant="yellow"
               onClick={() => void handleUnlinkWallet()}
               disabled={busy}
-              className="text-xs px-3 py-1.5 disabled:opacity-50 min-w-[5.5rem]"
+              className="text-xs px-3 py-1.5 disabled:opacity-50 min-w-22"
             >
               {linkPhase === 'preparing' && statusMessage?.toLowerCase().includes('unlink')
                 ? 'Unlinking…'
@@ -288,12 +288,12 @@ export function CryptoBonusPanel() {
           ) : needsLink || needsReconnect ? (
             <div className="flex flex-col items-stretch sm:items-end gap-1.5">
               {needsLink && trainerName && (
-                <p className="text-[10px] font-bold text-[#ff6b9d] text-right">
+                <p className="text-[10px] font-bold text-kawaii-pink text-right">
                   → {trainerName}
                 </p>
               )}
               {needsReconnect && (
-                <p className="text-[10px] font-bold text-[#d97706] text-right max-w-[11rem]">
+                <p className="text-[10px] font-bold text-[#d97706] text-right max-w-44">
                   Unlink first, then link this wallet
                 </p>
               )}
@@ -301,7 +301,7 @@ export function CryptoBonusPanel() {
                 variant="pink"
                 onClick={() => void handleLinkWallet()}
                 disabled={busy || Boolean(needsReconnect)}
-                className="text-xs px-3 py-1.5 disabled:opacity-50 min-w-[5.5rem]"
+                className="text-xs px-3 py-1.5 disabled:opacity-50 min-w-22"
               >
                 {linkLoading ? 'Linking…' : '✍️ Link'}
               </KawaiiButton>
@@ -310,7 +310,7 @@ export function CryptoBonusPanel() {
             <button
               type="button"
               onClick={handleConnect}
-              className="text-xs font-bold bg-white/80 text-[#9b5de5] border-2 border-[#e0c3fc] rounded-full px-3 py-1.5"
+              className="text-xs font-bold bg-white/80 text-kawaii-purple border-2 border-kawaii-lavender rounded-full px-3 py-1.5"
             >
               {shortAddress(address!)}
             </button>
@@ -329,11 +329,11 @@ export function CryptoBonusPanel() {
 
       <div className={`space-y-2 transition-opacity ${busy ? 'opacity-50 pointer-events-none' : ''}`}>
         {catalogLoading && (
-          <p className="text-center text-sm font-bold text-[#9b5de5] animate-pulse py-4">Loading crypto bonuses…</p>
+          <p className="text-center text-sm font-bold text-kawaii-purple animate-pulse py-4">Loading crypto bonuses…</p>
         )}
 
         {!catalogLoading && catalog.length === 0 && (
-          <p className="text-center text-xs text-[#9b5de5] py-3">
+          <p className="text-center text-xs text-kawaii-purple py-3">
             Crypto bonuses aren&apos;t available right now — check back soon ✨
           </p>
         )}
@@ -352,13 +352,13 @@ export function CryptoBonusPanel() {
           return (
             <div key={item.id} className="space-y-2">
               {showPremiumHeader && (
-                <p className="text-[10px] font-black uppercase tracking-widest text-[#ffd166] pt-1 flex items-center gap-1.5">
+                <p className="text-[10px] font-black uppercase tracking-widest text-kawaii-yellow pt-1 flex items-center gap-1.5">
                   <span>🔥</span> Premium
                 </p>
               )}
               <div
                 className={`flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl p-3 border-2 ${isOp
-                  ? 'bg-gradient-to-r from-[#fff9e6] to-[#f3e8ff] border-[#ffd166] shadow-[0_0_12px_rgba(255,209,102,0.35)]'
+                  ? 'bg-linear-to-r from-[#fff9e6] to-[#f3e8ff] border-kawaii-yellow shadow-[0_0_12px_rgba(255,209,102,0.35)]'
                   : 'bg-white/90 border-white'
                   }`}
               >
@@ -368,12 +368,12 @@ export function CryptoBonusPanel() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <p className="font-display font-bold text-[#4a3568]">{item.name}</p>
                       {isOp && (
-                        <span className="text-[9px] font-black uppercase tracking-wide bg-gradient-to-r from-[#ffd166] to-[#ff6b9d] text-white px-2 py-0.5 rounded-full">
+                        <span className="text-[9px] font-black uppercase tracking-wide bg-linear-to-r from-kawaii-yellow to-kawaii-pink text-white px-2 py-0.5 rounded-full">
                           OP
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-[#9b5de5] line-clamp-2">{item.description}</p>
+                    <p className="text-xs text-kawaii-purple line-clamp-2">{item.description}</p>
                     <p className={`text-[10px] font-bold mt-1 ${isOp ? 'text-[#d97706]' : 'text-[#b185db]'}`}>
                       {formatBnbFromWei(item.price_wei)} · {activeBscChain.currency}
                     </p>
@@ -431,17 +431,17 @@ function WalletFlowStatus({
   return (
     <div
       className={`rounded-xl px-4 py-3 border-2 flex items-center gap-3 ${isSuccess
-        ? 'bg-[#dcfce7] border-[#7ec850]'
+        ? 'bg-[#dcfce7] border-kawaii-green'
         : isError
           ? 'bg-[#fee2e2] border-red-300'
-          : 'bg-white/95 border-[#e0c3fc] shadow-sm'
+          : 'bg-white/95 border-kawaii-lavender shadow-sm'
         }`}
       role="status"
       aria-live="polite"
     >
       {loading && (
         <span
-          className="shrink-0 w-5 h-5 rounded-full border-2 border-[#9b5de5] border-t-transparent animate-spin"
+          className="shrink-0 w-5 h-5 rounded-full border-2 border-kawaii-purple border-t-transparent animate-spin"
           aria-hidden
         />
       )}
@@ -456,17 +456,17 @@ function WalletFlowStatus({
           {message ?? (loading ? 'Working…' : '')}
         </p>
         {loading && phase === 'signing' && (
-          <p className="text-[10px] font-semibold text-[#9b5de5] mt-0.5">Check your wallet extension or app</p>
+          <p className="text-[10px] font-semibold text-kawaii-purple mt-0.5">Check your wallet extension or app</p>
         )}
         {loading && phase === 'confirming' && (
-          <p className="text-[10px] font-semibold text-[#9b5de5] mt-0.5">This may take a few seconds</p>
+          <p className="text-[10px] font-semibold text-kawaii-purple mt-0.5">This may take a few seconds</p>
         )}
         {txHash && (
           <a
             href={`${explorerUrl}/tx/${txHash}`}
             target="_blank"
             rel="noreferrer"
-            className="text-[10px] font-bold text-[#9b5de5] underline mt-1 inline-block"
+            className="text-[10px] font-bold text-kawaii-purple underline mt-1 inline-block"
           >
             View on BscScan ↗
           </a>
