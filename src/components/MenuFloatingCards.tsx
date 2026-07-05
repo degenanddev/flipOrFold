@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { CardData, Rarity } from '../types'
 import { RARITY_COLORS } from '../utils/constants'
-import { getMenuShowcaseCards } from '../systems/cardLoader'
+import { getAmbientShowcaseCards, getMenuShowcaseCards } from '../systems/cardLoader'
 
 interface CardPlacement {
   card: CardData
@@ -21,8 +21,10 @@ interface CardPlacement {
   blur?: number
 }
 
+export type FloatingCardsVariant = 'menu' | 'ambient'
+
 /** Hand-placed in the margins — intentionally uneven, not mirrored */
-const PLACEMENTS: Omit<CardPlacement, 'card'>[] = [
+const MENU_PLACEMENTS: Omit<CardPlacement, 'card'>[] = [
   {
     top: '4%',
     left: '-0.6rem',
@@ -88,6 +90,53 @@ const PLACEMENTS: Omit<CardPlacement, 'card'>[] = [
   },
 ]
 
+/** Fewer, lighter placements for secondary screens */
+const AMBIENT_PLACEMENTS: Omit<CardPlacement, 'card'>[] = [
+  {
+    top: '5%',
+    left: '-0.35rem',
+    width: 62,
+    angle: -13,
+    opacity: 0.5,
+    spin: false,
+    holo: false,
+    driftSec: 16,
+    tiltSec: 13,
+    delay: 0.5,
+    blur: 0.5,
+  },
+  {
+    top: '20%',
+    right: '-0.45rem',
+    width: 70,
+    angle: 10,
+    opacity: 0.66,
+    spin: true,
+    holo: true,
+    driftSec: 18,
+    tiltSec: 14,
+    delay: 2.2,
+  },
+  {
+    bottom: '9%',
+    left: '0.15rem',
+    width: 56,
+    angle: -7,
+    opacity: 0.44,
+    spin: false,
+    holo: false,
+    driftSec: 15,
+    tiltSec: 12,
+    delay: 3.8,
+    blur: 0.65,
+  },
+]
+
+const VARIANT_CONFIG = {
+  menu: { placements: MENU_PLACEMENTS, getCards: getMenuShowcaseCards },
+  ambient: { placements: AMBIENT_PLACEMENTS, getCards: getAmbientShowcaseCards },
+} as const
+
 function FloatingCard({
   card,
   top,
@@ -144,14 +193,15 @@ function FloatingCard({
   )
 }
 
-export function MenuFloatingCards() {
+export function MenuFloatingCards({ variant = 'menu' }: { variant?: FloatingCardsVariant }) {
   const cards = useMemo(() => {
-    const showcase = getMenuShowcaseCards()
-    return PLACEMENTS.map((placement, i) => ({
+    const { placements, getCards } = VARIANT_CONFIG[variant]
+    const showcase = getCards()
+    return placements.map((placement, i) => ({
       ...placement,
       card: showcase[i % showcase.length]!,
     }))
-  }, [])
+  }, [variant])
 
   return (
     <div className="menu-floating-cards pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>

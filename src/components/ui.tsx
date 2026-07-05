@@ -52,21 +52,7 @@ export function ScreenLayout({
         menu ? 'screen-menu' : ''
       }`}
     >
-      {menu ? (
-        <MenuFloatingCards />
-      ) : (
-        <>
-          <div className="pointer-events-none absolute top-8 left-6 text-3xl animate-bounce-soft sticker-star">⭐</div>
-          <div className="pointer-events-none absolute top-16 right-10 text-2xl animate-wiggle sticker-star">✨</div>
-          <div
-            className="pointer-events-none absolute bottom-20 left-10 text-2xl animate-bounce-soft sticker-star"
-            style={{ animationDelay: '0.5s' }}
-          >
-            🌸
-          </div>
-          <div className="pointer-events-none absolute bottom-32 right-8 text-3xl animate-wiggle sticker-star">💫</div>
-        </>
-      )}
+      <MenuFloatingCards variant={menu ? 'menu' : 'ambient'} />
       <div className="relative z-10 flex w-full flex-col items-center">{children}</div>
     </div>
   )

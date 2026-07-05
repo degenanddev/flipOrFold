@@ -7,6 +7,7 @@ import { loadJSON, saveJSON } from '../utils/storage'
 import { unlockAudio } from '../systems/soundManager'
 import { STARTING_BALANCE, GAME_DURATION_SEC } from '../utils/constants'
 import { useCardPoolStore, type CardPoolMode } from '../store/cardPoolStore'
+import { AccountRecoveryPanel } from './AccountRecoveryPanel'
 
 const DRAFT_KEY = 'renaiss-pseudo-draft'
 
@@ -80,7 +81,7 @@ export function MenuScreen() {
     if (usernameStatus === 'invalid') return 'Letters, numbers, spaces, _ and - only'
     if (usernameStatus === 'banned') return 'Name not allowed'
     if (usernameStatus === 'checking') return 'Checking…'
-    if (usernameStatus === 'taken') return 'Name taken'
+    if (usernameStatus === 'taken') return 'Name taken — recover your account below if this was you'
     if (usernameStatus === 'available') return 'Ready ✓'
     return null
   })()
@@ -132,6 +133,7 @@ export function MenuScreen() {
                   {authError ?? hint}
                 </p>
               )}
+              <AccountRecoveryPanel />
             </div>
           )}
         </div>
@@ -159,8 +161,8 @@ export function MenuScreen() {
         </div>
       </Panel>
 
-      <p className="shrink-0 mt-3 text-[9px] sm:text-[10px] font-semibold text-[#b185db] text-center">
-        Progress synced to your account on this device
+      <p className="shrink-0 mt-3 text-[9px] sm:text-[10px] font-semibold text-[#b185db] text-center max-w-sm">
+        Progress is tied to this browser — link a wallet in Shop → Crypto to recover on other devices
       </p>
     </ScreenLayout>
   )

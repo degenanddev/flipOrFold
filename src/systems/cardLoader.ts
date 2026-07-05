@@ -206,15 +206,28 @@ const MENU_SHOWCASE_IDS = [
   'card-sv3-125',
 ] as const
 
-export function getMenuShowcaseCards(): CardData[] {
+/** Lighter set for shop / profile / etc. — Pokémon + One Piece from manifest only. */
+const AMBIENT_SHOWCASE_IDS = [
+  'card-base1-4',
+  'card-base1-58',
+  'card-op-OP04-014',
+] as const
+
+function getShowcaseCardsByIds(ids: readonly string[]): CardData[] {
   const localPool = loadLocalManifestPool()
   const byId = new Map(localPool.map((c) => [c.id, c]))
   const showcase: CardData[] = []
 
-  for (const id of MENU_SHOWCASE_IDS) {
+  for (const id of ids) {
     const card = byId.get(id)
     if (card?.image) showcase.push(card)
   }
+
+  return showcase.length > 0 ? showcase : localPool.slice(0, ids.length)
+}
+
+export function getMenuShowcaseCards(): CardData[] {
+  const showcase = getShowcaseCardsByIds(MENU_SHOWCASE_IDS)
 
   if (cardPool.length === 0) initCardPools()
   const renaiss = cardPool.filter((c) => c.gradeLabel || (c.game && c.game !== 'pokemon'))
@@ -222,5 +235,9 @@ export function getMenuShowcaseCards(): CardData[] {
     showcase[showcase.length - 1] = renaiss[0]!
   }
 
-  return showcase.length > 0 ? showcase : localPool.slice(0, 5)
+  return showcase
+}
+
+export function getAmbientShowcaseCards(): CardData[] {
+  return getShowcaseCardsByIds(AMBIENT_SHOWCASE_IDS)
 }

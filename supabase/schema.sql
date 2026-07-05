@@ -60,5 +60,8 @@ create table if not exists public.shop_catalog (
 -- claim_daily_reward        — daily gift
 -- get_leaderboard           — rankings
 -- import_local_save         — one-time localStorage migration
+-- wallet_recovery_lookup    — check if wallet has a linked trainer
+-- wallet_recovery_prepare   — sign message to recover on new device
+-- finalize_wallet_recovery  — move player to new device_id (via edge fn)
 
 -- Direct table access is revoked for anon; all writes go through RPCs.
