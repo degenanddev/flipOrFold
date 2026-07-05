@@ -18,6 +18,11 @@ import {
 type RecoveryPhase = 'idle' | 'preparing' | 'signing' | 'confirming' | 'success' | 'error'
 
 export function AccountRecoveryPanel() {
+  if (!WALLETCONNECT_PROJECT_ID || !isSupabaseConfigured()) return null
+  return <AccountRecoveryPanelInner />
+}
+
+function AccountRecoveryPanelInner() {
   const { open } = useWeb3Modal()
   const { address, isConnected, chainId } = useWeb3ModalAccount()
   const { walletProvider } = useWeb3ModalProvider()
@@ -28,12 +33,11 @@ export function AccountRecoveryPanel() {
   const [linkedUsername, setLinkedUsername] = useState<string | null>(null)
   const [lookupBusy, setLookupBusy] = useState(false)
 
-  const enabled = Boolean(WALLETCONNECT_PROJECT_ID) && isSupabaseConfigured()
   const wrongChain = isConnected && chainId !== activeBscChain.chainId
   const busy = phase === 'preparing' || phase === 'signing' || phase === 'confirming' || lookupBusy
 
   useEffect(() => {
-    if (!enabled || !isConnected || !address) {
+    if (!isConnected || !address) {
       setLinkedUsername(null)
       return
     }
@@ -50,7 +54,7 @@ export function AccountRecoveryPanel() {
     return () => {
       cancelled = true
     }
-  }, [enabled, isConnected, address])
+  }, [isConnected, address])
 
   const handleSwitchChain = useCallback(async () => {
     try {
@@ -114,8 +118,6 @@ export function AccountRecoveryPanel() {
       setStatus(rejected ? 'Signature cancelled' : 'Recovery failed — try again')
     }
   }, [walletProvider, address, wrongChain, handleSwitchChain, open])
-
-  if (!enabled) return null
 
   return (
     <div className="shrink-0 bg-white/70 rounded-xl p-2.5 border-2 border-white space-y-2">

@@ -42,3 +42,7 @@ export function initWeb3Modal(): void {
 
   initialized = true
 }
+
+export function isWeb3ModalInitialized(): boolean {
+  return initialized
+}

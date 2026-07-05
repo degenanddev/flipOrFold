@@ -330,7 +330,13 @@ export const useShopStore = create<ShopState>((set, get) => ({
     const spent = useProgressionStore.getState().spendCoins(item.price)
     if (!spent) return false
 
-    set({ ownedItems: [...get().ownedItems, itemId] })
+    const ownedItems = [...get().ownedItems, itemId]
+    const equipPatch: Partial<ShopHydrate> = { ownedItems }
+    if (item.category === 'characters') equipPatch.equippedCharacter = itemId
+    if (item.category === 'trails') equipPatch.equippedTrail = itemId
+    if (item.category === 'emotes') equipPatch.equippedEmote = itemId
+
+    set(equipPatch)
     get().saveLocal()
     return true
   },

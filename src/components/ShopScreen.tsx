@@ -45,7 +45,7 @@ export function ShopScreen() {
 
       <Panel className="w-full max-w-2xl animate-pop-in mx-auto">
         <div className="flex justify-between items-center gap-2 mb-3 sm:mb-4 flex-wrap">
-          <div className="font-display text-xl sm:text-2xl font-bold text-[#ffd166] shrink-0">
+          <div className="font-display text-xl sm:text-2xl font-bold text-kawaii-yellow shrink-0">
             🪙 {totalCoins}
           </div>
           <KawaiiButton
@@ -65,8 +65,8 @@ export function ShopScreen() {
               onClick={() => setCategory(c.key)}
               className={`px-2 py-1.5 sm:px-3 sm:py-2 rounded-full text-xs sm:text-sm font-display font-bold cursor-pointer transition-all border-2 text-center ${
                 category === c.key
-                  ? 'bg-[#ff6b9d] text-white border-white shadow-md'
-                  : 'bg-white/70 text-[#9b5de5] border-[#e0c3fc]'
+                  ? 'bg-kawaii-pink text-white border-white shadow-md'
+                  : 'bg-white/70 text-kawaii-purple border-kawaii-lavender'
               }`}
             >
               {c.emoji} {c.label}
@@ -110,7 +110,7 @@ export function ShopScreen() {
               <div
                 key={item.id}
                 className={`bg-[#f8f4ff] rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 border-2 ${
-                  equipped ? 'border-[#ff6b9d]' : 'border-white'
+                  equipped ? 'border-kawaii-pink' : 'border-white'
                 }`}
               >
                 <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
@@ -121,15 +121,20 @@ export function ShopScreen() {
                         {item.name}
                       </span>
                       {isPowerup && (
-                        <span className="text-[10px] sm:text-xs font-bold bg-[#9b5de5] text-white px-2 py-0.5 rounded-full">
+                        <span className="text-[10px] sm:text-xs font-bold bg-kawaii-purple text-white px-2 py-0.5 rounded-full">
                           Lv {powerupLevel}/{POWERUP_MAX_LEVEL}
                         </span>
                       )}
                     </div>
-                    <div className="text-xs sm:text-sm text-[#9b5de5] line-clamp-2">{item.description}</div>
+                    <div className="text-xs sm:text-sm text-kawaii-purple line-clamp-2">{item.description}</div>
                     {locked && (
-                      <div className="text-[10px] sm:text-xs font-bold text-[#ff6b9d] mt-0.5">
+                      <div className="text-[10px] sm:text-xs font-bold text-kawaii-pink mt-0.5">
                         🔒 Player lvl {item.unlockLevel}
+                      </div>
+                    )}
+                    {item.category === 'trails' && equipped && (
+                      <div className="text-[10px] font-bold text-kawaii-green mt-0.5">
+                        ✨ Active in-game behind your buddy
                       </div>
                     )}
                   </div>
@@ -137,7 +142,7 @@ export function ShopScreen() {
                 <div className="shrink-0 w-full sm:w-auto">
                   {isPowerup ? (
                     atMaxLevel ? (
-                      <span className="text-[#7ec850] font-display font-bold text-sm block text-center sm:text-left">
+                      <span className="text-kawaii-green font-display font-bold text-sm block text-center sm:text-left">
                         MAX ✓
                       </span>
                     ) : (
@@ -161,7 +166,7 @@ export function ShopScreen() {
                   ) : (
                     <KawaiiButton
                       variant="yellow"
-                      onClick={() => purchaseItem(item.id)}
+                      onClick={() => void purchaseItem(item.id)}
                       disabled={locked || totalCoins < item.price}
                       className="text-xs px-3 py-1.5 w-full sm:w-auto"
                     >

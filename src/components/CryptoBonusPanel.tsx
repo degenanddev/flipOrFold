@@ -23,6 +23,17 @@ import {
 import { isSupabaseConfigured } from '../supabase/client'
 
 export function CryptoBonusPanel() {
+  if (!WALLETCONNECT_PROJECT_ID) {
+    return (
+      <p className="text-center text-xs text-kawaii-purple py-3">
+        Crypto shop isn&apos;t configured — add VITE_WALLETCONNECT_PROJECT_ID to enable wallets
+      </p>
+    )
+  }
+  return <CryptoBonusPanelInner />
+}
+
+function CryptoBonusPanelInner() {
   const { open } = useWeb3Modal()
   const { address, isConnected, chainId } = useWeb3ModalAccount()
   const { walletProvider } = useWeb3ModalProvider()
@@ -233,10 +244,6 @@ export function CryptoBonusPanel() {
     if (needsLink) return { tone: 'info' as const, text: `Link wallet to trainer ${trainerName ?? '…'}` }
     return { tone: 'ok' as const, text: `Linked ${shortAddress(linkedWallet!)} · ${balance ? `${Number(formatEther(balance.wei)).toFixed(4)} ${activeBscChain.currency}` : '…'}` }
   }, [web3Ready, isConnected, wrongChain, needsReconnect, needsLink, linkedWallet, address, balance, trainerName])
-
-  if (!WALLETCONNECT_PROJECT_ID) {
-    return null
-  }
 
   return (
     <div className="space-y-2">

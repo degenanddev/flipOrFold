@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useGameStore } from '../store/gameStore'
@@ -148,42 +148,107 @@ export function Player() {
         <meshStandardMaterial color={palette.body} roughness={0.45} />
       </mesh>
 
-      <TrailParticles color={trailColor} />
+      <BuddyTrail trailId={equippedTrail} color={trailColor} />
     </group>
   )
 }
 
-function TrailParticles({ color }: { color: string }) {
-  const ref = useRef<THREE.Points>(null)
-  const count = 16
-  const positions = new Float32Array(count * 3)
+const TRAIL_PARTICLE_COUNT = 12
 
-  for (let i = 0; i < count; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 0.35
-    positions[i * 3 + 1] = Math.random() * 0.35 + 0.1
-    positions[i * 3 + 2] = Math.random() * 0.8 + 0.5
-  }
+const TRAIL_PRESETS: Record<string, { size: number; speed: number; holo?: boolean }> = {
+  'trail-neon-blue': { size: 0.38, speed: 0.055 },
+  'trail-purple-scan': { size: 0.34, speed: 0.062 },
+  'trail-gold': { size: 0.42, speed: 0.048 },
+  'trail-holo': { size: 0.36, speed: 0.052, holo: true },
+}
+
+const DEFAULT_TRAIL = TRAIL_PRESETS['trail-neon-blue']!
+
+let trailDotTexture: THREE.CanvasTexture | null = null
+
+function getTrailDotTexture(): THREE.CanvasTexture {
+  if (trailDotTexture) return trailDotTexture
+  const s = 32
+  const canvas = document.createElement('canvas')
+  canvas.width = s
+  canvas.height = s
+  const ctx = canvas.getContext('2d')!
+  const g = ctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2)
+  g.addColorStop(0, 'rgba(255,255,255,1)')
+  g.addColorStop(0.5, 'rgba(255,255,255,0.5)')
+  g.addColorStop(1, 'rgba(255,255,255,0)')
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, s, s)
+  trailDotTexture = new THREE.CanvasTexture(canvas)
+  return trailDotTexture
+}
+
+/** Single lightweight particle trail — 12 dots, 1 draw call, mobile-safe */
+function BuddyTrail({ trailId, color }: { trailId: string; color: string }) {
+  const ref = useRef<THREE.Points>(null)
+  const matRef = useRef<THREE.PointsMaterial>(null)
+  const preset = TRAIL_PRESETS[trailId] ?? DEFAULT_TRAIL
+  const texture = useMemo(() => getTrailDotTexture(), [])
+
+  const seeds = useMemo(
+    () =>
+      Array.from({ length: TRAIL_PARTICLE_COUNT }, (_, i) => ({
+        x: (Math.random() - 0.5) * 0.35,
+        y: 0.22 + (i / TRAIL_PARTICLE_COUNT) * 0.08,
+        z: -0.35 - (i / TRAIL_PARTICLE_COUNT) * 1.1,
+        phase: i * 0.9,
+      })),
+    [trailId]
+  )
+
+  const positions = useMemo(() => {
+    const buf = new Float32Array(TRAIL_PARTICLE_COUNT * 3)
+    for (let i = 0; i < TRAIL_PARTICLE_COUNT; i++) {
+      buf[i * 3] = seeds[i]!.x
+      buf[i * 3 + 1] = seeds[i]!.y
+      buf[i * 3 + 2] = seeds[i]!.z
+    }
+    return buf
+  }, [seeds])
 
   useFrame((state) => {
     if (!ref.current) return
     const pos = ref.current.geometry.attributes.position.array as Float32Array
-    for (let i = 0; i < count; i++) {
-      pos[i * 3 + 2] += 0.035
-      if (pos[i * 3 + 2] > 1.5) {
-        pos[i * 3 + 2] = 0.4
-        pos[i * 3] = (Math.random() - 0.5) * 0.35
+    const t = state.clock.elapsedTime * GAME_SPEED_MULTIPLIER
+
+    for (let i = 0; i < TRAIL_PARTICLE_COUNT; i++) {
+      const seed = seeds[i]!
+      pos[i * 3 + 2] -= preset.speed
+      if (pos[i * 3 + 2] < -1.85) {
+        pos[i * 3 + 2] = -0.32
+        pos[i * 3] = (Math.random() - 0.5) * 0.3
       }
-      pos[i * 3 + 1] = 0.15 + Math.sin(state.clock.elapsedTime * 6 + i) * 0.06
+      pos[i * 3 + 1] = seed.y + Math.sin(t * 5 + seed.phase) * 0.04
     }
     ref.current.geometry.attributes.position.needsUpdate = true
+
+    if (matRef.current && preset.holo) {
+      matRef.current.color.setHSL((t * 0.28) % 1, 0.8, 0.6)
+    }
   })
 
   return (
-    <points ref={ref}>
+    <points ref={ref} frustumCulled={false} renderOrder={8}>
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.14} color={color} transparent opacity={0.9} sizeAttenuation depthWrite={false} />
+      <pointsMaterial
+        ref={matRef}
+        map={texture}
+        size={preset.size}
+        color={color}
+        transparent
+        opacity={0.75}
+        sizeAttenuation
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+        alphaTest={0.02}
+      />
     </points>
   )
 }
